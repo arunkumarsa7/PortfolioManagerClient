@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    height: 40px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    background-color: #fafafa;
+    color: blue;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
