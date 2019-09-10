@@ -10,7 +10,7 @@ const routes: Routes = [
   {  path: "", component: HomeComponent},
  { path: "portfolio/dashboard/datasourcing", component:DatasourcingComponent},
    { path: "portfolio/dashboard", component: DashboardComponent},
-   { path: "portfolio", component: PortfolioComponent},
+   { path: "portfolio/:id", component: PortfolioComponent},
    {path: '**', redirectTo: '', pathMatch: 'full'}
     
     
