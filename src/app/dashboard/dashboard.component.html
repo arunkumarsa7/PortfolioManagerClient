@@ -1,14 +1,106 @@
-<h1>dashboard works!</h1>
-<p>
-    This will be like a super component for the DashBoard page. <br>We can divide the entire dashboard into three sub components.
-</p> <ol>
-
-   <li>Dashboard tile view from top portion</li>
-    <li>the navigation bar with multiple lists form middle portion</li>
-    <li>graph display will be the bottom portion</li></ol>
-<p>
-    Each of this three is a seperate component and will be intergrated here with its own module routing and services.
-</p>
+<div class="container-fluid">
+    <main class="main">
+  <div class="card card-header">
+  <div class="row" >
+    <div class="col-sm-4">
+        {{ project$?.name }} :: Data souring   
+    </div>
+    <div class="col-sm-8">
+      Service Portfolio Dashboard
+    </div>
+  </div>
+  </div>
+  <div class="animated fadeIn">
+      <div class="row"> <!--tile .row-->
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-success">
+              <div class="row">
+                  <div class="card-body pb-0">
+                      <div class="text-value">{{ project$?.activeSLA }}</div>
+                      <div class="card-">Active SLAs</div>
+                    </div>
+                <div class="card-body">
+                  <i class="fa fa-clock-o fa-5x" aria-hidden="true"></i>
+                </div>    
+              </div>
+          </div>
+        </div><!--/.col-->
+        <!-- <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-primary">
+            <div class="card-body pb-0"> -->
+              <!-- <div class="btn-group float-right" dropdown>
+                <button type="button" class="btn btn-transparent dropdown-toggle p-0" dropdownToggle>
+                  <i class="icon-settings"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div> -->
+              <!-- <div class="text-value">9.823</div>
+              <div>Members online</div>
+            </div>
+            <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+              <canvas baseChart class="chart"
+                      [datasets]="lineChart1Data"
+                      [labels]="lineChart1Labels"
+                      [options]="lineChart1Options"
+                      [colors]="lineChart1Colours"
+                      [legend]="lineChart1Legend"
+                      [chartType]="lineChart1Type"></canvas>
+            </div>
+          </div>
+        </div> -->
+        <!--/.col-->
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-warning">
+            <div class="row">
+                <div class="card-body pb-0">
+                    <div class="text-value">{{ project$?.atRiskSLA }}</div>
+                    <div>At Risk SLAs</div>
+                  </div>
+              <div class="card-body">
+                <i class="fa fa-exclamation-circle fa-5x" aria-hidden="true"></i>
+              </div>    
+          </div>
+          </div>
+        </div><!--/.col-->
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-danger">
+            <div class="row">
+             <div class="card-body pb-0">
+            
+                <div class="text-value">{{ project$?.activeSLA }}</div>
+                <div>Breached SLAs</div>
+              </div>
+            
+                <div class="card-body">
+                    <i class="fa  fa-medkit fa-5x" aria-hidden="true"></i>
+                </div> 
+            </div>
+          </div>
+        </div><!--/.col-->
+        <div class="col-sm-6 col-lg-3" >
+          <div class="row dashboardbtn">
+          <div class="btn-group btn-group-toggle mr-3 col-sm-12 " data-toggle="buttons" style="align-content: bottom;" >
+            <label class="btn btn-outline-secondary bg-white" [(ngModel)]="radioModel" btnRadio="1" id="option1">Kraft</label>
+            <label class="btn btn-outline-secondary bg-white" [(ngModel)]="radioModel" btnRadio="2" id="option2">Life</label>
+            <label class="btn btn-outline-secondary bg-white" [(ngModel)]="radioModel" btnRadio="3" id="option3">CFS</label>
+            <label class="btn btn-outline-secondary bg-white" [(ngModel)]="radioModel" btnRadio="4" id="option4">155</label>
+          </div> <!--/.button-grp-->
+        </div>
+        </div>
+      </div><!--tile/.row-->
+      <div>
+        <app-dash-board-content></app-dash-board-content>
+      </div><!-- content of dashboard -->
+      </div>
+    </main>
+  </div>
+    
+  
 <button routerLink="/portfolio">Back</button>
 <button routerLink="">Home</button>
 <button routerLink="/portfolio/dashboard/datasourcing">Forward</button>
