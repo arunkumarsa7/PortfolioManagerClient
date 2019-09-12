@@ -6,7 +6,7 @@
 *            VSCode      : 1.38.0                                                            *
 **********************************************************************************************
 12.09.2019 Arun
--Added code to dynamically upadte the app title
+-Added code to dynamically update the app title
 
 10.09.2019 Sarath(1.0.0.001)
 -Cleaned up app component files
