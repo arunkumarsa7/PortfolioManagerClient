@@ -7,13 +7,13 @@ import { DatasourcingComponent } from './datasourcing/datasourcing.component';
 
 
 const routes: Routes = [
-  {  path: "", component: HomeComponent},
- { path: "portfolio/dashboard/datasourcing", component:DatasourcingComponent},
-   { path: "portfolio/dashboard", component: DashboardComponent},
-   { path: "portfolio/:id", component: PortfolioComponent},
-   {path: '**', redirectTo: '', pathMatch: 'full'}
-    
-    
+  { path: "", component: HomeComponent },
+  { path: "portfolio/dashboard/datasourcing", component: DatasourcingComponent },
+  { path: "portfolio/dashboard", component: DashboardComponent },
+  { path: "portfolio/:id", component: PortfolioComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
+
+
 ];
 
 @NgModule({
@@ -21,7 +21,7 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents =[
+export const routingComponents = [
   HomeComponent,
   PortfolioComponent,
   DashboardComponent,
