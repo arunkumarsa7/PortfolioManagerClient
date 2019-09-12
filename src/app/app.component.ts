@@ -17,5 +17,5 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  title = 'Service Level management';
+  title = 'Service Level Management | Portfolio Overview';
 }
