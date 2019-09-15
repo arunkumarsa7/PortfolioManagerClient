@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-portfolio',
@@ -8,27 +8,37 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PortfolioComponent implements OnInit {
 
-  //hard coded Pillar list
-  public pillarArray=[
+  // hard coded Pillar list
+  public pillarArray = [
     {
-      "id":1, "name":"Customer Platform"
+      id: 1, name: 'Customer Platform'
     },
     {
-      "id":2, "name":"Global Platform"
+      id: 2, name: 'Global Platform'
     },
     {
-      "id":3, "name":"Cross-Pillar Platform"
+      id: 3, name: 'Cross-Pillar Platform'
     },
   ];
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
   ngOnInit() {
     this.route.paramMap
-    .subscribe(params=>{
-     let id= params.get('id');
-      console.log(id);
-      //Ideally we should write a service to get a response for the given id
-    });
-  }
+    .subscribe(params => {
+     const id = params.get('id');
+     console.log('in Portfolio component id =' + id);
+      // Ideally we should write a service to get a response for the given id
+    }); }
+    public nextPage() {
+      this.router.navigateByUrl('portfolio/dashboard', { skipLocationChange: true });
+    }
+    public previousPage() {
+     this.router.navigateByUrl('', { skipLocationChange: true });
+    }
+    public showHomePage() {
+     this.router.navigateByUrl('', { skipLocationChange: true });
+    }
+
+
 
 
 

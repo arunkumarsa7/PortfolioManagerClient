@@ -9,6 +9,6 @@
 <p>
     Each of this three is a seperate component and will be intergrated here with its own module routing and services.
 </p>
-<button routerLink="/portfolio">Back</button>
-<button routerLink="">Home</button>
-<button routerLink="/portfolio/dashboard/datasourcing">Forward</button>
+<button (click)="previousPage()">Back</button>
+<button (click)="showHomePage()">Home</button>
+<button (click)="nextPage()">Forward</button>
