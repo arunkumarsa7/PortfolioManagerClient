@@ -34,22 +34,22 @@
             <p>Service Package 4</p>
         </div>
     </div>
-
 </div>
+
 <div class="container">
     <div class="row footer-row">
         <div class="col-md-4 footer-button-div">
-            <button routerLink="" class="footer-button">
+            <button (click)="previousPage()" class="footer-button">
                 <img src="assets/images/backward.png" width="90" height="50" alt="submit" />
             </button>
         </div>
         <div class="col-md-4 footer-button-div">
-            <button routerLink="" class="footer-button">
+            <button (click)="showHomePage()" class="footer-button">
                 <img src="assets/images/home.png" width="80" height="50" alt="submit" />
             </button>
         </div>
         <div class="col-md-4 footer-button-div">
-            <button routerLink="/portfolio/dashboard" class="footer-button">
+            <button (click)="nextPage()" class="footer-button">
                 <img src="assets/images/forward.png" width="90" height="50" alt="submit" />
             </button>
         </div>

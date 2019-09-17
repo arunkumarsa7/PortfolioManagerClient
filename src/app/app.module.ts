@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule,routingComponents } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 
 
@@ -12,12 +13,13 @@ import {HttpClientModule} from '@angular/common/http';
   declarations: [
     AppComponent,
     routingComponents
-    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
