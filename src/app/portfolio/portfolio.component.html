@@ -1,19 +1,19 @@
 <h1>portfolio works!</h1>
 <p>
-This component should be common for both Pillar specific and Project Specific display .<br>
-i.e the same model of display for pillar list like  ADM, AM-UK etc <br> as well as Project lists like ABBS, Global-One etc.
+    This component should be common for both Pillar specific and Project Specific display .<br>
+    i.e the same model of display for pillar list like ADM, AM-UK etc <br> as well as Project lists like ABBS,
+    Global-One etc.
 
 </p>
 <div>
-<h2>
-    OE List
-</h2>
-<ul *ngFor="let pillar of pillarArray">
-    <li>{{pillar.name}}</li>
-</ul>
+    <h2>
+        OE List
+    </h2>
+    <ul *ngFor="let pillar of pillarArray">
+        <li>{{pillar.name}}</li>
+    </ul>
 
 </div>
 <button (click)="previousPage()">Back</button>
 <button (click)="showHomePage()">Home</button>
 <button (click)="nextPage()">Forward</button>
-

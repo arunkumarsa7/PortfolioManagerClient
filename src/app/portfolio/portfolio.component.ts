@@ -7,7 +7,6 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit {
-
   // hard coded Pillar list
   public pillarArray = [
     {
@@ -23,23 +22,19 @@ export class PortfolioComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
   ngOnInit() {
     this.route.paramMap
-    .subscribe(params => {
-     const id = params.get('id');
-     console.log('in Portfolio component id =' + id);
-      // Ideally we should write a service to get a response for the given id
-    }); }
-    public nextPage() {
-      this.router.navigateByUrl('portfolio/dashboard', { skipLocationChange: true });
-    }
-    public previousPage() {
-     this.router.navigateByUrl('', { skipLocationChange: true });
-    }
-    public showHomePage() {
-     this.router.navigateByUrl('', { skipLocationChange: true });
-    }
-
-
-
-
-
+      .subscribe(params => {
+        const id = params.get('id');
+        console.log('in Portfolio component id =' + id);
+        // Ideally we should write a service to get a response for the given id
+      });
+  }
+  public nextPage() {
+    this.router.navigateByUrl('portfolio/dashboard', { skipLocationChange: true });
+  }
+  public previousPage() {
+    this.router.navigateByUrl('', { skipLocationChange: true });
+  }
+  public showHomePage() {
+    this.router.navigateByUrl('', { skipLocationChange: true });
+  }
 }
