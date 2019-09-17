@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-datasourcing',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatasourcingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
-
+  public previousPage() {
+    this.router.navigateByUrl('portfolio/dashboard', { skipLocationChange: true });
+  }
+  public showHomePage() {
+    this.router.navigateByUrl('', { skipLocationChange: true });
+  }
 }

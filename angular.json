@@ -32,6 +32,9 @@
             "scripts": []
           },
           "configurations": {
+            "es5": {
+              "tsConfig": "./tsconfig.es5.json"
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -69,6 +72,9 @@
             "browserTarget": "portfolio-management:build"
           },
           "configurations": {
+            "es5": {
+              "browserTarget": "portfolio-management:build:es5"
+            },
             "production": {
               "browserTarget": "portfolio-management:build:production"
             }
@@ -123,6 +129,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "portfolio-management"
 }

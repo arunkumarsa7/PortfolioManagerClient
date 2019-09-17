@@ -1,0 +1,71 @@
+[33mcommit 003c00e76da467e5e0f0e30fc52f9ecc94678e40[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m, [m[1;31morigin/dashboard_navas[m[33m)[m
+Merge: b706e2b 1338791
+Author: Arun Kumar S A <47004913+arunkumarsa7@users.noreply.github.com>
+Date:   Thu Sep 12 19:05:14 2019 +0530
+
+    Merge pull request #13 from arunkumarsa7/basic_skeliton_arun
+    
+    Basic skeliton arun
+
+[33mcommit 1338791ee91722e68c5d95ef9dad2b36bff48484[m[33m ([m[1;31morigin/basic_skeliton_arun[m[33m)[m
+Author: arunkumarsa7 <arunkumarsa8374@gmail.com>
+Date:   Thu Sep 12 19:03:57 2019 +0530
+
+    updated release notes
+
+[33mcommit c14f3b649007bd85569b44a17dd581d967a81478[m
+Author: arunkumarsa7 <arunkumarsa8374@gmail.com>
+Date:   Thu Sep 12 19:00:44 2019 +0530
+
+    Code changes to dynamically update the app title.
+
+[33mcommit 98182bff67432d40d0dddf953f10ea94be80fdda[m
+Author: arunkumarsa7 <arunkumarsa8374@gmail.com>
+Date:   Thu Sep 12 15:56:14 2019 +0530
+
+    Formatted the code
+
+[33mcommit b706e2bdd89c52f762076de95777402c23cce6ac[m
+Merge: 9cd2298 3fa28e8
+Author: Arun Kumar S A <47004913+arunkumarsa7@users.noreply.github.com>
+Date:   Tue Sep 10 22:20:43 2019 +0530
+
+    Merge pull request #2 from arunkumarsa7/basic_skeliton_sarath
+    
+    Sarath(1.0.0.001)
+
+[33mcommit 3fa28e8461e012441ca3c922582f9b9481fb531f[m[33m ([m[1;31morigin/basic_skeliton_sarath[m[33m, [m[1;32mbasic_skeliton_sarath[m[33m)[m
+Author: sam13113 <sarath2madhu@gmail.com>
+Date:   Tue Sep 10 21:53:31 2019 +0530
+
+    Sarath(1.0.0.001)
+    -Cleaned up app component files
+    -Updated Homepage to pass the selection ID as URL param
+
+[33mcommit 9cd229889d61a972f2fee58d811c2b9457e36c0f[m
+Merge: 2806775 a8dba60
+Author: Arun Kumar S A <47004913+arunkumarsa7@users.noreply.github.com>
+Date:   Mon Sep 9 18:45:51 2019 +0530
+
+    Merge pull request #1 from arunkumarsa7/basic_skeliton_sarath
+    
+    09.09.2019 Sarath(1.0.0.000)
+
+[33mcommit a8dba60d6938182ec389e17cc12b86bb6eb47a92[m
+Author: sam13113 <sarath2madhu@gmail.com>
+Date:   Mon Sep 9 16:14:23 2019 +0530
+
+    09.09.2019 Sarath(1.0.0.000)
+    BaseLine structure to the project.
+
+[33mcommit 28067755074082adaaf24dfa80e3cc2851a96033[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: arunkumarsa7 <arunkumarsa8374@gmail.com>
+Date:   Sun Sep 8 23:30:04 2019 +0530
+
+    initial commit all modified changes
+
+[33mcommit f3d61921145874435e4313dc374f3f0fadcd921c[m
+Author: arunkumarsa7 <arunkumarsa8374@gmail.com>
+Date:   Sun Sep 8 21:07:14 2019 +0530
+
+    initial commit

@@ -1,13 +1,16 @@
 <h1>datasourcing works!</h1>
 <p>
-        Likewise, This will be super component group for the Datasourcing page. <br>We can divide the entire datasourcing into three sub components.
-    </p> <ol>
-    
-       <li>Dashboard tile view on top left portion</li>
-        <li>the navigation bar with multiple lists on top right portion</li>
-        <li>graph display will be the bottom portion</li></ol>
-    <p>
-        Each of this three is a seperate component and will be intergrated here with its own module routing and services.
-    </p>
-<button routerLink="/portfolio/dashboard">Back</button>
-<button routerLink="">Home</button>
+    Likewise, This will be super component group for the Datasourcing page. <br>We can divide the entire datasourcing
+    into three sub components.
+</p>
+<ol>
+
+    <li>Dashboard tile view on top left portion</li>
+    <li>the navigation bar with multiple lists on top right portion</li>
+    <li>graph display will be the bottom portion</li>
+</ol>
+<p>
+    Each of this three is a seperate component and will be intergrated here with its own module routing and services.
+</p>
+<button (click)="previousPage()">Back</button>
+<button (click)="showHomePage()">Home</button>

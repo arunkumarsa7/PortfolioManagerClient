@@ -5,9 +5,6 @@
 *            BootStrap   : 4.3.1                                                             *
 *            VSCode      : 1.38.0                                                            *
 **********************************************************************************************
-12.09.2019 Arun
--Added code to dynamically update the app title
-
 10.09.2019 Sarath(1.0.0.001)
 -Cleaned up app component files
 -Updated Homepage to pass the selection ID as URL param
