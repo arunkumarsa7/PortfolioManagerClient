@@ -14,8 +14,8 @@ export class DatasourcingComponent implements OnInit {
   }
   public previousPage() {
     this.router.navigateByUrl('portfolio/dashboard', { skipLocationChange: true });
-   }
-   public showHomePage() {
+  }
+  public showHomePage() {
     this.router.navigateByUrl('', { skipLocationChange: true });
-   }
+  }
 }

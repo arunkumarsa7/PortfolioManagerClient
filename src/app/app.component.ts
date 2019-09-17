@@ -17,5 +17,5 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  public static title = 'Service Level management';
+  public static title = 'Service Level Management | Portfolio Management';
 }
