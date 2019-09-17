@@ -13,7 +13,45 @@
         <li>{{pillar.name}}</li>
     </ul>
 
+    <div class="section group">
+        <div class="col span_1_of_2">
+            <img src="assets/images/folder.png">
+            <p>Service Package 1</p>
+        </div>
+        <div class="col span_1_of_2">
+            <img src="assets/images/folder.png">
+            <p>Service Package 2</p>
+        </div>
+    </div>
+
+    <div class="section group">
+        <div class="col span_1_of_2">
+            <img src="assets/images/folder.png">
+            <p>Service Package 3</p>
+        </div>
+        <div class="col span_1_of_2">
+            <img src="assets/images/folder.png">
+            <p>Service Package 4</p>
+        </div>
+    </div>
 </div>
-<button (click)="previousPage()">Back</button>
-<button (click)="showHomePage()">Home</button>
-<button (click)="nextPage()">Forward</button>
+
+<div class="container">
+    <div class="row footer-row">
+        <div class="col-md-4 footer-button-div">
+            <button (click)="previousPage()" class="footer-button">
+                <img src="assets/images/backward.png" width="90" height="50" alt="submit" />
+            </button>
+        </div>
+        <div class="col-md-4 footer-button-div">
+            <button (click)="showHomePage()" class="footer-button">
+                <img src="assets/images/home.png" width="80" height="50" alt="submit" />
+            </button>
+        </div>
+        <div class="col-md-4 footer-button-div">
+            <button (click)="nextPage()" class="footer-button">
+                <img src="assets/images/forward.png" width="90" height="50" alt="submit" />
+            </button>
+        </div>
+    </div>
+</div>

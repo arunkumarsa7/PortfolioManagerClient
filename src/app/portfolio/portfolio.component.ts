@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -21,12 +22,7 @@ export class PortfolioComponent implements OnInit {
   ];
   constructor(private route: ActivatedRoute, private router: Router) { }
   ngOnInit() {
-    this.route.paramMap
-      .subscribe(params => {
-        const id = params.get('id');
-        console.log('in Portfolio component id =' + id);
-        // Ideally we should write a service to get a response for the given id
-      });
+    this.updateToolbarAppTitle();
   }
   public nextPage() {
     this.router.navigateByUrl('portfolio/dashboard', { skipLocationChange: true });
@@ -37,4 +33,14 @@ export class PortfolioComponent implements OnInit {
   public showHomePage() {
     this.router.navigateByUrl('', { skipLocationChange: true });
   }
+
+  updateToolbarAppTitle() {
+    this.route.paramMap
+      .subscribe(params => {
+        let id = params.get('id');
+        let elem: HTMLElement = document.getElementById('appTitle');
+        elem.innerHTML = AppComponent.title + ' | ' + id;
+      });
+  }
+
 }
