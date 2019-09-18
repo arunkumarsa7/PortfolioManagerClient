@@ -21,17 +21,9 @@ export class PortfolioComponent implements OnInit {
     },
   ];
   constructor(private route: ActivatedRoute, private router: Router) { }
+
   ngOnInit() {
     this.updateToolbarAppTitle();
-  }
-  public nextPage() {
-    this.router.navigateByUrl('portfolio/dashboard', { skipLocationChange: true });
-  }
-  public previousPage() {
-    this.router.navigateByUrl('', { skipLocationChange: true });
-  }
-  public showHomePage() {
-    this.router.navigateByUrl('', { skipLocationChange: true });
   }
 
   updateToolbarAppTitle() {
@@ -41,6 +33,10 @@ export class PortfolioComponent implements OnInit {
         let elem: HTMLElement = document.getElementById('appTitle');
         elem.innerHTML = AppComponent.title + ' | ' + id;
       });
+  }
+
+  public showDashboard(event: Event) {
+    this.router.navigateByUrl('/portfolio/dashboard', { skipLocationChange: true });
   }
 
 }

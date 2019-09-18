@@ -7,6 +7,7 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { DashboardCommonModule } from './common/dashboard-common.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     FormsModule,
     BsDropdownModule,
     ButtonsModule.forRoot(),
-    DashboardModule
+    DashboardModule,
+    DashboardCommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
