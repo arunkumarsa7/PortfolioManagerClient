@@ -10,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let  subProject of  subProjects$">
+        <tr *ngFor="let  subProject of  subProjects$" (click)="showDatasourcing($event)">
             <td>
                 <div class="small text-muted">
                     {{subProject.name}}

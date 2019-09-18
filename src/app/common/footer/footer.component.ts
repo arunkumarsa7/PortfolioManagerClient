@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-datasourcing',
-  templateUrl: './datasourcing.component.html',
-  styleUrls: ['./datasourcing.component.css']
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.css']
 })
-export class DatasourcingComponent implements OnInit {
+export class FooterComponent implements OnInit {
 
   constructor(private router: Router) { }
 
