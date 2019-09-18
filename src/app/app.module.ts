@@ -5,6 +5,7 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { ServiceDescriptionComponent } from './service-description/service-description.component';
 
 
 
@@ -12,7 +13,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
+    ServiceDescriptionComponent
 
   ],
   imports: [

@@ -1,0 +1,17 @@
+
+  p {
+    color: rgb(99, 8, 184);
+  font-family: courier;
+  font-size:100%;
+
+  }
+  div {
+    height: 200px;
+    width: 50%;
+    display: block;
+    background-color: rgb(158, 209, 212);
+    border: 1px solid black;
+    color:rgb(243, 10, 88);
+    font-family: verdana;
+    font-size: 80%;
+  }
