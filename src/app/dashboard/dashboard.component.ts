@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,18 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  project$: object;
 
-  constructor( private router: Router) { }
-  public nextPage() {
-    this.router.navigateByUrl('portfolio/dashboard/datasourcing', { skipLocationChange: true });
-  }
-  public previousPage() {
-   this.router.navigateByUrl('portfolio/id', { skipLocationChange: true });
-  }
+  constructor(private data: DataService, private router: Router) { }
+
   public showHomePage() {
     this.router.navigateByUrl('', { skipLocationChange: true });
-   }
+  }
+
   ngOnInit() {
+    this.data.getProject().subscribe(data => this.project$ = data)
   }
 
 }

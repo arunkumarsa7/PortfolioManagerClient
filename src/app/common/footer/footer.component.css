@@ -1,0 +1,30 @@
+html,
+body {
+    height: 100%;
+}
+
+#page-content {
+    flex: 1 0 auto;
+}
+
+#sticky-footer {
+    position        : absolute;
+    bottom          : 0;
+    width           : 100%;
+    background-color: #004a94;
+}
+
+.footer-row {
+    display: flex;
+}
+
+.footer-button-div {
+    flex-grow : 1;
+    text-align: center;
+}
+
+.footer-button {
+    border    : 0;
+    background: transparent;
+    cursor    : pointer;
+}
