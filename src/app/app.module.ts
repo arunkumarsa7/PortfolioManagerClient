@@ -7,11 +7,13 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { PortfolioSubComponent } from './portfolio-sub/portfolio-sub.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
+    PortfolioSubComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     FormsModule,
     BsDropdownModule,
     ButtonsModule.forRoot(),
-    DashboardModule
+    DashboardModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

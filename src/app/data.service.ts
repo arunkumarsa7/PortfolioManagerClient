@@ -13,5 +13,7 @@ export class DataService {
   getSubProjects(){
     return this.http.get('https://my-json-server.typicode.com/navas-infobreez/FakeServer/subProject')
   }
-
+  getProtfolioServices(){
+    return this.http.get('https://my-json-server.typicode.com/lenimol/demo/portfolio')
+}
 }

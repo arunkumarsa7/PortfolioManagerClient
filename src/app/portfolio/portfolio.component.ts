@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DataService } from '../data.service';
+
 
 @Component({
   selector: 'app-portfolio',
@@ -9,20 +11,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PortfolioComponent implements OnInit {
   // hard coded Pillar list
-  public pillarArray = [
-    {
-      id: 1, name: 'Customer Platform'
-    },
-    {
-      id: 2, name: 'Global Platform'
-    },
-    {
-      id: 3, name: 'Cross-Pillar Platform'
-    },
-  ];
-  constructor(private route: ActivatedRoute, private router: Router) { }
+   pillarArray: Object;
+  constructor(private data: DataService,private route: ActivatedRoute, private router: Router
+    ) { }
   ngOnInit() {
     this.updateToolbarAppTitle();
+    this.data.getProtfolioServices().subscribe(data => this.pillarArray = data)
   }
   public nextPage() {
     this.router.navigateByUrl('portfolio/dashboard', { skipLocationChange: true });
@@ -32,6 +26,12 @@ export class PortfolioComponent implements OnInit {
   }
   public showHomePage() {
     this.router.navigateByUrl('', { skipLocationChange: true });
+  }
+  public protfolioSubPage() {
+
+    this.router.navigateByUrl('portfolio/portfolio-sub', 
+    { skipLocationChange: true });
+   
   }
 
   updateToolbarAppTitle() {
