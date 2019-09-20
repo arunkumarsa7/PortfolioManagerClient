@@ -7,11 +7,12 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +21,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     FormsModule,
     BsDropdownModule,
     ButtonsModule.forRoot(),
-    DashboardModule
+    DashboardModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
