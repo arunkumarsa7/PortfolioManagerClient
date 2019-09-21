@@ -1,17 +1,40 @@
+.descHeading{
+  float: left;
+  width: 70%;
+  margin-left:-25mm;
+  font-weight: bold
+}
+.impactHeading{
+  float:right;
+  width: 30%;
+  margin-left:20mm;
+  font-weight: bold
+}
 
-  p {
-    color: rgb(99, 8, 184);
-  font-family: courier;
-  font-size:100%;
 
-  }
-  div {
+
+.description {
     height: 200px;
-    width: 50%;
+    width: 70%;
     display: block;
-    background-color: rgb(158, 209, 212);
-    border: 1px solid black;
-    color:rgb(243, 10, 88);
+    color: black;
     font-family: verdana;
-    font-size: 80%;
+    font-size: 60%;
+    float: left;
+    margin-left:-25mm;
+    border-style: hidden
+    
+    
+  }
+  .impact{
+    height: 200px;
+    width: 30%;
+    display: block;
+    color: rgb(12, 0, 0);
+    font-family: verdana;
+    font-size: 60%;
+    border-style: solid;
+    float: right;
+    margin-left:20mm
+
   }

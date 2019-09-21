@@ -12,13 +12,15 @@ import { ServiceDescriptionComponent } from './service-description/service-descr
 
 
 import { DashboardCommonModule } from './common/dashboard-common.module';
+import { KeyContactsComponent } from './key-contacts/key-contacts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
     ServiceDescriptionComponent,
-    routingComponents
+    routingComponents,
+    KeyContactsComponent
   ],
   imports: [
     BrowserModule,
