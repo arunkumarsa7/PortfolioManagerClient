@@ -1,57 +1,26 @@
-<h1>portfolio works!</h1>
-<p>
-    This component should be common for both Pillar specific and Project Specific display .<br>
-    i.e the same model of display for pillar list like ADM, AM-UK etc <br> as well as Project lists like ABBS,
-    Global-One etc.
-
-</p>
-<div>
-    <h2>
-        OE List
-    </h2>
-    <ul *ngFor="let pillar of pillarArray">
-        <li>{{pillar.name}}</li>
-    </ul>
-
-    <div class="section group">
-        <div class="col span_1_of_2">
-            <img src="assets/images/folder.png">
-            <p>Service Package 1</p>
-        </div>
-        <div class="col span_1_of_2">
-            <img src="assets/images/folder.png">
-            <p>Service Package 2</p>
-        </div>
-    </div>
-
-    <div class="section group">
-        <div class="col span_1_of_2">
-            <img src="assets/images/folder.png">
-            <p>Service Package 3</p>
-        </div>
-        <div class="col span_1_of_2">
-            <img src="assets/images/folder.png">
-            <p>Service Package 4</p>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-md-6" *ngFor="let piller of pillarArray" (click)="showDashboard($event)">
+                <img type="button" src="assets/images/folder.png" />
+                <p class="list-group-item-text">{{ piller.name }}</p>
+            </div>
+            <!-- <div class="col span_1_of_2">
+                        <img src="assets/images/folder.png" (click)="showDashboard($event)">
+                        <p>Service Package 2</p>
+                    </div>
+                </div>
+            
+                <div class="section group">
+                    <div class="col span_1_of_2">
+                        <img src="assets/images/folder.png" (click)="showDashboard($event)">
+                        <p>Service Package 3</p>
+                    </div>
+                    <div class="col span_1_of_2">
+                        <img src="assets/images/folder.png" (click)="showDashboard($event)">
+                        <p>Service Package 4</p>
+                    </div> -->
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row footer-row">
-        <div class="col-md-4 footer-button-div">
-            <button (click)="previousPage()" class="footer-button">
-                <img src="assets/images/backward.png" width="90" height="50" alt="submit" />
-            </button>
-        </div>
-        <div class="col-md-4 footer-button-div">
-            <button (click)="showHomePage()" class="footer-button">
-                <img src="assets/images/home.png" width="80" height="50" alt="submit" />
-            </button>
-        </div>
-        <div class="col-md-4 footer-button-div">
-            <button (click)="nextPage()" class="footer-button">
-                <img src="assets/images/forward.png" width="90" height="50" alt="submit" />
-            </button>
-        </div>
-    </div>
 </div>

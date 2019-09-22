@@ -12,13 +12,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private data: DataService, private router: Router) { }
 
-  public nextPage() {
-    this.router.navigateByUrl('portfolio/dashboard/datasourcing', { skipLocationChange: true });
-  }
-  public previousPage() {
-    this.router.navigateByUrl('portfolio/id', { skipLocationChange: true });
-  }
-  public showHomePage() {
+    public showHomePage() {
     this.router.navigateByUrl('', { skipLocationChange: true });
   }
   ngOnInit() {

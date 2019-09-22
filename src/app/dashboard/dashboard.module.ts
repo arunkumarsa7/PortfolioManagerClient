@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
 import { DashboardProjectsComponent } from './dashboard-projects/dashboard-projects.component';
-import { LinechartcomponentComponent } from '../linechartcomponent/linechartcomponent.component';
-import { DoughnutchartcomponentComponent } from '../doughnutchartcomponent/doughnutchartcomponent.component';
+import { LinechartComponent } from '../linechart/linechart.component';
+import { DoughnutchartComponent } from '../doughnutchart/doughnutchart.component';
 import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
@@ -12,8 +12,8 @@ import { ChartsModule } from 'ng2-charts';
         DashboardComponent,
         DashboardContentComponent,
         DashboardProjectsComponent,
-        LinechartcomponentComponent,
-        DoughnutchartcomponentComponent
+        LinechartComponent,
+        DoughnutchartComponent
     ],
     imports: [
         CommonModule,

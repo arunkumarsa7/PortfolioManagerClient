@@ -19,20 +19,15 @@ export class PortfolioComponent implements OnInit {
     {
       id: 3, name: 'Cross-Pillar Platform'
     },
+    {
+      id: 4, name: 'IT Operations'
+    }
   ];
   constructor(private route: ActivatedRoute, private router: Router) { }
   ngOnInit() {
     this.updateToolbarAppTitle();
   }
-  public nextPage() {
-    this.router.navigateByUrl('portfolio/dashboard', { skipLocationChange: true });
-  }
-  public previousPage() {
-    this.router.navigateByUrl('', { skipLocationChange: true });
-  }
-  public showHomePage() {
-    this.router.navigateByUrl('', { skipLocationChange: true });
-  }
+  
 
   updateToolbarAppTitle() {
     this.route.paramMap
@@ -43,4 +38,7 @@ export class PortfolioComponent implements OnInit {
       });
   }
 
+  public showDashboard(event: Event) {
+    this.router.navigateByUrl('/portfolio/dashboard', { skipLocationChange: true });
+  }
 }

@@ -1,13 +1,13 @@
-/*  SECTIONS  */
-.section {
+/* /*  SECTIONS  */
+/* .section {
     clear         : both;
     padding       : 0px;
     margin        : 0px;
     padding-bottom: 20px;
-}
+}*/
 
 /*  COLUMN SETUP  */
-.col {
+/* .col {
     display: block;
     float  : left;
     margin : 1% 0 1% 0%;
@@ -30,9 +30,9 @@
 .col:first-child {
     margin-left: 0;
 }
-
+ */
 /*  GROUPING  */
-.group:before,
+/* .group:before,
 .group:after {
     content: "";
     display: table;
@@ -43,16 +43,16 @@
 }
 
 .group {
-    zoom: 1;
+    zoom: 1;*/
     /* For IE 6/7 */
-}
+/*}
 
 .span_1_of_2 {
     width: 47.5%;
 }
-
+ */
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
-@media only screen and (max-width: 480px) {
+/*@media only screen and (max-width: 480px) {
     .col {
         margin: 1% 0 1% 0%;
     }
@@ -64,7 +64,7 @@
     }
 }
 
-.footer-row {
+ .footer-row {
     display: flex;
 }
 
@@ -77,4 +77,4 @@
     border    : 0;
     background: transparent;
     cursor    : pointer;
-}
+}  */

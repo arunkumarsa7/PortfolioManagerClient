@@ -2,9 +2,7 @@
   <main class="main">
     <div class="card card-header">
       <div class="row">
-        <div class="col-sm-4">
-          {{ project$?.name }} :: Data sourcing
-        </div>
+        <div class="col-sm-4">{{ project$?.name }} :: Data sourcing</div>
         <div class="col-sm-8">
           Service Portfolio Dashboard
         </div>
@@ -35,7 +33,10 @@
                 <div>At Risk SLAs</div>
               </div>
               <div class="card-body">
-                <i class="fa fa-exclamation-circle fa-5x" aria-hidden="true"></i>
+                <i
+                  class="fa fa-exclamation-circle fa-5x"
+                  aria-hidden="true"
+                ></i>
               </div>
             </div>
           </div>
@@ -45,7 +46,6 @@
           <div class="card text-white bg-danger">
             <div class="row">
               <div class="card-body pb-0">
-
                 <div class="text-value">{{ project$?.activeSLA }}</div>
                 <div>Breached SLAs</div>
               </div>
@@ -57,29 +57,46 @@
           </div>
         </div>
         <!--/.col-->
-        <!--div class="col-sm-6 col-lg-3">
+        <div class="col-sm-6 col-lg-3">
           <div class="row dashboardbtn">
-            <div class="btn-group btn-group-toggle mr-3 col-sm-12 " data-toggle="buttons"
-              style="align-content: bottom;">
-              <label class="btn btn-outline-secondary bg-white" [(ngModel)]="radioModel" btnRadio="1"
-                id="option1">Kraft</label>
-              <label class="btn btn-outline-secondary bg-white" [(ngModel)]="radioModel" btnRadio="2"
-                id="option2">Life</label>
-              <label class="btn btn-outline-secondary bg-white" [(ngModel)]="radioModel" btnRadio="3"
-                id="option3">CFS</label>
-              <label class="btn btn-outline-secondary bg-white" [(ngModel)]="radioModel" btnRadio="4"
-                id="option4">155</label>
+            <div
+              class="btn-group btn-group-toggle mr-3 col-sm-12 "
+              data-toggle="buttons"
+              style="align-content: bottom;"
+            >
+              <label
+                class="btn btn-outline-secondary bg-white"
+                btnRadio="1"
+                id="option1"
+                >Kraft</label
+              >
+              <label
+                class="btn btn-outline-secondary bg-white"
+                btnRadio="2"
+                id="option2"
+                >Life</label
+              >
+              <label
+                class="btn btn-outline-secondary bg-white"
+                btnRadio="3"
+                id="option3"
+                >CFS</label
+              >
+              <label
+                class="btn btn-outline-secondary bg-white"
+                btnRadio="4"
+                id="option4"
+                >PMS</label
+              >
             </div>
           </div>
-        </div--> 
+        </div>
       </div>
       <!--tile/.row-->
       <div>
         <app-dashboard-content></app-dashboard-content>
-      </div><!-- content of dashboard -->
+      </div>
+      <!-- content of dashboard -->
     </div>
   </main>
 </div>
-<button (click)="previousPage()">Back</button>
-<button (click)="showHomePage()">Home</button>
-<button (click)="nextPage()">Forward</button>
