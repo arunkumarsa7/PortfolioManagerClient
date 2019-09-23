@@ -29,14 +29,14 @@ export class PortfolioComponent implements OnInit {
   updateToolbarAppTitle() {
     this.route.paramMap
       .subscribe(params => {
-        let id = params.get('id');
-        let elem: HTMLElement = document.getElementById('appTitle');
+        const id = params.get('id');
+        const elem: HTMLElement = document.getElementById('appTitle');
         elem.innerHTML = AppComponent.title + ' | ' + id;
       });
   }
 
-  public showDashboard(event: Event) {
-    this.router.navigateByUrl('/portfolio/dashboard', { skipLocationChange: true });
+  public showProjects(event: Event) {
+    this.router.navigateByUrl('/portfolio/projects', { skipLocationChange: true });
   }
 
 }
