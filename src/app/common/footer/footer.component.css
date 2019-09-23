@@ -19,18 +19,41 @@ body {
     display: flex;
 }
 
-.footer-button-div {
+.back-button-div,
+.footer-text-companion,
+.dummy-button-div,
+.dummy-text-companion {
+    width: 20%;
+    float: left;
+}
+
+.home-button-div {
     flex-grow : 1;
     text-align: center;
 }
 
-.footer-button {
-    border    : 0;
+.back-button-div button,
+.home-button-div button {
+    border    : none;
+    outline   : none;
     background: transparent;
     cursor    : pointer;
 }
 
+.home-button-div button img {
+    width : 40%;
+    height: 40%;
+}
+
+.back-button-div button img {
+    width      : 25%;
+    height     : 40%;
+    float      : left;
+    margin-left: 5px;
+}
+
 .footer-text {
+    width      : 60%;
     font-size  : 1rem;
     color      : rgb(0, 0, 0);
     font-family: Georgia, sans-serif;

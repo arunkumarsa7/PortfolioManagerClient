@@ -16,6 +16,7 @@ export class HomeComponent implements AfterViewInit {
         this.globals.currentOE = AppSettings.defaultOE;
         this.globals.appPage = AppSettings.defaultPageKey;
     }
+
     constructor(private router: Router, globals: Globals) {
         this.globals = globals;
     }
