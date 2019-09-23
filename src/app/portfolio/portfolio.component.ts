@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { Globals } from '../common/utils/globals';
+import { AppSettings } from '../common/utils/AppSettings';
 
 @Component({
   selector: 'app-portfolio',
@@ -8,35 +10,38 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit {
-  // hard coded Pillar list
-  public pillarArray = [
-    {
-      id: 1, name: 'Customer Platform'
-    },
-    {
-      id: 2, name: 'Global Platform'
-    },
-    {
-      id: 3, name: 'Cross-Pillar Platform'
-    },
-  ];
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  globals: Globals;
+
+  constructor(private router: Router, globals: Globals) {
+    this.globals = globals;
+  }
 
   ngOnInit() {
     this.updateToolbarAppTitle();
   }
 
-  updateToolbarAppTitle() {
-    this.route.paramMap
-      .subscribe(params => {
-        const id = params.get('id');
-        const elem: HTMLElement = document.getElementById('appTitle');
-        elem.innerHTML = AppComponent.title + ' | ' + id;
-      });
+  private updateToolbarAppTitle() {
+    const elem: HTMLElement = document.getElementById('appTitle');
+    elem.innerHTML = AppComponent.title + ' | ' + this.globals.currentOE;
   }
 
-  public showProjects(event: Event) {
+  public handlePortFolioClickEvent(event: Event) {
+    const currentPage = this.globals.appPage;
+    if (AppSettings.portfolioPageKey === currentPage) {
+      this.showProjects();
+    } else if (AppSettings.projectsPageKey === currentPage) {
+      this.showProjectDashboard();
+    }
+  }
+
+  private showProjects() {
+    this.globals.appPage = AppSettings.projectsPageKey;
     this.router.navigateByUrl('/portfolio/projects', { skipLocationChange: true });
+  }
+
+  private showProjectDashboard() {
+    this.globals.appPage = AppSettings.projectDashboardPageKey;
+    this.router.navigateByUrl('portfolio/projects/dashboard', { skipLocationChange: true });
   }
 
 }

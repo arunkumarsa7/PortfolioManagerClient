@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../data.service';
 import { Router } from '@angular/router';
+import { Globals } from '../../common/utils/globals';
+import { AppSettings } from '../../common/utils/AppSettings';
 
 @Component({
   selector: 'app-sub-project-table',
@@ -9,15 +11,17 @@ import { Router } from '@angular/router';
 })
 export class DashboardProjectsComponent implements OnInit {
   subProjects$: object;
+  globals: Globals;
 
-  constructor(private data: DataService, private router: Router) { }
+  constructor(private data: DataService, private router: Router, globals: Globals) { this.globals = globals;}
 
   ngOnInit() {
     this.data.getSubProjects().subscribe(data => this.subProjects$ = data)
   }
 
   public showDatasourcing(event: Event) {
-    this.router.navigateByUrl('/portfolio/dashboard/datasourcing', { skipLocationChange: true });
+    this.globals.appPage = AppSettings.datasourcingPageKey;
+    this.router.navigateByUrl('/portfolio/projects/dashboard/datasourcing', { skipLocationChange: true });
   }
 
 }
