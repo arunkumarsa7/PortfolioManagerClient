@@ -8,10 +8,10 @@ body {
 }
 
 #sticky-footer {
-    position        : absolute;
+    position        : fixed;
     bottom          : 0;
     width           : 100%;
-    background-color: #004a94;
+    background-color: #003781;
 }
 
 .footer-row {

@@ -1,0 +1,42 @@
+.navbar{
+    padding: 1.5rem 0rem;
+    background-color:#fff;
+    
+}
+
+/* .brdcrmp{
+    background-color:#eee;
+    height: 2rem;
+    border: 1px solid #000;
+} */
+
+.breadcrumb{
+    border-top: 1px solid #c8ced3;
+}
+
+ ul.breadcrumb {
+    list-style: none;
+    background-color: #eee;
+    width: 100%;
+  }
+
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 1rem;
+  }
+  
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: #444444;
+    content: "<-\00a0";
+  }
+  
+  ul.breadcrumb li a {
+    color: #444444;
+    text-decoration: none;
+  }
+  
+  ul.breadcrumb li a:hover {
+    color: #003781;
+    text-decoration: underline;
+  } 
