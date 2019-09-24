@@ -22,5 +22,4 @@ export class AppRoutingModule { }
 
 export const routingComponents = [
   HomeComponent,
-  PortfolioComponent,
-  DatasourcingComponent];
+  PortfolioComponent  ];
