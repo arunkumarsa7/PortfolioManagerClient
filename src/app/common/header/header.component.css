@@ -1,23 +1,26 @@
-.app-header {
-    width           : 100%;
-    height          : 80%;
-    background-color: #004a94;
+.navbar {
+  background-color: #003781;
+  color           : #fff;
+  position        : fixed;
+  width           : 100%;
+  top             : 0;
+  font-family     : Georgia, sans-serif;
+  height          : 50px;
 }
 
-.spacer {
-    flex: 1;
+.spans,
+logo-div {
+  padding-left: 0px !important;
 }
 
-.toolbar {
-    width      : 100%;
-    height     : 100%;
-    display    : flex;
-    align-items: center;
+@media(max-width: 992px) {
+  .navbar-left img {
+    width: 100%;
+  }
 }
 
-#appTitle {
-    font-size   : 1.2vw;
-    color       : rgb(255, 255, 255);
-    font-family : Georgia, sans-serif;
-    padding-left: 5px;
+@media(max-width: 768px) {
+  .navbar-left img {
+    width: 100%;
+  }
 }

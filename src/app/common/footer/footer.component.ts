@@ -17,10 +17,6 @@ export class FooterComponent implements AfterViewInit {
   ngAfterViewInit(): void {
   }
 
-  public showHomePage() {
-    this.router.navigateByUrl('', { skipLocationChange: true });
-  }
-
   public showBackPage() {
     const currentPage = this.globals.appPage;
     const currentPageIndex = AppSettings.portfolioAppPages.indexOf(currentPage);
