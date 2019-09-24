@@ -13,7 +13,7 @@ export class DashboardProjectsComponent implements OnInit {
   subProjects$: object;
   globals: Globals;
 
-  constructor(private data: DataService, private router: Router, globals: Globals) { this.globals = globals;}
+  constructor(private data: DataService, private router: Router, globals: Globals) { this.globals = globals; }
 
   ngOnInit() {
     this.data.getSubProjects().subscribe(data => this.subProjects$ = data)

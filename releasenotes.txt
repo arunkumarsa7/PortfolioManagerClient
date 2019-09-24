@@ -5,9 +5,47 @@
 *            BootStrap   : 4.3.1                                                             *
 *            VSCode      : 1.38.0                                                            *
 **********************************************************************************************
+
+22.09.2019 Sarath(1.0.2.001)
+-Added Graph tiles with current develop content
+-Formatted Header, Home,Footer with BootStrap
+-Removed Redundant codes in angular.json code.
+
+20.09.2019 Siby(1.0.1.003)
+code changes for graphs added to repository
+
+17.09.2019 Arun(1.0.1.002)
+-code formatting
+-Merge branch 'develop'
+
+17.09.2019 Navas(1.0.1.001)
+-spelling mistake correction in heading
+-First Dashboard structure introduced to develop
+-Merge branch 'develop'
+
+16.09.2019 Sarath(1.0.0.007)
+-Compactibility for legacy browsers.
+-Merge branch 'develop' 
+
+15.09.2019 Sarath(1.0.0.006)
+-Routing modules introduced for dashboard
+
+13.09.2019 Navas(1.0.0.005)
+-insert dashboard content and sub project table module
+
+12.09.2019 Arun(1.0.0.004)
+-code changes for the portfolio page
+-Merge branch 'develop' 
+
+12.09.2019 Arun(1.0.0.003)
+-Code changes to dynamically update the app title.
+
+12.09.2019 Arun(1.0.0.002)
+-Formatted the code
+
 10.09.2019 Sarath(1.0.0.001)
 -Cleaned up app component files
 -Updated Homepage to pass the selection ID as URL param
 
 09.09.2019 Sarath(1.0.0.000)
-BaseLine structure to the project.
+BaseLine structure to the project. 

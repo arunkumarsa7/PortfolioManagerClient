@@ -12,5 +12,4 @@ export class DatasourcingComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

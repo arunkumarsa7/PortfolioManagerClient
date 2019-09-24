@@ -13,7 +13,7 @@ import { Globals } from './common/utils/globals';
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
   ],
   imports: [
     BrowserModule,
