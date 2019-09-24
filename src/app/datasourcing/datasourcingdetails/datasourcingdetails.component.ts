@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatasourcingdetailsComponent implements OnInit {
 
-  //serviceRecord="I'm Service record";
   datasourceFilters = [
     {
        name: 'Service Record1',
@@ -30,10 +29,6 @@ export class DatasourcingdetailsComponent implements OnInit {
 
   ngOnInit() {
   }
-  //  onServiceRecord(){
-  //   this.serviceRecord="on click of Service record"; 
-  //  }
-
   public ChangeDatasourceFilter(index: number, datasource: any) {
     this.selectedIndex = index;
   }

@@ -1,3 +1,4 @@
+import { DatasourcingdetailsComponent } from './datasourcingdetails/datasourcingdetails.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DatasourcingComponent} from './datasourcing.component';
@@ -10,11 +11,12 @@ import { ServicesSLAComponent } from './services-sla/services-sla.component';
       KeyContactsComponent,
         ServiceDescriptionComponent,
         DatasourcingComponent,
-        ServicesSLAComponent
+        ServicesSLAComponent,
+        DatasourcingdetailsComponent
     ],
     imports: [
         CommonModule,
-        
+
     ],
     providers: [],
     exports: [DatasourcingComponent]
