@@ -1,0 +1,11 @@
+<!--<div class="container"></div>-->
+<p>datasourcingdetails works!</p>
+<div>
+        <ul>
+          <li *ngFor="let datasource of datasourceFilters; let i = index" class="active"
+           [class.active]="selectedIndex === i"
+          (click)="ChangeDatasourceFilter(i,datasource.value)">
+            {{datasource.name}}
+          </li>
+        </ul>
+      </div>
