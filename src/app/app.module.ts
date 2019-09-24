@@ -7,20 +7,16 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { ServiceDescriptionComponent } from './service-description/service-description.component';
-
-
-
+import {DatasourcingModule} from './datasourcing/datasourcing.module';
 import { DashboardCommonModule } from './common/dashboard-common.module';
-import { KeyContactsComponent } from './key-contacts/key-contacts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
-    ServiceDescriptionComponent,
-    routingComponents,
-    KeyContactsComponent
+  
+    routingComponents
+    
   ],
   imports: [
     BrowserModule,
@@ -30,7 +26,8 @@ import { KeyContactsComponent } from './key-contacts/key-contacts.component';
     BsDropdownModule,
     ButtonsModule.forRoot(),
     DashboardModule,
-    DashboardCommonModule
+    DashboardCommonModule,
+    DatasourcingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
