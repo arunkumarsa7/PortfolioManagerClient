@@ -1,21 +1,10 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: "app-root",
-  template: `
-    <app-header></app-header>
-    <div id="app-content"><router-outlet></router-outlet></div>
-    <app-footer></app-footer>
-  `,
-  styles: [
-    `
-      #app-content {
-        min-height: 70%;
-       
-      }
-    `
-  ]
+  selector: 'app-root',
+  template: `<app-header></app-header><router-outlet></router-outlet><app-footer></app-footer>`,
+  styles: []
 })
 export class AppComponent {
-  public static title = "Service Level Management | Portfolio Management";
+  public static title = 'Service Level Management | Portfolio Management';
 }

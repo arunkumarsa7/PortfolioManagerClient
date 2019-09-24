@@ -7,9 +7,10 @@ import { DatasourcingComponent } from './datasourcing/datasourcing.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'portfolio/dashboard/datasourcing', component: DatasourcingComponent },
-  { path: 'portfolio/dashboard', component: DashboardComponent },
-  { path: 'portfolio/:id', component: PortfolioComponent },
+  { path: 'portfolio/projects/dashboard/datasourcing', component: DatasourcingComponent },
+  { path: 'portfolio/projects/dashboard', component: DashboardComponent },
+  { path: 'portfolio/projects', component: PortfolioComponent },
+  { path: 'portfolio', component: PortfolioComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
@@ -17,7 +18,9 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
+
 export const routingComponents = [
   HomeComponent,
   PortfolioComponent,

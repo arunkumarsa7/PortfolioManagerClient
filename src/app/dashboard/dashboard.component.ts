@@ -12,11 +12,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(private data: DataService, private router: Router) { }
 
-    public showHomePage() {
-    this.router.navigateByUrl('', { skipLocationChange: true });
-  }
   ngOnInit() {
-    this.data.getProject().subscribe(data => this.project$ = data)
+    this.data.getProject().subscribe(data => this.project$ = data);
   }
 
 }

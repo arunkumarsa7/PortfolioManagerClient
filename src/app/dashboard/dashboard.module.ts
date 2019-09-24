@@ -5,6 +5,7 @@ import { DashboardContentComponent } from './dashboard-content/dashboard-content
 import { DashboardProjectsComponent } from './dashboard-projects/dashboard-projects.component';
 import { LinechartComponent } from '../linechart/linechart.component';
 import { DoughnutchartComponent } from '../doughnutchart/doughnutchart.component';
+import { DashboardCommonModule } from '../common/dashboard-common.module';
 import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { ChartsModule } from 'ng2-charts';
     ],
     imports: [
         CommonModule,
+        DashboardCommonModule,
         ChartsModule
     ],
     providers: [],

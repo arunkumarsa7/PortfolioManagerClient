@@ -1,26 +1,23 @@
-<div class="container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3 col-md-6" *ngFor="let piller of pillarArray" (click)="showDashboard($event)">
-                <img type="button" src="assets/images/folder.png" />
-                <p class="list-group-item-text">{{ piller.name }}</p>
-            </div>
-            <!-- <div class="col span_1_of_2">
-                        <img src="assets/images/folder.png" (click)="showDashboard($event)">
-                        <p>Service Package 2</p>
-                    </div>
-                </div>
-            
-                <div class="section group">
-                    <div class="col span_1_of_2">
-                        <img src="assets/images/folder.png" (click)="showDashboard($event)">
-                        <p>Service Package 3</p>
-                    </div>
-                    <div class="col span_1_of_2">
-                        <img src="assets/images/folder.png" (click)="showDashboard($event)">
-                        <p>Service Package 4</p>
-                    </div> -->
+<div class="content">
+    <div class="section group">
+        <div class="col span_1_of_2">
+            <img src="assets/images/portfolio/folder.png" (click)="handlePortFolioClickEvent($event)">
+            <p>Service Package 1</p>
+        </div>
+        <div class="col span_1_of_2">
+            <img src="assets/images/portfolio/folder.png" (click)="handlePortFolioClickEvent($event)">
+            <p>Service Package 2</p>
         </div>
     </div>
 
+    <div class="section group">
+        <div class="col span_1_of_2">
+            <img src="assets/images/portfolio/folder.png" (click)="handlePortFolioClickEvent($event)">
+            <p>Service Package 3</p>
+        </div>
+        <div class="col span_1_of_2">
+            <img src="assets/images/portfolio/folder.png" (click)="handlePortFolioClickEvent($event)">
+            <p>Service Package 4</p>
+        </div>
+    </div>
 </div>

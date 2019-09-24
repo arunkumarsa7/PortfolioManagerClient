@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { DashboardCommonModule } from './common/dashboard-common.module';
-import { ChartsModule } from 'ng2-charts';
+import { Globals } from './common/utils/globals';
 
 @NgModule({
   declarations: [
@@ -23,10 +23,9 @@ import { ChartsModule } from 'ng2-charts';
     BsDropdownModule,
     ButtonsModule.forRoot(),
     DashboardModule,
-    DashboardCommonModule,
-    ChartsModule
+    DashboardCommonModule
   ],
-  providers: [],
+  providers: [Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
