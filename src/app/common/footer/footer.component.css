@@ -8,23 +8,40 @@ body {
 }
 
 #sticky-footer {
-    position        : absolute;
-    bottom          : 0;
+    position        : fixed;
+    bottom          : 0px;
     width           : 100%;
-    background-color: #004a94;
+    height          : 10%;
+    background-color: #003781;
 }
 
 .footer-row {
     display: flex;
 }
 
-.footer-button-div {
-    flex-grow : 1;
-    text-align: center;
+.back-button-div,
+.dummy-button-div {
+    width: 20%;
+    float: left;
 }
 
-.footer-button {
-    border    : 0;
+.back-button-div button {
+    border    : none;
+    outline   : none;
     background: transparent;
     cursor    : pointer;
+}
+
+.back-button-div button img {
+    width      : 25%;
+    height     : 40%;
+    float      : left;
+    margin-left: 5px;
+}
+
+.footer-text {
+    width      : 60%;
+    font-size  : 1rem;
+    color      : rgb(0, 0, 0);
+    font-family: Georgia, sans-serif;
 }

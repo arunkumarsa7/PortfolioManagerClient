@@ -1,0 +1,26 @@
+.navbar {
+  background-color: #003781;
+  color           : #fff;
+  position        : fixed;
+  width           : 100%;
+  top             : 0;
+  font-family     : Georgia, sans-serif;
+  height          : 50px;
+}
+
+.spans,
+logo-div {
+  padding-left: 0px !important;
+}
+
+@media(max-width: 992px) {
+  .navbar-left img {
+    width: 100%;
+  }
+}
+
+@media(max-width: 768px) {
+  .navbar-left img {
+    width: 100%;
+  }
+}
