@@ -63,18 +63,3 @@
         width: 100%;
     }
 }
-
-.footer-row {
-    display: flex;
-}
-
-.footer-button-div {
-    flex-grow : 1;
-    text-align: center;
-}
-
-.footer-button {
-    border    : 0;
-    background: transparent;
-    cursor    : pointer;
-}
