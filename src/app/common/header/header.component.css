@@ -1,7 +1,13 @@
 .navbar{
-    padding: 1.5rem 0rem;
+    padding: .5rem 0rem;
     background-color:#fff;
-    
+    position: fixed;
+    width:100%;
+    top: 0;
+}
+
+.navbar-left img{
+  width: 75%;
 }
 
 /* .brdcrmp{
@@ -10,7 +16,7 @@
     border: 1px solid #000;
 } */
 
-.breadcrumb{
+/* .breadcrumb{
     border-top: 1px solid #c8ced3;
 }
 
@@ -39,4 +45,4 @@
   ul.breadcrumb li a:hover {
     color: #003781;
     text-decoration: underline;
-  } 
+  }  */
