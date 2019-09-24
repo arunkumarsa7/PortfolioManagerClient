@@ -4,9 +4,11 @@ import { HomeComponent } from './home.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DatasourcingComponent } from './datasourcing/datasourcing.component';
+import { DocumentTableComponent } from './fileupload/document-table/document-table.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'portfolio/dashboard/fileupload', component: DocumentTableComponent },
   { path: 'portfolio/dashboard/datasourcing', component: DatasourcingComponent },
   { path: 'portfolio/dashboard', component: DashboardComponent },
   { path: 'portfolio/:id', component: PortfolioComponent },

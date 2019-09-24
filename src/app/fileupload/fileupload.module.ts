@@ -10,5 +10,5 @@ import { DocumentTableComponent } from './document-table/document-table.componen
   imports: [
     CommonModule
   ]
-})
+  , exports: [DocumentTableComponent]})
 export class FileuploadModule { }

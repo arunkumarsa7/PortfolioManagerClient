@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { DashboardCommonModule } from './common/dashboard-common.module';
+import { FileuploadModule } from './fileupload/fileupload.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { DashboardCommonModule } from './common/dashboard-common.module';
     BsDropdownModule,
     ButtonsModule.forRoot(),
     DashboardModule,
-    DashboardCommonModule
+    DashboardCommonModule,FileuploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]
