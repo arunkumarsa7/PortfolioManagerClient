@@ -23,39 +23,24 @@ p {
   margin: 0;
 }
 
-.spacer {
-  flex: 1;
-}
-
-.toolbar {
-  height          : 40px;
-  display         : flex;
-  align-items     : center;
-  background-color: #fafafa;
-  color           : blue;
-  font-weight     : 600;
-}
-
-.toolbar img {
-  margin: 0 16px;
-}
-
-.toolbar figure {
-  margin: auto;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
 
 html,
-body {
+body,
+app-root {
   margin    : 0px;
   padding   : 0px;
   min-height: 100%;
   height    : 100%;
 }
 
-.content{
+.content {
   padding-top: 60px;
+}
+
+app-footer {
+  width : 100%;
+  height: 10%;
 }
