@@ -1,47 +1,40 @@
 ul {
   list-style-type : none;
-  margin          : 0;
+  margin          : 15px;
   padding         : 0;
   overflow        : hidden;
-  background-color: rgba(208, 216, 233, 0.904);
+  background-color: white
+  
 }
 
 li {
-  font-size      : 14px;
+  font-size      : 25px;
   float          : left;
-  opacity        : 0.5;
+  opacity        : 0.6;
   cursor         : pointer;
   display        : block;
   color          : black;
   text-align     : center;
-  padding        : 16px;
+  padding        : 25px;
   text-decoration: none;
   font-weight    : medium;
-
+  margin-right: 4px;
+  padding-right: 81px;
 }
 
 li.active {
-  color        : rgb(113, 179, 233);
+  color        : rgb(92, 150, 197);
   opacity      : 1;
   border-bottom: 2px solid currentColor;
-  background-color: antiquewhite;
+  background-color: rgb(231, 241, 241);
 }
 
 li:hover {
   color        : #2196F3;
   border-bottom: 2px solid currentColor;
 }
+ul li { 
+  background-color: rgba(153, 202, 214, 0.904);
 
-/* li::after {
+}
 
-  content: '||';
-
-  position: absolute;
-
-  right: -5px;
-
-  line-height: 50px;
-
-  color: rgb(243, 245, 247);
-
-} */

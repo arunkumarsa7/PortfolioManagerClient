@@ -1,3 +1,4 @@
+import { DatasourcingdetailsComponent } from './datasourcingdetails/datasourcingdetails.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DatasourcingComponent} from './datasourcing.component';
@@ -8,11 +9,12 @@ import { KeyContactsComponent } from './key-contacts/key-contacts.component';
     declarations: [
       KeyContactsComponent,
         ServiceDescriptionComponent,
-        DatasourcingComponent
+        DatasourcingComponent,
+        DatasourcingdetailsComponent
     ],
     imports: [
         CommonModule,
-        
+
     ],
     providers: [],
     exports: [DatasourcingComponent]
