@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
 import {DatasourcingModule} from './datasourcing/datasourcing.module';
 import { DashboardCommonModule } from './common/dashboard-common.module';
+import { Globals } from './common/utils/globals';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { DashboardCommonModule } from './common/dashboard-common.module';
     DashboardCommonModule,
     DatasourcingModule
   ],
-  providers: [],
+  providers: [Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
