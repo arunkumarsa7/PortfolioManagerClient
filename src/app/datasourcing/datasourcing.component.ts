@@ -12,9 +12,4 @@ export class DatasourcingComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  public showHomePage() {
-    this.router.navigateByUrl('', { skipLocationChange: true });
-  }
-
 }

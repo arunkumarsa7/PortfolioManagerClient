@@ -7,16 +7,14 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
-import {DatasourcingModule} from './datasourcing/datasourcing.module';
+import { DatasourcingModule } from './datasourcing/datasourcing.module';
 import { DashboardCommonModule } from './common/dashboard-common.module';
+import { Globals } from './common/utils/globals';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents,
-  
     routingComponents
-    
   ],
   imports: [
     BrowserModule,
@@ -29,7 +27,7 @@ import { DashboardCommonModule } from './common/dashboard-common.module';
     DashboardCommonModule,
     DatasourcingModule
   ],
-  providers: [],
+  providers: [Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
