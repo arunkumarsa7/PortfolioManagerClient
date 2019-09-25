@@ -1,23 +1,58 @@
 <div class="content">
-    <div class="section group">
-        <div class="col span_1_of_2">
-            <img src="assets/images/portfolio/folder.png" (click)="handlePortFolioClickEvent($event)">
-            <p>Service Package 1</p>
+    <div id="portfolioDiv" class="container" *ngIf="showPortfolio">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <img class="img-fluid cursor-pointer" src="assets/images/portfolio/folder.svg"
+                    (click)="handlePortFolioClickEvent($event)">
+                <p>Service Package 1</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <img class="img-fluid cursor-pointer" src="assets/images/portfolio/folder.svg"
+                    (click)="handlePortFolioClickEvent($event)">
+                <p>Service Package 2</p>
+            </div>
         </div>
-        <div class="col span_1_of_2">
-            <img src="assets/images/portfolio/folder.png" (click)="handlePortFolioClickEvent($event)">
-            <p>Service Package 2</p>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <img class="img-fluid cursor-pointer" src="assets/images/portfolio/folder.svg"
+                    (click)="handlePortFolioClickEvent($event)">
+                <p>Service Package 3</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <img class="img-fluid cursor-pointer" src="assets/images/portfolio/folder.svg"
+                    (click)="handlePortFolioClickEvent($event)">
+                <p>Service Package 4</p>
+            </div>
         </div>
     </div>
 
-    <div class="section group">
-        <div class="col span_1_of_2">
-            <img src="assets/images/portfolio/folder.png" (click)="handlePortFolioClickEvent($event)">
-            <p>Service Package 3</p>
+    <div id="projectsDiv" class="container" *ngIf="showProjects">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <img class="img-fluid cursor-pointer" src="assets/images/portfolio/project.svg"
+                    (click)="handlePortFolioClickEvent($event)">
+                <p>Project 1</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <img class="img-fluid cursor-pointer" src="assets/images/portfolio/project.svg"
+                    (click)="handlePortFolioClickEvent($event)">
+                <p>Project 2</p>
+            </div>
         </div>
-        <div class="col span_1_of_2">
-            <img src="assets/images/portfolio/folder.png" (click)="handlePortFolioClickEvent($event)">
-            <p>Service Package 4</p>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <img class="img-fluid cursor-pointer" src="assets/images/portfolio/project.svg"
+                    (click)="handlePortFolioClickEvent($event)">
+                <p>Project 3</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <img class="img-fluid cursor-pointer" src="assets/images/portfolio/project.svg"
+                    (click)="handlePortFolioClickEvent($event)">
+                <p>Project 4</p>
+            </div>
         </div>
     </div>
+
 </div>

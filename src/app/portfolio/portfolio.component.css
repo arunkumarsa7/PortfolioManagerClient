@@ -1,65 +1,19 @@
-/*  SECTIONS  */
-.section {
-    clear         : both;
-    padding       : 0px;
-    margin        : 0px;
-    padding-bottom: 20px;
+#portfolioDiv .row img {
+    height: 50%;
+    width : 50%;
 }
 
-/*  COLUMN SETUP  */
-.col {
-    display: block;
-    float  : left;
-    margin : 1% 0 1% 0%;
-    height : 100px;
+#projectsDiv .row img {
+    height: 40%;
+    width : 40%;
 }
 
-.col img {
-    margin-left : auto;
-    margin-right: auto;
-    display     : block;
-    cursor      : pointer;
+#portfolioDiv .row p {
+    width     : 50%;
+    text-align: center;
 }
 
-.col p {
-    margin-left : auto;
-    margin-right: auto;
-    text-align  : center;
-}
-
-.col:first-child {
-    margin-left: 0;
-}
-
-/*  GROUPING  */
-.group:before,
-.group:after {
-    content: "";
-    display: table;
-}
-
-.group:after {
-    clear: both;
-}
-
-.group {
-    zoom: 1;
-    /* For IE 6/7 */
-}
-
-.span_1_of_2 {
-    width: 47.5%;
-}
-
-/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
-@media only screen and (max-width: 480px) {
-    .col {
-        margin: 1% 0 1% 0%;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .span_1_of_2 {
-        width: 100%;
-    }
+#projectsDiv .row p {
+    width     : 40%;
+    text-align: center;
 }

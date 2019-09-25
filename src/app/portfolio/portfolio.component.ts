@@ -11,6 +11,8 @@ import { AppSettings } from '../common/utils/AppSettings';
 })
 export class PortfolioComponent implements OnInit {
   globals: Globals;
+  showPortfolio = false;
+  showProjects = false;
 
   constructor(private router: Router, globals: Globals) {
     this.globals = globals;
@@ -18,6 +20,18 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit() {
     this.updateToolbarAppTitle();
+    this.updateViewPage();
+  }
+
+  private updateViewPage() {
+    const currentPage = this.globals.appPage;
+    if (AppSettings.portfolioPageKey === currentPage) {
+      this.showPortfolio = true;
+      this.showProjects = false;
+    } else if (AppSettings.projectsPageKey === currentPage) {
+      this.showPortfolio = false;
+      this.showProjects = true;
+    }
   }
 
   private updateToolbarAppTitle() {
@@ -28,13 +42,13 @@ export class PortfolioComponent implements OnInit {
   public handlePortFolioClickEvent(event: Event) {
     const currentPage = this.globals.appPage;
     if (AppSettings.portfolioPageKey === currentPage) {
-      this.showProjects();
+      this.showProjectsPage();
     } else if (AppSettings.projectsPageKey === currentPage) {
       this.showProjectDashboard();
     }
   }
 
-  private showProjects() {
+  private showProjectsPage() {
     this.globals.appPage = AppSettings.projectsPageKey;
     this.router.navigateByUrl('/portfolio/projects', { skipLocationChange: true });
   }
