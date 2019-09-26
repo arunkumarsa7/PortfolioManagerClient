@@ -1,0 +1,15 @@
+.thead {
+
+    color           : white;
+    background-color: darkgray;
+    text-align      : center;
+}
+
+.text {
+    color     : black;
+    text-align: center;
+}
+
+.serviceSla {
+    margin-left: 30mm
+}

@@ -1,0 +1,40 @@
+ul {
+  list-style-type : none;
+  margin          : 15px;
+  padding         : 0;
+  overflow        : hidden;
+  background-color: white
+  
+}
+
+li {
+  font-size      : 25px;
+  float          : left;
+  opacity        : 0.6;
+  cursor         : pointer;
+  display        : block;
+  color          : black;
+  text-align     : center;
+  padding        : 25px;
+  text-decoration: none;
+  font-weight    : medium;
+  margin-right: 4px;
+  padding-right: 81px;
+}
+
+li.active {
+  color        : rgb(92, 150, 197);
+  opacity      : 1;
+  border-bottom: 2px solid currentColor;
+  background-color: rgb(231, 241, 241);
+}
+
+li:hover {
+  color        : #2196F3;
+  border-bottom: 2px solid currentColor;
+}
+ul li { 
+  background-color: rgba(153, 202, 214, 0.904);
+
+}
+
