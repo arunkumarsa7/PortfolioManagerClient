@@ -5,12 +5,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   templateUrl: './linechart.component.html',
   styleUrls: ['./linechart.component.css']
 })
-export class LinechartComponent  {
+export class LinechartComponent {
   public lineChartData: Array<any> = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Kraft'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Leben'},
-    {data: [18, 48, 77, 9, 100, 47, 80], label: 'CFS'},
-    {data: [14, 53, 60, 90, 13, 66, 60], label: 'PMS'}
+    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Kraft' },
+    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Leben' },
+    { data: [18, 48, 77, 9, 100, 47, 80], label: 'CFS' },
+    { data: [14, 53, 60, 90, 13, 66, 60], label: 'PMS' }
   ];
   public lineChartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   public lineChartOptions: any = {
@@ -57,5 +57,14 @@ export class LinechartComponent  {
 
   ngOnInit() {
   }
+
+  public chartClicked(e: any): void {
+    console.log(e);
+  }
+
+  public chartHovered(e: any): void {
+    console.log(e);
+  }
+
 }
 
