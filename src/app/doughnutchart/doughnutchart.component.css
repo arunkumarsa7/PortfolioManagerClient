@@ -1,3 +1,8 @@
 p {
-    font-family: Lato;
-  }
+  font-family: Lato;
+}
+
+.doughnutChart-div {
+  display: block;
+  width  : 400px
+}
