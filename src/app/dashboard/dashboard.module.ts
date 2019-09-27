@@ -7,6 +7,7 @@ import { LinechartComponent } from '../linechart/linechart.component';
 import { DoughnutchartComponent } from '../doughnutchart/doughnutchart.component';
 import { DashboardCommonModule } from '../common/dashboard-common.module';
 import { ChartsModule } from 'ng2-charts';
+import { DashboardStaticContentComponent } from './dashboard-static-content/dashboard-static-content.component';
 
 @NgModule({
     declarations: [
@@ -14,7 +15,8 @@ import { ChartsModule } from 'ng2-charts';
         DashboardContentComponent,
         DashboardProjectsComponent,
         LinechartComponent,
-        DoughnutchartComponent
+        DoughnutchartComponent,
+        DashboardStaticContentComponent
     ],
     imports: [
         CommonModule,
@@ -22,7 +24,7 @@ import { ChartsModule } from 'ng2-charts';
         ChartsModule
     ],
     providers: [],
-    exports: [DashboardComponent]
+    exports: [DashboardComponent, DashboardStaticContentComponent]
 
 })
 export class DashboardModule { }
