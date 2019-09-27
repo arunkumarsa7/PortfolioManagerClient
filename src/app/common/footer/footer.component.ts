@@ -25,12 +25,12 @@ export class FooterComponent implements AfterViewInit {
     this.router.navigateByUrl(AppSettings.portfolioAppPageUrls[currentPageIndex - 1], { skipLocationChange: true });
   }
 
-  public enableBackButton() {
-    this.backFlowValid = true;
-  }
-
-  public disableBackButton() {
-    this.backFlowValid = false;
+  public getVisibility(): String {
+    if(this.globals.appPage==AppSettings.homePageKey){
+      return "hidden";
+    }else{
+      return "visible";
+    }
   }
 
 }
