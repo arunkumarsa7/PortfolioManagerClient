@@ -1,4 +1,4 @@
-export interface ProjectInterface {
+export interface ProjectInfo {
     name: string;
     activeSLA: string;
     atRiskSLA: string;

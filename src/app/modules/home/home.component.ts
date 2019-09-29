@@ -2,7 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import { AppComponent } from '../../app.component';
 import { Globals } from '../../shared/constant/globals';
 import { AppSettings } from '../../shared/constant/app-settings';
-import { RouterUtil } from '../../shared/service/router-util';
+import { RouterUtil } from '../../shared/service/routing/router-util';
 
 @Component({
     templateUrl: './home.component.html',

@@ -4,14 +4,15 @@ import { HomeComponent } from './modules/home/home.component';
 import { PortfolioComponent } from './modules/portfolio/portfolio.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { DatasourcingComponent } from './modules/dashboard/datasourcing/datasourcing.component';
+import { AppSettings } from './shared/constant/app-settings';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'portfolio/projects/dashboard/datasourcing', component: DatasourcingComponent },
-  { path: 'portfolio/projects/dashboard', component: DashboardComponent },
-  { path: 'portfolio/projects', component: PortfolioComponent },
-  { path: 'portfolio', component: PortfolioComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  { path: AppSettings.homePageUrl, component: HomeComponent },
+  { path: AppSettings.datasourcingPageUrl, component: DatasourcingComponent },
+  { path: AppSettings.dashboardPageUrl, component: DashboardComponent },
+  { path: AppSettings.projectsPageUrl, component: PortfolioComponent },
+  { path: AppSettings.portfolioPageUrl, component: PortfolioComponent },
+  { path: AppSettings.anyPageUrl, redirectTo: AppSettings.homePageUrl, pathMatch: AppSettings.pathMatchFull }
 ];
 
 @NgModule({

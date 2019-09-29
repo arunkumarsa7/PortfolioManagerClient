@@ -11,7 +11,7 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { DatasourcingModule } from './modules/dashboard/datasourcing/datasourcing.module';
 import { DashboardCommonModule } from './common/dashboard-common.module';
 import { Globals } from './shared/constant/globals';
-import { RouterUtil } from './shared/service/router-util';
+import { RouterUtil } from './shared/service/routing/router-util';
 
 @NgModule({
   declarations: [

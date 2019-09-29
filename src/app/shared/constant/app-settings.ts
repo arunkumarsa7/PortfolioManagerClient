@@ -8,6 +8,8 @@ export class AppSettings {
     public static dashboardPageKey = 'projectDashboard';
     public static datasourcingPageKey = 'datasourcing';
     public static homePageUrl = '';
+    public static pathMatchFull = 'full';
+    public static anyPageUrl = '**';
     public static portfolioPageUrl = 'portfolio';
     public static projectsPageUrl = 'portfolio/projects';
     public static dashboardPageUrl = 'portfolio/projects/dashboard';

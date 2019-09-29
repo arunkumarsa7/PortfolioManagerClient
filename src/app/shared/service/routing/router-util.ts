@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Globals } from '../constant/globals';
-import { AppSettings } from '../constant/app-settings';
-import { PageInfo } from '../../models/page-info';
+import { Globals } from '../../constant/globals';
+import { AppSettings } from '../../constant/app-settings';
+import { PageInfo } from '../../../models/page-info';
 import { Router } from '@angular/router';
+
 @Injectable()
 export class RouterUtil {
     globals: Globals;

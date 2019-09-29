@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../../data.service';
+import { DataService } from '../../../shared/service/data/data.service';
 import { Router } from '@angular/router';
-import { ProjectInterface } from '../project-interface';
+import { ProjectInfo } from '../../../models/project-info';
 
 @Component({
   selector: 'app-datasourcing',
@@ -9,12 +9,12 @@ import { ProjectInterface } from '../project-interface';
   styleUrls: ['./datasourcing.component.css']
 })
 export class DatasourcingComponent implements OnInit {
-  project$: ProjectInterface;
+  project$: ProjectInfo;
 
   constructor(private data: DataService, private router: Router) { }
 
   ngOnInit() {
-    this.data.getProject().subscribe((data: ProjectInterface) => this.project$ = data);
+    this.data.getProject().subscribe((data: ProjectInfo) => this.project$ = data);
   }
 
 }
