@@ -1,17 +1,8 @@
-html,
-body {
-    height: 100%;
-}
-
-#page-content {
-    flex: 1 0 auto;
-}
-
 #sticky-footer {
     position        : fixed;
     bottom          : 0px;
     width           : 100%;
-    height          : 10%;
+    height          : 7vh;
     background-color: #003781;
 }
 
@@ -37,11 +28,12 @@ body {
     height     : 40%;
     float      : left;
     margin-left: 5px;
+    padding-top: .6em
 }
 
 .footer-text {
     width      : 60%;
     font-size  : 1rem;
-    color      : rgb(0, 0, 0);
     font-family: Georgia, sans-serif;
+    padding-top: .6em
 }
