@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>datasourcing works!</h1>
 <p>
     Likewise, This will be super component group for the Datasourcing page. <br>We can divide the entire datasourcing
@@ -12,3 +13,85 @@
 <p>
     Each of this three is a seperate component and will be intergrated here with its own module routing and services.
 </p>
+=======
+<div class="container-fluid content">
+  <main class="main">
+    <div class="card card-header">
+      <div class="row">
+        <div class="col-sm-4">
+          {{ project$?.name }} :: Data sourcing :: PMS
+        </div>
+        <div class="col-sm-8">
+          Service Record Definition
+        </div>
+      </div>
+    </div>
+    <div class="animated fadeIn">
+      <div class="row">
+        <!--tile .row-->
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-success">
+            <div class="row">
+              <div class="card-body pb-0">
+                <div class="text-value">{{ project$?.activeSLA }}</div>
+                <div class="card-">Active SLAs</div>
+              </div>
+              <div class="card-body">
+                <i class="fa fa-clock-o fa-5x" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-warning">
+            <div class="row">
+              <div class="card-body pb-0">
+                <div class="text-value">{{ project$?.atRiskSLA }}</div>
+                <div>At Risk SLAs</div>
+              </div>
+              <div class="card-body">
+                <i class="fa fa-exclamation-circle fa-5x" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-danger">
+            <div class="row">
+              <div class="card-body pb-0">
+
+                <div class="text-value">{{ project$?.activeSLA }}</div>
+                <div>Breached SLAs</div>
+              </div>
+
+              <div class="card-body">
+                <i class="fa  fa-medkit fa-5x" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+        <div class="col-sm-6 col-lg-3">
+          <div class="row dashboardbtn">
+            <div class="btn-group btn-group-toggle mr-3 col-sm-12 " data-toggle="buttons"
+              style="align-content: bottom;">
+              <label class="btn btn-outline-secondary bg-white" btnRadio="1" id="option1">Kraft</label>
+              <label class="btn btn-outline-secondary bg-white" btnRadio="2" id="option2">Life</label>
+              <label class="btn btn-outline-secondary bg-white" btnRadio="3" id="option3">CFS</label>
+              <label class="btn btn-outline-secondary bg-white" btnRadio="4" id="option4">155</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--tile/.row-->
+      <div>
+        <app-service-description></app-service-description>
+        <app-key-contacts></app-key-contacts>
+        <app-datasourcingdetails></app-datasourcingdetails>
+      </div><!-- content of dashboard -->
+    </div>
+  </main>
+</div>
+>>>>>>> origin/develop
