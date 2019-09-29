@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../app.component';
+import { AppComponent } from '../../app.component';
 import { Router } from '@angular/router';
-import { Globals } from '../common/utils/globals';
-import { AppSettings } from '../common/utils/AppSettings';
+import { Globals } from '../../shared/constant/globals';
+import { AppSettings } from '../../shared/constant/app-settings';
 
 @Component({
   selector: 'app-portfolio',
@@ -54,7 +54,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   private showProjectDashboard() {
-    this.globals.appPage = AppSettings.projectDashboardPageKey;
+    this.globals.appPage = AppSettings.dashboardPageKey;
     this.router.navigateByUrl('portfolio/projects/dashboard', { skipLocationChange: true });
   }
 

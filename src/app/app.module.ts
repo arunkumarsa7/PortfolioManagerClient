@@ -2,19 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { ButtonsModule } from 'ngx-bootstrap/buttons';
-import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeModule } from './modules/home/home.module';
+import { PortfolioModule } from './modules/portfolio/portfolio.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { DatasourcingModule } from './datasourcing/datasourcing.module';
 import { DashboardCommonModule } from './common/dashboard-common.module';
-import { Globals } from './common/utils/globals';
+import { Globals } from './shared/constant/globals';
+import { RouterUtil } from './shared/service/router-util';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    routingComponents
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -22,12 +23,13 @@ import { Globals } from './common/utils/globals';
     HttpClientModule,
     FormsModule,
     BsDropdownModule,
-    ButtonsModule.forRoot(),
     DashboardModule,
     DashboardCommonModule,
-    DatasourcingModule
+    DatasourcingModule,
+    HomeModule,
+    PortfolioModule
   ],
-  providers: [Globals],
+  providers: [Globals, RouterUtil],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

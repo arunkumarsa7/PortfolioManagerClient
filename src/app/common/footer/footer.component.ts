@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Globals } from '../utils/globals';
-import { AppSettings } from '../utils/AppSettings';
+import { Globals } from '../../shared/constant/globals';
+import { AppSettings } from '../../shared/constant/app-settings';
 
 @Component({
   selector: 'app-footer',
@@ -25,12 +25,8 @@ export class FooterComponent implements AfterViewInit {
     this.router.navigateByUrl(AppSettings.portfolioAppPageUrls[currentPageIndex - 1], { skipLocationChange: true });
   }
 
-  public getVisibility(): String {
-    if(this.globals.appPage==AppSettings.homePageKey){
-      return "hidden";
-    }else{
-      return "visible";
-    }
+  public getVisibility(): string {
+    return (this.globals.appPage === AppSettings.homePageKey) ? 'hidden' : 'visible';
   }
 
 }

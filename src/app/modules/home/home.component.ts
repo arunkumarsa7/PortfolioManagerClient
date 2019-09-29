@@ -1,8 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AppComponent } from './app.component';
-import { Globals } from './common/utils/globals';
-import { AppSettings } from './common/utils/AppSettings';
+import { AppComponent } from '../../app.component';
+import { Globals } from '../../shared/constant/globals';
+import { AppSettings } from '../../shared/constant/app-settings';
+import { RouterUtil } from '../../shared/service/router-util';
 
 @Component({
     templateUrl: './home.component.html',
@@ -17,14 +17,13 @@ export class HomeComponent implements AfterViewInit {
         this.globals.appPage = AppSettings.defaultPageKey;
     }
 
-    constructor(private router: Router, globals: Globals) {
+    constructor(private routerUtil: RouterUtil, globals: Globals) {
         this.globals = globals;
     }
 
-    public showPortfolio(event: Event) {
+    public handleHomeButtonClick(event: Event) {
         this.globals.currentOE = (event.currentTarget as Element).id;
-        this.globals.appPage = AppSettings.portfolioPageKey;
-        this.router.navigateByUrl('/portfolio', { skipLocationChange: true });
+        this.routerUtil.navigateToNextPage();
     }
 
 }
