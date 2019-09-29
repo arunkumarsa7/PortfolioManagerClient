@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { DataService } from '../../data.service';
 import { Router } from '@angular/router';
-import { ProjectInterface } from '../dashboard/project-interface';
+import { ProjectInterface } from './project-interface';
 
 @Component({
-  selector: 'app-datasourcing',
-  templateUrl: './datasourcing.component.html',
-  styleUrls: ['./datasourcing.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class DatasourcingComponent implements OnInit {
+export class DashboardComponent implements OnInit {
   project$: ProjectInterface;
 
   constructor(private data: DataService, private router: Router) { }

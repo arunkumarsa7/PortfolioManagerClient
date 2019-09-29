@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-datasourcingdetails',
-  templateUrl: './datasourcingdetails.component.html',
-  styleUrls: ['./datasourcingdetails.component.css']
+  selector: 'app-datasourcing-details',
+  templateUrl: './datasourcing-details.component.html',
+  styleUrls: ['./datasourcing-details.component.css']
 })
-export class DatasourcingdetailsComponent implements OnInit {
+export class DatasourcingDetailsComponent implements OnInit {
 
   datasourceFilters = [
     {
