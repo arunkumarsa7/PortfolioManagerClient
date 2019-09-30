@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../data.service';
-import { Router } from '@angular/router';
+import { ProjectInterface } from '../project-interface';
 @Component({
   selector: 'app-dashboard-static-content',
   templateUrl: './dashboard-static-content.component.html',
@@ -8,12 +8,12 @@ import { Router } from '@angular/router';
 })
 export class DashboardStaticContentComponent implements OnInit {
 
-  project$: object;
+  project$: ProjectInterface;
 
-  constructor(private data: DataService, private router: Router) { }
+  constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.data.getProject().subscribe(data => this.project$ = data);
+     this.data.getProject().subscribe((data: ProjectInterface) => this.project$ = data);
   }
 
 }
