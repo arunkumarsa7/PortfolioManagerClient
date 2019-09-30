@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-linechartcomponent',
+  selector: 'app-linechart-component',
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.css']
 })

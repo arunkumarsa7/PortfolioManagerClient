@@ -1,23 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
-import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
-import { DashboardProjectsComponent } from './dashboard-projects/dashboard-projects.component';
 import { DashboardCommonModule } from '../../common/app-common.module';
-import { DashboardChartsModule } from './charts/app-charts.module';
 import { ContractModule } from './project-documents/contracts/contract.module';
+import { ProjectsModule } from './projects/projects.module';
 
 @NgModule({
-    declarations: [
-        DashboardComponent,
-        DashboardContentComponent,
-        DashboardProjectsComponent
-    ],
+    declarations: [DashboardComponent],
     imports: [
         CommonModule,
         DashboardCommonModule,
-        DashboardChartsModule,
-        ContractModule
+        ContractModule,
+        ProjectsModule
     ],
     providers: [],
     exports: [DashboardComponent]

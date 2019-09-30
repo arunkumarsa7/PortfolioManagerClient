@@ -12,4 +12,4 @@ import { ChartsModule } from 'ng2-charts';
   ],
   exports: [LineChartComponent, DoughnutChartComponent]
 })
-export class DashboardChartsModule { }
+export class AppChartsModule { }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ChartType } from 'chart.js';
 
 @Component({
-  selector: 'app-doughnutchartcomponent',
+  selector: 'app-doughnutchart-component',
   templateUrl: './doughnut-chart.component.html',
   styleUrls: ['./doughnut-chart.component.css']
 })
