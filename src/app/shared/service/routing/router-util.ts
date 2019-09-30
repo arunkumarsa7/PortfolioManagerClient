@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Globals } from '../../constant/globals';
 import { AppSettings } from '../../constant/app-settings';
-import { PageInfo } from '../../../models/page-info';
+import { PageInfo } from '../../../shared/models/page-info';
 import { Router } from '@angular/router';
 
 @Injectable()

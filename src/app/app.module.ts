@@ -9,7 +9,7 @@ import { HomeModule } from './modules/home/home.module';
 import { PortfolioModule } from './modules/portfolio/portfolio.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { DatasourcingModule } from './modules/dashboard/datasourcing/datasourcing.module';
-import { DashboardCommonModule } from './common/dashboard-common.module';
+import { DashboardCommonModule } from './common/app-common.module';
 import { Globals } from './shared/constant/globals';
 import { RouterUtil } from './shared/service/routing/router-util';
 
