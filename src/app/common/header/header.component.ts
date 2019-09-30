@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
-import { AppSettings } from '../../shared/constant/app-settings';
+import { AppConstants } from '../../shared/constant/app-constants';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   }
 
   public showHomePage() {
-    this.router.navigateByUrl(AppSettings.homePageUrl, { skipLocationChange: true });
+    this.router.navigateByUrl(AppConstants.homePageUrl, { skipLocationChange: true });
   }
 
 }

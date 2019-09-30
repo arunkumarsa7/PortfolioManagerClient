@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Globals } from '../../constant/globals';
-import { AppSettings } from '../../constant/app-settings';
+import { AppConstants } from '../../constant/app-constants';
 import { PageInfo } from '../../../shared/models/page-info';
 import { Router } from '@angular/router';
 
@@ -11,15 +11,15 @@ export class RouterUtil {
         this.globals = globals;
     }
     private getNextPageInfo() {
-        const nextPageIndex = AppSettings.portfolioAppPages.indexOf(this.globals.appPage) + 1;
-        const nextPageUrl = AppSettings.portfolioAppPageUrls[nextPageIndex];
-        const nextPage = AppSettings.portfolioAppPages[nextPageIndex];
+        const nextPageIndex = AppConstants.portfolioAppPages.indexOf(this.globals.appPage) + 1;
+        const nextPageUrl = AppConstants.portfolioAppPageUrls[nextPageIndex];
+        const nextPage = AppConstants.portfolioAppPages[nextPageIndex];
         return { pageIndex: nextPageIndex, pageUrl: nextPageUrl, pageName: nextPage };
     }
     private getPreviousPageInfo() {
-        const previousPageIndex = AppSettings.portfolioAppPages.indexOf(this.globals.appPage) - 1;
-        const previousPageUrl = AppSettings.portfolioAppPageUrls[previousPageIndex];
-        const previousPage = AppSettings.portfolioAppPages[previousPageIndex];
+        const previousPageIndex = AppConstants.portfolioAppPages.indexOf(this.globals.appPage) - 1;
+        const previousPageUrl = AppConstants.portfolioAppPageUrls[previousPageIndex];
+        const previousPage = AppConstants.portfolioAppPages[previousPageIndex];
         return { pageIndex: previousPageIndex, pageUrl: previousPageUrl, pageName: previousPage };
     }
     public navigateToNextPage() {

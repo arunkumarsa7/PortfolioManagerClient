@@ -1,5 +1,5 @@
 
-export class AppSettings {
+export class AppConstants {
     public static defaultOE = 'DE';
     public static defaultPageKey = 'home';
     public static homePageKey = 'home';
@@ -14,6 +14,6 @@ export class AppSettings {
     public static projectsPageUrl = 'portfolio/projects';
     public static dashboardPageUrl = 'portfolio/projects/dashboard';
     public static datasourcingPageUrl = 'portfolio/projects/dashboard/datasourcing';
-    public static portfolioAppPages = [AppSettings.homePageKey, AppSettings.portfolioPageKey, AppSettings.projectsPageKey, AppSettings.dashboardPageKey, AppSettings.datasourcingPageKey];
-    public static portfolioAppPageUrls = [AppSettings.homePageUrl, AppSettings.portfolioPageUrl, AppSettings.projectsPageUrl, AppSettings.dashboardPageUrl, AppSettings.datasourcingPageUrl];
+    public static portfolioAppPages = [AppConstants.homePageKey, AppConstants.portfolioPageKey, AppConstants.projectsPageKey, AppConstants.dashboardPageKey, AppConstants.datasourcingPageKey];
+    public static portfolioAppPageUrls = [AppConstants.homePageUrl, AppConstants.portfolioPageUrl, AppConstants.projectsPageUrl, AppConstants.dashboardPageUrl, AppConstants.datasourcingPageUrl];
 }

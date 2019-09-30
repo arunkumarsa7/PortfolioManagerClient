@@ -3,10 +3,10 @@ import { ChartType } from 'chart.js';
 
 @Component({
   selector: 'app-doughnutchartcomponent',
-  templateUrl: './doughnutchart.component.html',
-  styleUrls: ['./doughnutchart.component.css']
+  templateUrl: './doughnut-chart.component.html',
+  styleUrls: ['./doughnut-chart.component.css']
 })
-export class DoughnutchartComponent {
+export class DoughnutChartComponent {
   public doughnutChartLabels: string[] = ['Kraft', 'Leben', 'CFS', 'PMS'];
   public doughnutChartData: number[] = [350, 450, 100, 255];
   public doughnutChartType: ChartType = 'doughnut';

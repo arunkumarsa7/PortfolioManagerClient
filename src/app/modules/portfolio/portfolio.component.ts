@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../../app.component';
 import { Router } from '@angular/router';
 import { Globals } from '../../shared/constant/globals';
-import { AppSettings } from '../../shared/constant/app-settings';
+import { AppConstants } from '../../shared/constant/app-constants';
 
 @Component({
   selector: 'app-portfolio',
@@ -25,10 +25,10 @@ export class PortfolioComponent implements OnInit {
 
   private updateViewPage() {
     const currentPage = this.globals.appPage;
-    if (AppSettings.portfolioPageKey === currentPage) {
+    if (AppConstants.portfolioPageKey === currentPage) {
       this.showPortfolio = true;
       this.showProjects = false;
-    } else if (AppSettings.projectsPageKey === currentPage) {
+    } else if (AppConstants.projectsPageKey === currentPage) {
       this.showPortfolio = false;
       this.showProjects = true;
     }
@@ -41,20 +41,20 @@ export class PortfolioComponent implements OnInit {
 
   public handlePortFolioClickEvent(event: Event) {
     const currentPage = this.globals.appPage;
-    if (AppSettings.portfolioPageKey === currentPage) {
+    if (AppConstants.portfolioPageKey === currentPage) {
       this.showProjectsPage();
-    } else if (AppSettings.projectsPageKey === currentPage) {
+    } else if (AppConstants.projectsPageKey === currentPage) {
       this.showProjectDashboard();
     }
   }
 
   private showProjectsPage() {
-    this.globals.appPage = AppSettings.projectsPageKey;
+    this.globals.appPage = AppConstants.projectsPageKey;
     this.router.navigateByUrl('/portfolio/projects', { skipLocationChange: true });
   }
 
   private showProjectDashboard() {
-    this.globals.appPage = AppSettings.dashboardPageKey;
+    this.globals.appPage = AppConstants.dashboardPageKey;
     this.router.navigateByUrl('portfolio/projects/dashboard', { skipLocationChange: true });
   }
 

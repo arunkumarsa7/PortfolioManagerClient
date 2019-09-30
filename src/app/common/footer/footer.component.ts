@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Globals } from '../../shared/constant/globals';
-import { AppSettings } from '../../shared/constant/app-settings';
+import { AppConstants } from '../../shared/constant/app-constants';
 import { RouterUtil } from '../../shared/service/routing/router-util';
 
 @Component({
@@ -23,7 +23,7 @@ export class FooterComponent implements AfterViewInit {
   }
 
   public getVisibility(): string {
-    return (this.globals.appPage === AppSettings.homePageKey) ? 'hidden' : 'visible';
+    return (this.globals.appPage === AppConstants.homePageKey) ? 'hidden' : 'visible';
   }
 
 }

@@ -2,15 +2,15 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-linechartcomponent',
-  templateUrl: './linechart.component.html',
-  styleUrls: ['./linechart.component.css']
+  templateUrl: './line-chart.component.html',
+  styleUrls: ['./line-chart.component.css']
 })
-export class LinechartComponent  {
+export class LineChartComponent {
   public lineChartData: Array<any> = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Kraft'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Leben'},
-    {data: [18, 48, 77, 9, 100, 47, 80], label: 'CFS'},
-    {data: [14, 53, 60, 90, 13, 66, 60], label: 'PMS'}
+    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Kraft' },
+    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Leben' },
+    { data: [18, 48, 77, 9, 100, 47, 80], label: 'CFS' },
+    { data: [14, 53, 60, 90, 13, 66, 60], label: 'PMS' }
   ];
   public lineChartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   public lineChartOptions: any = {
@@ -34,7 +34,7 @@ export class LinechartComponent  {
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(77,83,96,1)'
     },
-    { // cfs 
+    { // cfs
       backgroundColor: 'rgba(221, 81, 130, 0.1)',
       borderColor: '#dd5182',
       pointBackgroundColor: '#dd5182',
@@ -55,7 +55,5 @@ export class LinechartComponent  {
 
   constructor() { }
 
-  ngOnInit() {
-  }
 }
 
