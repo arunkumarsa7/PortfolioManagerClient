@@ -5,10 +5,10 @@ import { ProjectInfo } from '../../../shared/models/project-info';
 
 @Component({
   selector: 'app-datasourcing',
-  templateUrl: './datasourcing.component.html',
-  styleUrls: ['./datasourcing.component.css']
+  templateUrl: './service-record.component.html',
+  styleUrls: ['./service-record.component.css']
 })
-export class DatasourcingComponent implements OnInit {
+export class ServiceRecordComponent implements OnInit {
   project$: ProjectInfo;
 
   constructor(private data: DataService, private router: Router) { }

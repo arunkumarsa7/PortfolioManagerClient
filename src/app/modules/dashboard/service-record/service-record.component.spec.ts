@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DatasourcingComponent } from './datasourcing.component';
+import { ServiceRecordComponent } from './service-record.component';
 
 describe('DatasourcingComponent', () => {
-  let component: DatasourcingComponent;
-  let fixture: ComponentFixture<DatasourcingComponent>;
+  let component: ServiceRecordComponent;
+  let fixture: ComponentFixture<ServiceRecordComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DatasourcingComponent ]
+      declarations: [ ServiceRecordComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DatasourcingComponent);
+    fixture = TestBed.createComponent(ServiceRecordComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
