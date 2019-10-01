@@ -1,0 +1,31 @@
+<!-- Project vs SLAs-->
+<div class="card">
+  <div class="card-body">
+    <app-sub-project-table></app-sub-project-table>
+  </div>
+</div>
+<!-- chart -->
+<div class="card">
+  <div class="row">
+    <div class="card-body col-sm-12 col-lg-6">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="small text-muted"># Breached SLAs Trends</div>
+        </div>
+      </div>
+      <div class="chart-wrapper mt-4" style="height:300px;">
+        <app-linechart-component></app-linechart-component>
+      </div>
+    </div>
+    <div class="card-body col-sm-12 col-lg-6">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="small text-muted"># SLA Breach by Service Pacakages</div>
+        </div>
+      </div>
+      <div class="chart-wrapper mt-4" style="height:300px;">
+        <app-doughnutchart-component></app-doughnutchart-component>
+      </div>
+    </div>
+  </div>
+</div>
