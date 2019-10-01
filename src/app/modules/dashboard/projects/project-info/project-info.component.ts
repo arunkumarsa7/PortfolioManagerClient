@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../../../../shared/service/data/data.service';
-import { Globals } from '../../../../../shared/constant/globals';
-import { RouterUtil } from '../../../../../shared/service/routing/router-util';
+import { DataService } from '../../../../shared/service/data/data.service';
+import { Globals } from '../../../../shared/constant/globals';
+import { RouterUtil } from '../../../../shared/service/routing/router-util';
 
 @Component({
   selector: 'app-sub-project-table',
