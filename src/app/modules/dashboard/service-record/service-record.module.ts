@@ -1,11 +1,10 @@
 import { DatasourcingDetailsComponent } from './datasourcing-details/datasourcing-details.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ServiceRecordComponent} from './service-record.component';
+import { ServiceRecordComponent } from './service-record.component';
 import { ServiceDescriptionComponent } from './service-description/service-description.component';
 import { KeyContactsComponent } from './key-contacts/key-contacts.component';
 import { ServicesSLAComponent } from './services-sla/services-sla.component';
-import { DashboardModule } from '../dashboard/dashboard.module';
 
 @NgModule({
     declarations: [
@@ -16,8 +15,7 @@ import { DashboardModule } from '../dashboard/dashboard.module';
         DatasourcingDetailsComponent
     ],
     imports: [
-        CommonModule,
-        DashboardModule
+        CommonModule
     ],
     providers: [],
     exports: [ServiceRecordComponent]

@@ -15,7 +15,7 @@ import { RouterUtil } from './shared/service/routing/router-util';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
