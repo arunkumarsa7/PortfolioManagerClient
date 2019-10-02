@@ -21,4 +21,4 @@ import { ServicesSLAComponent } from './services-sla/services-sla.component';
     exports: [ServiceRecordComponent]
 
 })
-export class DatasourcingModule { }
+export class ServiceRecordModule { }

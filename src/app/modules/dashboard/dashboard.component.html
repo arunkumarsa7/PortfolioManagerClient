@@ -2,8 +2,8 @@
   <main class="main">
     <div class="animated fadeIn">
       <app-dashboard-header></app-dashboard-header>
-      <div>
-        <app-dashboard-content></app-dashboard-content>
+      <div class="routeContainer" [@routerTransition]="prepareDashBoardRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
       </div>
     </div>
   </main>
