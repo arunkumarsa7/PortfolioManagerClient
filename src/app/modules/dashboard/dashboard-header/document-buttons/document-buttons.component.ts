@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { AppConstants } from "src/app/shared/constant/app-constants";
-import { Globals } from "src/app/shared/constant/globals";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppConstants } from 'src/app/shared/constant/app-constants';
+import { Globals } from 'src/app/shared/constant/globals';
 
 @Component({
-  selector: "app-document-buttons",
-  templateUrl: "./document-buttons.component.html",
-  styleUrls: ["./document-buttons.component.css"]
+  selector: 'app-document-buttons',
+  templateUrl: './document-buttons.component.html',
+  styleUrls: ['./document-buttons.component.css']
 })
 export class DocumentButtonsComponent implements OnInit {
   globals: Globals;

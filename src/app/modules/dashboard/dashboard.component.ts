@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import {  routerTransition } from '../../core/animations/app-animations';
 
 @Component({

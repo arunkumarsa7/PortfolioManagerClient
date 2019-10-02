@@ -8,9 +8,9 @@ const routes: Routes = [
   { path: AppConstants.dashboardPageUrl, loadChildren: () => {
     return import('./modules/dashboard/dashboard.module').then(mod => mod.DashboardModule);
   }},
-  { path: AppConstants.projectsPageUrl, component: PortfolioComponent ,data: {animation: AppConstants.projectsPageKey}},
-  { path: AppConstants.portfolioPageUrl, component: PortfolioComponent ,data: {animation: AppConstants.portfolioPageKey} },
-  { path: AppConstants.homePageUrl, component: HomeComponent,data: {animation: AppConstants.homePageKey} },
+  { path: AppConstants.projectsPageUrl, component: PortfolioComponent , data: {animation: AppConstants.projectsPageKey}},
+  { path: AppConstants.portfolioPageUrl, component: PortfolioComponent , data: {animation: AppConstants.portfolioPageKey} },
+  { path: AppConstants.homePageUrl, component: HomeComponent, data: {animation: AppConstants.homePageKey} },
   { path: AppConstants.anyPageUrl, redirectTo: AppConstants.homePageUrl, pathMatch: AppConstants.pathMatchFull }
 ];
 

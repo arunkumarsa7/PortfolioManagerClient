@@ -18,20 +18,19 @@ export class AppConstants {
     public static datasourcingPageUrl = 'portfolio/projects/dashboard/datasourcing';
     public static contractsPageUrl = 'portfolio/projects/dashboard/contracts';
     public static portfolioAppPages = [AppConstants.homePageKey, AppConstants.portfolioPageKey, AppConstants.projectsPageKey, AppConstants.dashboardPageKey, AppConstants.datasourcingPageKey, AppConstants.contractsPageKey];
-    public static portfolioAppPageUrls = [AppConstants.homePageUrl, AppConstants.portfolioPageUrl, AppConstants.projectsPageUrl, AppConstants.dashboardPageUrl, AppConstants.datasourcingPageUrl,AppConstants.contractsPageUrl];
+    public static portfolioAppPageUrls = [AppConstants.homePageUrl, AppConstants.portfolioPageUrl, AppConstants.projectsPageUrl, AppConstants.dashboardPageUrl, AppConstants.datasourcingPageUrl, AppConstants.contractsPageUrl];
 }
 
-export let RoutingEnumConstants=
-{
-Home:{
-key:'home',
-url:''
+export let RoutingEnumConstants = {
+Home: {
+key: 'home',
+url: ''
 },
-DashBoard:{
-  key:'projectDashboard',
-  url:'portfolio/projects/dashboard'
+DashBoard: {
+  key: 'projectDashboard',
+  url: 'portfolio/projects/dashboard'
 }
-}
+};
 export interface EnumLayout {
   key: string;
   url: string;
