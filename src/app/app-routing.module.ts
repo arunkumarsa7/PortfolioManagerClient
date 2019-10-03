@@ -2,16 +2,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './modules/home/home.component';
 import { PortfolioComponent } from './modules/portfolio/portfolio.component';
-import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { ServiceRecordComponent } from './modules/dashboard/service-record/service-record.component';
 import { AppConstants } from './shared/constant/app-constants';
 
 const routes: Routes = [
-  { path: AppConstants.homePageUrl, component: HomeComponent },
-  { path: AppConstants.datasourcingPageUrl, component: ServiceRecordComponent },
-  { path: AppConstants.dashboardPageUrl, component: DashboardComponent },
-  { path: AppConstants.projectsPageUrl, component: PortfolioComponent },
-  { path: AppConstants.portfolioPageUrl, component: PortfolioComponent },
+  { path: AppConstants.dashboardPageUrl, loadChildren: () => {
+    return import('./modules/dashboard/dashboard.module').then(mod => mod.DashboardModule);
+  }},
+  { path: AppConstants.projectsPageUrl, component: PortfolioComponent , data: {animation: AppConstants.projectsPageKey}},
+  { path: AppConstants.portfolioPageUrl, component: PortfolioComponent , data: {animation: AppConstants.portfolioPageKey} },
+  { path: AppConstants.homePageUrl, component: HomeComponent, data: {animation: AppConstants.homePageKey} },
   { path: AppConstants.anyPageUrl, redirectTo: AppConstants.homePageUrl, pathMatch: AppConstants.pathMatchFull }
 ];
 

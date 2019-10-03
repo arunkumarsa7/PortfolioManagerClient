@@ -15,7 +15,7 @@ export class ProjectInfoComponent implements OnInit {
   constructor(private data: DataService, private routerUtil: RouterUtil, globals: Globals) { this.globals = globals; }
 
   ngOnInit() {
-    this.data.getSubProjects().subscribe(data => this.subProjects$ = data)
+    this.data.getSubProjects().subscribe(data => this.subProjects$ = data);
   }
 
   public showDatasourcing(event: Event) {

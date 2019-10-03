@@ -7,6 +7,8 @@ export class AppConstants {
     public static projectsPageKey = 'projects';
     public static dashboardPageKey = 'projectDashboard';
     public static datasourcingPageKey = 'datasourcing';
+    public static contractsPageKey = 'contracts';
+    // this is the default URL for all routing modules in this application, any changes here will break entire navigation
     public static homePageUrl = '';
     public static pathMatchFull = 'full';
     public static anyPageUrl = '**';
@@ -14,6 +16,22 @@ export class AppConstants {
     public static projectsPageUrl = 'portfolio/projects';
     public static dashboardPageUrl = 'portfolio/projects/dashboard';
     public static datasourcingPageUrl = 'portfolio/projects/dashboard/datasourcing';
-    public static portfolioAppPages = [AppConstants.homePageKey, AppConstants.portfolioPageKey, AppConstants.projectsPageKey, AppConstants.dashboardPageKey, AppConstants.datasourcingPageKey];
-    public static portfolioAppPageUrls = [AppConstants.homePageUrl, AppConstants.portfolioPageUrl, AppConstants.projectsPageUrl, AppConstants.dashboardPageUrl, AppConstants.datasourcingPageUrl];
+    public static contractsPageUrl = 'portfolio/projects/dashboard/contracts';
+    public static portfolioAppPages = [AppConstants.homePageKey, AppConstants.portfolioPageKey, AppConstants.projectsPageKey, AppConstants.dashboardPageKey, AppConstants.datasourcingPageKey, AppConstants.contractsPageKey];
+    public static portfolioAppPageUrls = [AppConstants.homePageUrl, AppConstants.portfolioPageUrl, AppConstants.projectsPageUrl, AppConstants.dashboardPageUrl, AppConstants.datasourcingPageUrl, AppConstants.contractsPageUrl];
+}
+
+export let RoutingEnumConstants = {
+Home: {
+key: 'home',
+url: ''
+},
+DashBoard: {
+  key: 'projectDashboard',
+  url: 'portfolio/projects/dashboard'
+}
+};
+export interface EnumLayout {
+  key: string;
+  url: string;
 }

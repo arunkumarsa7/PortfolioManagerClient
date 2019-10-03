@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../shared/service/data/data.service';
-import { Router } from '@angular/router';
-import { ProjectInfo } from '../../shared/models/project-info';
+import { Router, RouterOutlet } from '@angular/router';
+import {  routerTransition } from '../../core/animations/app-animations';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  animations: [ routerTransition()]
 })
 export class DashboardComponent implements OnInit {
-  project$: ProjectInfo;
 
-  constructor(private data: DataService, private router: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    this.data.getProject().subscribe((data: ProjectInfo) => this.project$ = data);
   }
-
+  prepareDashBoardRoute(outlet: RouterOutlet) {
+    // outlet && outlet.activatedRouteData &&
+    return  outlet.activatedRouteData.animation;
+  }
 }
