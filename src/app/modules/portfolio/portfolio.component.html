@@ -1,5 +1,6 @@
 <div class="container content">
-    <div class="row portfolioDiv" *ngIf="showPortfolio">
+    <div class="row portfolioDiv" *ngIf="showPortfolio" >
+
         <div class="col-lg-6 text-center pt-5">
             <img class="img-fluid cursor-pointer mh-50" src="assets/images/portfolio/folder.svg"
                 (click)="handlePortFolioClickEvent($event)">
@@ -20,6 +21,19 @@
                 (click)="handlePortFolioClickEvent($event)">
             <p>Service Package 4</p>
         </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-body">
+              <table class="table table-striped">
+                <tbody>
+                  <tr *ngFor="let serviceOffering of serviceOfferings | async">
+                    <td>{{serviceOffering.serviceName}}</td>
+                    <td>{{serviceOffering.serviceDecription}}</td>
+                   </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
     </div>
 
     <div class="row projectDiv" *ngIf="showProjects">

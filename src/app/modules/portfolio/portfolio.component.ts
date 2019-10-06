@@ -3,6 +3,9 @@ import { AppComponent } from '../../app.component';
 import { Router } from '@angular/router';
 import { Globals } from '../../shared/constant/globals';
 import { AppConstants } from '../../shared/constant/app-constants';
+import { Observable } from "rxjs";
+import { ServiceOfferingService } from "./portfolio.service";
+import { ServiceOffering } from "./serviceOffering";
 
 @Component({
   selector: 'app-portfolio',
@@ -13,14 +16,21 @@ export class PortfolioComponent implements OnInit {
   globals: Globals;
   showPortfolio = false;
   showProjects = false;
-
-  constructor(private router: Router, globals: Globals) {
+  serviceOfferings: Observable<ServiceOffering[]>;
+  
+  constructor(private serviceOfferingService: ServiceOfferingService,private router: Router, globals: Globals) {
     this.globals = globals;
   }
 
   ngOnInit() {
+    this.reloadData();
     this.updateToolbarAppTitle();
     this.updateViewPage();
+  }
+
+  reloadData() {
+    this.serviceOfferings = this.serviceOfferingService.getServiceOfferingList();
+    
   }
 
   private updateViewPage() {
