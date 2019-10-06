@@ -1,0 +1,26 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './modules/home/home.component';
+import { PortfolioComponent } from './modules/portfolio/portfolio.component';
+import { AppConstants } from './shared/constant/app-constants';
+import { LoginComponent } from './modules/login';
+import { AuthGuard } from './shared/_helpers';
+const routes: Routes = [
+  { path: AppConstants.dashboardPageUrl, loadChildren: () => {
+    return import('./modules/dashboard/dashboard.module').then(mod => mod.DashboardModule);
+  }},
+  { path: AppConstants.projectsPageUrl, component: PortfolioComponent , data: {animation: AppConstants.projectsPageKey}},
+  { path: AppConstants.portfolioPageUrl, component: PortfolioComponent , data: {animation: AppConstants.portfolioPageKey} },
+  { path: AppConstants.homePageUrl, component: HomeComponent, data: {animation: AppConstants.homePageKey},canActivate: [AuthGuard] },
+  { path: AppConstants.loginUrl, component: LoginComponent, 
+    data: {animation: AppConstants.loginPageKey} },
+  { path: AppConstants.anyPageUrl, redirectTo: AppConstants.homePageUrl, 
+    pathMatch: AppConstants.pathMatchFull }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+
+export class AppRoutingModule { }

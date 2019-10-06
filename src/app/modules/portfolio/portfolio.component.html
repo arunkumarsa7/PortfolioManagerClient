@@ -1,0 +1,48 @@
+<div class="container content">
+    <div class="row portfolioDiv" *ngIf="showPortfolio">
+        <div class="col-lg-6 text-center pt-5">
+            <img class="img-fluid cursor-pointer mh-50" src="assets/images/portfolio/folder.svg"
+                (click)="handlePortFolioClickEvent($event)">
+            <p>Service Package 1</p>
+        </div>
+        <div class="col-lg-6 text-center pt-5">
+            <img class="img-fluid cursor-pointer mh-50" src="assets/images/portfolio/folder.svg"
+                (click)="handlePortFolioClickEvent($event)">
+            <p>Service Package 2</p>
+        </div>
+        <div class="col-lg-6 text-center pt-5">
+            <img class="img-fluid cursor-pointer mh-50" src="assets/images/portfolio/folder.svg"
+                (click)="handlePortFolioClickEvent($event)">
+            <p>Service Package 3</p>
+        </div>
+        <div class="col-lg-6 text-center pt-5">
+            <img class="img-fluid cursor-pointer mh-50" src="assets/images/portfolio/folder.svg"
+                (click)="handlePortFolioClickEvent($event)">
+            <p>Service Package 4</p>
+        </div>
+    </div>
+
+    <div class="row projectDiv" *ngIf="showProjects">
+        <div class="col-lg-6 text-center pt-5">
+            <img class="img-fluid cursor-pointer" src="assets/images/portfolio/project.svg"
+                (click)="handlePortFolioClickEvent($event)">
+            <p class="pt-3">Project 1</p>
+        </div>
+        <div class="col-lg-6 text-center pt-5">
+            <img class="img-fluid cursor-pointer" src="assets/images/portfolio/project.svg"
+                (click)="handlePortFolioClickEvent($event)">
+            <p class="pt-3">Project 2</p>
+        </div>
+
+        <div class="col-lg-6 text-center pt-5">
+            <img class="img-fluid cursor-pointer" src="assets/images/portfolio/project.svg"
+                (click)="handlePortFolioClickEvent($event)">
+            <p class="pt-3">Project 3</p>
+        </div>
+        <div class="col-lg-6 text-center pt-5">
+            <img class="img-fluid cursor-pointer" src="assets/images/portfolio/project.svg"
+                (click)="handlePortFolioClickEvent($event)">
+            <p class="pt-3">Project 4</p>
+        </div>
+    </div>
+</div>
