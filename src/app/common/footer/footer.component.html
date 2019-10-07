@@ -1,12 +1,12 @@
-<footer id="sticky-footer" class="py-4 text-white-50">
-  <div class="footer-row">
+<footer id="sticky-footer" class="">
+  <div class="footer-row text-white-50">
     <div class="back-button-div">
-      <button (click)="showBackPage()">
+      <button (click)="showBackPage()" [style.visibility]="getVisibility()">
         <img src="assets/images/footer/back.png" alt="submit" />
       </button>
     </div>
     <div class="container text-center footer-text">
-      <small>Copyright &copy; www.allianz.com</small>
+      Copyright &copy; www.allianz.com
     </div>
     <div class="dummy-button-div">
     </div>

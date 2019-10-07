@@ -1,0 +1,35 @@
+.tile-icon {
+    font-size: 2em;
+}
+
+.card-body {
+    flex       : .6 1 auto;
+    padding-top: 0px !important;
+}
+
+.tile {
+    height: 75px;
+}
+
+@media(max-width: 992px) {
+    .tile-icon {
+        display: none;
+    }
+}
+
+@media(max-width: 768px) {
+    .tile-icon {
+        font-size: 3em;
+    }
+}
+
+@media(max-width: 576px) {
+    .tile-icon {
+        display  : block;
+        font-size: 2em;
+    }
+
+    .tile-text {
+        margin-top: 3%;
+    }
+}
