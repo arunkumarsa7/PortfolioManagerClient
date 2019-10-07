@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DatasourcingComponent } from './datasourcing/datasourcing.component';
+import { HomeComponent } from './modules/home/home.component';
+import { PortfolioComponent } from './modules/portfolio/portfolio.component';
+import { AppConstants } from './shared/constant/app-constants';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'portfolio/projects/dashboard/datasourcing', component: DatasourcingComponent },
-  { path: 'portfolio/projects/dashboard', component: DashboardComponent },
-  { path: 'portfolio/projects', component: PortfolioComponent },
-  { path: 'portfolio', component: PortfolioComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  { path: AppConstants.dashboardPageUrl, loadChildren: () => {
+    return import('./modules/dashboard/dashboard.module').then(mod => mod.DashboardModule);
+  }},
+  { path: AppConstants.projectsPageUrl, component: PortfolioComponent , data: {animation: AppConstants.projectsPageKey}},
+  { path: AppConstants.portfolioPageUrl, component: PortfolioComponent , data: {animation: AppConstants.portfolioPageKey} },
+  { path: AppConstants.homePageUrl, component: HomeComponent, data: {animation: AppConstants.homePageKey} },
+  { path: AppConstants.anyPageUrl, redirectTo: AppConstants.homePageUrl, pathMatch: AppConstants.pathMatchFull }
 ];
 
 @NgModule({
@@ -20,7 +20,3 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
-
-export const routingComponents = [
-  HomeComponent,
-  PortfolioComponent  ];

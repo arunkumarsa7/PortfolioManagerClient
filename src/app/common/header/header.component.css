@@ -1,11 +1,15 @@
 .navbar {
   background-color: #003781;
-  color           : #fff;
   position        : fixed;
-  width           : 100%;
-  top             : 0;
   font-family     : Georgia, sans-serif;
   height          : 50px;
+  z-index         : 1;
+  padding         : 0rem 0rem;
+}
+
+.navbar-left img {
+  min-height: 1.5rem;
+
 }
 
 .spans,
@@ -13,14 +17,26 @@ logo-div {
   padding-left: 0px !important;
 }
 
+.title {
+  font-size: 1.5em;
+}
+
 @media(max-width: 992px) {
   .navbar-left img {
     width: 100%;
+  }
+
+  .title {
+    font-size: 1.3em;
   }
 }
 
 @media(max-width: 768px) {
   .navbar-left img {
     width: 100%;
+  }
+
+  .title {
+    font-size: 1.1em;
   }
 }
