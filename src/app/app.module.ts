@@ -8,7 +8,7 @@ import { PortfolioModule } from './modules/portfolio/portfolio.module';
 import { Globals } from './shared/constant/globals';
 import { RouterUtil } from './shared/service/routing/router-util';
 import { AppCommonModule } from './common/app-common.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     AppCommonModule,
     HomeModule,
     PortfolioModule
