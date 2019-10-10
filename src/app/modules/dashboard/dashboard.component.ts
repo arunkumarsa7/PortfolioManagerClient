@@ -5,8 +5,7 @@ import {  routerTransition } from '../../core/animations/app-animations';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css'],
-  animations: [ routerTransition()]
+  styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
 
@@ -14,8 +13,8 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
   }
-  prepareDashBoardRoute(outlet: RouterOutlet) {
-    // outlet && outlet.activatedRouteData &&
-    return  outlet.activatedRouteData.animation;
-  }
+  // prepareDashBoardRoute(outlet: RouterOutlet) {
+  //   // outlet && outlet.activatedRouteData &&
+  //   return  outlet.activatedRouteData.animation;
+  // }
 }
