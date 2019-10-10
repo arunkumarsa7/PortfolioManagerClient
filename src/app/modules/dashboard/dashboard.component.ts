@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
-import {  routerTransition } from '../../core/animations/app-animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,8 +12,5 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
   }
-  // prepareDashBoardRoute(outlet: RouterOutlet) {
-  //   // outlet && outlet.activatedRouteData &&
-  //   return  outlet.activatedRouteData.animation;
-  // }
+
 }

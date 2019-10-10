@@ -1,24 +1,38 @@
 import { Injectable, Injector } from '@angular/core';
-import { DashboardDataService } from '../data/dashboard-data.service';
+import { DashboardService } from '../data/dashboard/dashboard.service';
+import { ServiceOfferingService } from '../data/service-offering/service-offering.service';
 
 @Injectable()
 export class FacadeService {
-    private dashboardDataService: DashboardDataService;
+    private dashboardService: DashboardService;
+    private serviceOfferingService: ServiceOfferingService;
 
-    public get getDashboardDataService(): DashboardDataService {
-        if (!this.dashboardDataService) {
-            this.dashboardDataService = this.injector.get(DashboardDataService);
+    public get getDashboardService(): DashboardService {
+        if (!this.dashboardService) {
+            this.dashboardService = this.injector.get(DashboardService);
         }
-        return this.dashboardDataService;
+        return this.dashboardService;
+    }
+
+    public get getServiceOfferingService(): ServiceOfferingService {
+        if (!this.serviceOfferingService) {
+            this.serviceOfferingService = this.injector.get(ServiceOfferingService);
+        }
+        return this.serviceOfferingService;
     }
 
     constructor(private injector: Injector) { }
 
-    getProject() {
-        return this.getDashboardDataService.getProject();
+    getProjects() {
+        return this.getDashboardService.getProjects();
     }
 
     getSubProjects() {
-        return this.getDashboardDataService.getSubProjects();
+        return this.getDashboardService.getSubProjects();
     }
+
+    getServiceOfferings() {
+        return this.getServiceOfferingService.getServiceOfferings();
+    }
+
 }

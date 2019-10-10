@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { FacadeService } from '../../../../shared/service/facade/facade.service';
-import { ProjectInfo } from '../../../../shared/models/project-info';
+import { IProjectInfo } from '../../../../shared/models/iproject-info';
 
 @Component({
   selector: 'app-dashboard-tiles',
@@ -10,15 +10,23 @@ import { ProjectInfo } from '../../../../shared/models/project-info';
 })
 export class DashboardTilesComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
-  project$: ProjectInfo;
+  projects$: IProjectInfo;
 
-  constructor(private facadeDataService: FacadeService) { }
+  constructor(private facadeService: FacadeService) { }
 
   ngOnInit() {
-    this.subscription = this.facadeDataService.getProject().subscribe((data: ProjectInfo) => this.project$ = data);
+    this.subscribeServices();
   }
 
   ngOnDestroy() {
+    this.unsubscribeServices();
+  }
+
+  private subscribeServices() {
+    this.subscription = this.facadeService.getProjects().subscribe((data: IProjectInfo) => this.projects$ = data);
+  }
+
+  private unsubscribeServices() {
     this.subscription.unsubscribe();
   }
 

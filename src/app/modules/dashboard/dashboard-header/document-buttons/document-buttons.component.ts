@@ -10,15 +10,18 @@ import { Globals } from 'src/app/shared/constant/globals';
 })
 export class DocumentButtonsComponent implements OnInit {
   globals: Globals;
+
   constructor(private router: Router, globals: Globals) {
     this.globals = globals;
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
   showContractsPage() {
     this.globals.appPage = AppConstants.contractsPageKey;
     this.router.navigateByUrl(AppConstants.contractsPageUrl, {
       skipLocationChange: true
     });
   }
+
 }
