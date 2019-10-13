@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ProjectInfo } from '../../../shared/models/project-info';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardDataService {
+
+  private baseUrl = 'http://localhost:8080/healthApp/getProjectsByPortfolio?portfolioId=164';
   project$: ProjectInfo;
+ 
 
   constructor(private http: HttpClient) { }
 
@@ -16,6 +20,11 @@ export class DashboardDataService {
 
   getSubProjects() {
     return this.http.get('https://my-json-server.typicode.com/navas-infobreez/FakeServer/subProject');
+    
+  }
+
+  getProjectList(): Observable<any> { 
+    return this.http.get(`${this.baseUrl}`);
   }
 
 }

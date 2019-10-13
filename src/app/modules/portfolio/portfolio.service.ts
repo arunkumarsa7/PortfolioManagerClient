@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ServiceOfferingService {
 
-  private baseUrl = 'http://localhost:8080/healthApp/getServiceOfferingsByOE';
+  private baseUrl = 'http://localhost:8080/healthApp/getServiceOfferingsByOE?oeId=171';
 
   constructor(private http: HttpClient) { }
 
