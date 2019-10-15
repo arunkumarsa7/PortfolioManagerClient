@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class DashboardDataService {
 
-  private baseUrl = 'http://localhost:8080/healthApp/getProjectsByPortfolio?portfolioId=164';
+  private baseUrl = 'http://localhost:8080/healthApp/getProjectsByPortfolio?portfolioId=40';
   project$: ProjectInfo;
  
 
