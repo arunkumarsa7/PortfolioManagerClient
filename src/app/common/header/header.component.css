@@ -9,7 +9,7 @@
 
 .navbar-left img {
   min-height: 1.5rem;
-
+  min-width : 5em;
 }
 
 .spans,
@@ -18,7 +18,8 @@ logo-div {
 }
 
 .title {
-  font-size: 1.5em;
+  font-size  : 1.5em;
+  margin-left: -1em;
 }
 
 @media(max-width: 992px) {
@@ -38,5 +39,12 @@ logo-div {
 
   .title {
     font-size: 1.1em;
+  }
+}
+
+@media(max-width: 576px) {
+
+  .title {
+    display: none;
   }
 }
