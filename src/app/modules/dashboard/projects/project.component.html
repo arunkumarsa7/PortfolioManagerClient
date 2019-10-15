@@ -6,24 +6,25 @@
 </div>
 <!-- chart -->
 <div class="card">
+  <div class="row ml-0 mr-0">
+    <div class="text-center w-100 bg-light m-1 border">
+      <h5>Analytics Report</h5>
+    </div>
+  </div>
   <div class="row">
     <div class="card-body col-sm-12 col-lg-6">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="small text-muted"># Breached SLAs Trends</div>
-        </div>
+      <div class="col-sm-12">
+        <div class="small text-muted"># Breached SLAs Trends</div>
       </div>
-      <div class="chart-wrapper mt-4" style="height:300px;">
+      <div class="chart-wrapper mt-4 w100">
         <app-linechart-component></app-linechart-component>
       </div>
     </div>
     <div class="card-body col-sm-12 col-lg-6">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="small text-muted"># SLA Breach by Service Pacakages</div>
-        </div>
+      <div class="col-sm-12">
+        <div class="small text-muted"># SLA Breach by Service Pacakages</div>
       </div>
-      <div class="chart-wrapper mt-4" style="height:300px;">
+      <div class="chart-wrapper mt-4 w100">
         <app-doughnutchart-component></app-doughnutchart-component>
       </div>
     </div>
