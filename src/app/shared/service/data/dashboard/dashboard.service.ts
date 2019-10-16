@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IProjectInfo } from '../../../models/iproject-info';
-import { ISubprojectInfo } from '../../../models/isubproject-info';
+import { IProjectInfo } from 'src/app/shared/models/iproject-info';
+import { ISubprojectInfo } from 'src/app/shared/models/isubproject-info';
+import { IProjectDetails } from 'src/app/shared/models/iproject-details';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
+
+  private baseUrl = 'http://localhost:8080/healthApp/getProjectsByPortfolio?portfolioId=40';
 
   constructor(private http: HttpClient) { }
 
@@ -16,6 +19,10 @@ export class DashboardService {
 
   getSubProjects() {
     return this.http.get<ISubprojectInfo>('https://my-json-server.typicode.com/navas-infobreez/FakeServer/subProject');
+  }
+
+  getProjectList() {
+    return this.http.get<IProjectDetails>(`${this.baseUrl}`);
   }
 
 }
