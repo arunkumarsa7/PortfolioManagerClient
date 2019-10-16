@@ -1,9 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, } from 'rxjs';
-import { FacadeService } from '../../../../shared/service/facade/facade.service';
-import { ISubprojectInfo } from '../../../../shared/models/isubproject-info';
-import { RouterUtil } from '../../../../shared/service/routing/router-util';
-import { IProjectDetails } from '../../../../shared/models/iproject-details';
+import { RouterUtil } from 'src/app/shared/service/routing/router-util';
+import { FacadeService } from 'src/app/shared/service/facade/facade.service';
+import { IProjectDetails } from 'src/app/shared/models/iproject-details';
 
 @Component({
   selector: 'app-sub-project-table',
@@ -12,7 +11,7 @@ import { IProjectDetails } from '../../../../shared/models/iproject-details';
 })
 export class ProjectInfoComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
-  projectDetails$: IProjectDetails[];
+  projectDetails$: IProjectDetails;
 
   constructor(private facadeService: FacadeService, private routerUtil: RouterUtil) { }
 
@@ -25,7 +24,7 @@ export class ProjectInfoComponent implements OnInit, OnDestroy {
   }
 
   private subscribeServices() {
-    this.subscription = this.facadeService.getProjectList().subscribe((data: IProjectDetails[]) => this.projectDetails$ = data);
+    this.subscription = this.facadeService.getProjectList().subscribe((data: IProjectDetails) => this.projectDetails$ = data);
   }
 
   private unsubscribeServices() {

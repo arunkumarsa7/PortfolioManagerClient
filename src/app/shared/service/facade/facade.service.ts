@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
-import { DashboardService } from '../data/dashboard/dashboard.service';
-import { ServiceOfferingService } from '../data/service-offering/service-offering.service';
-import { OEDataService, OEList } from 'src/app/shared/service/data/oe-data.service';
+import { DashboardService } from 'src/app/shared/service/data/dashboard/dashboard.service';
+import { ServiceOfferingService } from 'src/app/shared/service/data/service-offering/service-offering.service';
+import { OEDataService, OEList } from 'src/app/shared/service/data/oe/oe-data.service';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -38,6 +38,10 @@ export class FacadeService {
 
     getSubProjects() {
         return this.getDashboardService.getSubProjects();
+    }
+
+    getProjectList() {
+        return this.getDashboardService.getProjectList();
     }
 
     getServiceOfferings() {

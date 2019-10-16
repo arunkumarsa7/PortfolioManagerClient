@@ -1,17 +1,16 @@
 /* @import "~@coreui/coreui/dist/css/coreui"; */
 .sub-project-card {
     border-radius: 0.15rem;
-    padding-left: .5em;
+    padding-left : .5em;
 }
 
-.table-div{
+.table-div {
     max-height: 15.5rem;
     min-height: 15.5rem;
     overflow-y: scroll;
 }
 
-.table-div table thead{
+.table-div table thead {
     position: sticky;
-    top: 0;
+    top     : 0;
 }
-
