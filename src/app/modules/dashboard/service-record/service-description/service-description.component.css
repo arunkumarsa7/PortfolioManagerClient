@@ -1,4 +1,4 @@
-.descHeading{
+/* .descHeading{
   float: left;
   width: 70%;
   margin-left:-25mm;
@@ -9,11 +9,11 @@
   width: 30%;
   margin-left:20mm;
   font-weight: bold
-}
+} */
 
 
 
-.description {
+/* .description {
     height: 200px;
     width: 70%;
     display: block;
@@ -37,4 +37,8 @@
     float: right;
     margin-left:20mm
 
+  } */
+
+  p{
+    font-size: 1em;
   }

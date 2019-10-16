@@ -1,0 +1,9 @@
+[
+  { "title": "DE", "isDisabled" : false, "imgHref" : "assets/images/home/DE_flag.png"
+  },
+  { "title": "US", "isDisabled": true, "imgHref": "assets/images/home/US_flag.png"
+  },
+  { "title": "UK", "isDisabled": false, "imgHref": "assets/images/home/UK_flag.png"
+  }
+
+]
