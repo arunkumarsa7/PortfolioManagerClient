@@ -1,41 +1,39 @@
-<div class="row">
-    <div class="col-sm-4 col-lg-4">
-        <div class="card text-white bg-success tile">
-            <div class="row tile-text">
-                <div class="card-body">
-                    <div class="text-value">{{ project$?.activeSLA }}</div>
-                    <div class="card-">Active SLAs</div>
-                </div>
-                <div class="tile-icon">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+<div class="col-md-4 col-lg-4 float-left">
+    <div class="card text-white bg-success tile">
+        <div class="tile-text">
+            <div class="card-body">
+                <div class="col-9 text-value float-left">{{ projects$?.activeSLA }}</div>
+                <div class="col-9 float-left">Active SLAs</div>
+                <div class="tile-icon float-right">
+                    <i class="fa fa-clock-o"></i>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-sm-4 col-lg-4">
-        <div class="card text-white bg-warning tile">
-            <div class="row tile-text">
-                <div class="card-body">
-                    <div class="text-value">{{ project$?.atRiskSLA }}</div>
-                    <div>At Risk SLAs</div>
-                </div>
-                <div class="tile-icon">
-                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+</div>
+
+<div class="col-md-4 col-lg-4 float-left">
+    <div class="card text-white bg-warning tile">
+        <div class="tile-text">
+            <div class="card-body">
+                <div class="col-9 text-value float-left">{{ projects$?.atRiskSLA }}</div>
+                <div class="col-9 float-left">At Risk SLAs</div>
+                <div class="tile-icon float-right">
+                    <i class="fa fa-exclamation-circle"></i>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-sm-4 col-lg-4">
-        <div class="card text-white bg-danger tile">
-            <div class="row tile-text">
-                <div class="card-body">
+</div>
 
-                    <div class="text-value">{{ project$?.activeSLA }}</div>
-                    <div>Breached SLAs</div>
-                </div>
-
-                <div class="tile-icon">
-                    <i class="fa  fa-ban" aria-hidden="true"></i>
+<div class="col-md-4 col-lg-4 float-left">
+    <div class="card text-white bg-danger tile">
+        <div class="tile-text">
+            <div class="card-body">
+                <div class="col-9 text-value float-left">{{ projects$?.activeSLA }}</div>
+                <div class="col-9 float-left">Breached SLAs</div>
+                <div class="tile-icon float-right">
+                    <i class="fa  fa-ban"></i>
                 </div>
             </div>
         </div>

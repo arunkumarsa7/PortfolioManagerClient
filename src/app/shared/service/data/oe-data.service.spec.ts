@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DashboardDataService } from './dashboard-data.service';
+import { OEDataService } from './oe-data.service';
 
-describe('DataService', () => {
+describe('OEDataService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: DashboardDataService = TestBed.get(DashboardDataService);
+    const service: OEDataService = TestBed.get(OEDataService);
     expect(service).toBeTruthy();
   });
 });

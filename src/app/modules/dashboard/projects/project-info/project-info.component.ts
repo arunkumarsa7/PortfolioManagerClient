@@ -1,10 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { DashboardDataService } from '../../../../shared/service/data/dashboard-data.service';
-import { Globals } from '../../../../shared/constant/globals';
+import { Subscription, } from 'rxjs';
+import { FacadeService } from '../../../../shared/service/facade/facade.service';
+import { ISubprojectInfo } from '../../../../shared/models/isubproject-info';
 import { RouterUtil } from '../../../../shared/service/routing/router-util';
-import { ProjectDetails } from "./projectDetails";
-import { Observable } from "rxjs";
+import { IProjectDetails } from '../../../../shared/models/iproject-details';
 
 @Component({
   selector: 'app-sub-project-table',
@@ -13,21 +12,27 @@ import { Observable } from "rxjs";
 })
 export class ProjectInfoComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
-  subProjects$: object;
-  globals: Globals;
-  projectDetails: Observable<ProjectDetails[]>;
+  projectDetails$: IProjectDetails[];
 
-  constructor(private data: DashboardDataService, private routerUtil: RouterUtil, globals: Globals) { this.globals = globals; }
+  constructor(private facadeService: FacadeService, private routerUtil: RouterUtil) { }
 
   ngOnInit() {
-    this.subscription = this.data.getProjectList().subscribe(data => this.subProjects$ = data);
-   }
+    this.subscribeServices();
+  }
 
   ngOnDestroy() {
+    this.unsubscribeServices();
+  }
+
+  private subscribeServices() {
+    this.subscription = this.facadeService.getProjectList().subscribe((data: IProjectDetails[]) => this.projectDetails$ = data);
+  }
+
+  private unsubscribeServices() {
     this.subscription.unsubscribe();
   }
 
-  public showDatasourcing(event: Event) {
+  public showDatasourcing() {
     this.routerUtil.navigateToNextPage();
   }
 

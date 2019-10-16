@@ -1,5 +1,5 @@
 <div class="container content">
-    <div class="row portfolioDiv" *ngIf="showPortfolio" >
+    <div class="row portfolioDiv" *ngIf="showPortfolio">
 
         <div class="col-lg-6 text-center pt-5">
             <img class="img-fluid cursor-pointer mh-50" src="assets/images/portfolio/folder.svg"
@@ -22,40 +22,43 @@
             <p>Service Package 4</p>
         </div>
 
+        <!-- Code snippet to dynamically load values from server -->
         <div class="panel panel-primary">
             <div class="panel-body">
-              <table class="table table-striped">
-                <tbody>
-                  <tr *ngFor="let serviceOffering of serviceOfferings | async">
-                    <td>{{serviceOffering.serviceName}}</td>
-                    <td>{{serviceOffering.serviceDecription}}</td>
-                   </tr>
-                </tbody>
-              </table>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr *ngFor="let serviceOffering of serviceOfferings$">
+                            <td>{{serviceOffering.serviceName}}</td>
+                            <td>{{serviceOffering.serviceDecription}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-          </div>
+        </div>
+        <!-- Code snippet to dynamically load values from server -->
+
     </div>
 
     <div class="row projectDiv" *ngIf="showProjects">
         <div class="col-lg-6 text-center pt-5">
             <img class="img-fluid cursor-pointer" src="assets/images/portfolio/project.svg"
-                (click)="handlePortFolioClickEvent($event)">
+                (click)="handleProjectClickEvent($event)">
             <p class="pt-3">Project 1</p>
         </div>
         <div class="col-lg-6 text-center pt-5">
             <img class="img-fluid cursor-pointer" src="assets/images/portfolio/project.svg"
-                (click)="handlePortFolioClickEvent($event)">
+                (click)="handleProjectClickEvent($event)">
             <p class="pt-3">Project 2</p>
         </div>
 
         <div class="col-lg-6 text-center pt-5">
             <img class="img-fluid cursor-pointer" src="assets/images/portfolio/project.svg"
-                (click)="handlePortFolioClickEvent($event)">
+                (click)="handleProjectClickEvent($event)">
             <p class="pt-3">Project 3</p>
         </div>
         <div class="col-lg-6 text-center pt-5">
             <img class="img-fluid cursor-pointer" src="assets/images/portfolio/project.svg"
-                (click)="handlePortFolioClickEvent($event)">
+                (click)="handleProjectClickEvent($event)">
             <p class="pt-3">Project 4</p>
         </div>
     </div>

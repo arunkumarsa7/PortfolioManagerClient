@@ -1,5 +1,5 @@
-<div>
-    <table class="table table-responsive-sm table-hover table-outline mb-0">
+<div class="table-div">
+    <table class="table table-responsive-sm table-hover table-outline mb-0 table-fixed">
         <thead class="thead-light">
             <tr>
                 <th class="small">Service</th>
@@ -11,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let  subProject of  subProjects$" (click)="showDatasourcing($event)" class="cursor-pointer">
+            <tr *ngFor="let subProject of subProjects$" (click)="showDatasourcing()" class="cursor-pointer">
                 <td>
                     <div class="small text-muted">
                         {{subProject.projectName}}
