@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AppComponent } from '../../app.component';
-import { Globals } from '../../shared/constant/globals';
-import { RouterUtil } from '../../shared/service/routing/router-util';
-import { AppConstants } from '../../shared/constant/app-constants';
-import { FacadeService } from '../../shared/service/facade/facade.service';
-import { IServiceOffering } from '../../shared/models/iservice-offering';
+import { AppComponent } from 'src/app/app.component';
+import { Globals } from 'src/app/shared/constant/globals';
+import { RouterUtil } from 'src/app/shared/service/routing/router-util';
+import { AppConstants } from 'src/app/shared/constant/app-constants';
+import { FacadeService } from 'src/app/shared/service/facade/facade.service';
+import { IServiceOffering } from 'src/app/shared/models/iservice-offering';
 import { Subscription } from 'rxjs';
 
 @Component({

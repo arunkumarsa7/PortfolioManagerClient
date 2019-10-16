@@ -1,14 +1,14 @@
 .dashboardbtn span {
-    height: 75px;
-    padding-top: 1.5rem;
-    color: #5C689B;
+    height          : 75px;
+    padding-top     : 1.5rem;
+    color           : #5C689B;
     background-color: #AFCDF4;
-    border: 1px solid #068dbe;
-    margin-top: auto;
-    margin-bottom: auto;    
+    border          : 1px solid #068dbe;
+    margin-top      : auto;
+    margin-bottom   : auto;
 }
 
 .dashboardbtn span:hover {
-    color:white;
+    color           : white;
     background-color: #20a8d8;
 }

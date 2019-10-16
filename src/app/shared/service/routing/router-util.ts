@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Globals } from '../../constant/globals';
-import { AppConstants } from '../../constant/app-constants';
-import { IPageInfo } from '../../models/ipage-info';
 import { Router } from '@angular/router';
+import { Globals } from 'src/app/shared/constant/globals';
+import { AppConstants } from 'src/app/shared/constant/app-constants';
+import { IPageInfo } from 'src/app/shared/models/ipage-info';
 
 @Injectable()
 export class RouterUtil {

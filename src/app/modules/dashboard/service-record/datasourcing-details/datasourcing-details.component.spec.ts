@@ -8,9 +8,9 @@ describe('DatasourcingDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DatasourcingDetailsComponent ]
+      declarations: [DatasourcingDetailsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

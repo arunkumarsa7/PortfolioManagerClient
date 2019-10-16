@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { FacadeService } from '../../../shared/service/facade/facade.service';
-import { IProjectInfo } from '../../../shared/models/iproject-info';
+import { FacadeService } from 'src/app/shared/service/facade/facade.service';
+import { IProjectInfo } from 'src/app/shared/models/iproject-info';
 
 @Component({
   selector: 'app-datasourcing',

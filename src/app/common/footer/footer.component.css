@@ -38,7 +38,7 @@
 
 @media(max-width: 576px) {
     .footer-text {
-        font-size  : .75rem;
+        font-size : .75rem;
         margin-top: .5em;
     }
-  }
+}

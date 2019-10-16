@@ -1,8 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Globals } from '../../shared/constant/globals';
-import { AppConstants } from '../../shared/constant/app-constants';
-import { RouterUtil } from '../../shared/service/routing/router-util';
+import { Globals } from 'src/app/shared/constant/globals';
+import { AppConstants } from 'src/app/shared/constant/app-constants';
+import { RouterUtil } from 'src/app/shared/service/routing/router-util';
 
 @Component({
   selector: 'app-footer',

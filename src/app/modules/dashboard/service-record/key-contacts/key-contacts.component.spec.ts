@@ -8,9 +8,9 @@ describe('KeyContactsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ KeyContactsComponent ]
+      declarations: [KeyContactsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
