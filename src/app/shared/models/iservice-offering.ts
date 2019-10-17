@@ -1,5 +1,7 @@
 export class IServiceOffering {
     id: number;
-    serviceName: string;
-    serviceDecription: string;
+    name: string;
+    decription: string;
+    businessWeightage: number;
+    operatingEntityId: number;
 }

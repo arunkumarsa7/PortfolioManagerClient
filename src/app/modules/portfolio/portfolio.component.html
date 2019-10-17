@@ -28,8 +28,11 @@
                 <table class="table table-striped">
                     <tbody>
                         <tr *ngFor="let serviceOffering of serviceOfferings$">
-                            <td>{{serviceOffering.serviceName}}</td>
-                            <td>{{serviceOffering.serviceDecription}}</td>
+                            <td>{{serviceOffering.id}}</td>
+                            <td>{{serviceOffering.name}}</td>
+                            <td>{{serviceOffering.decription}}</td>
+                            <td>{{serviceOffering.businessWeightage}}</td>
+                            <td>{{serviceOffering.operatingEntityId}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -61,5 +64,26 @@
                 (click)="handleProjectClickEvent($event)">
             <p class="pt-3">Project 4</p>
         </div>
+
+         <!-- Code snippet to dynamically load values from server -->
+         <div class="panel panel-primary">
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr *ngFor="let portfolio of portfolios$">
+                            <td>{{portfolio.id}}</td>
+                            <td>{{portfolio.name}}</td>
+                            <td>{{portfolio.decription}}</td>
+                            <td>{{portfolio.solution}}</td>
+                            <td>{{portfolio.portfolioModel}}</td>
+                            <td>{{portfolio.businessWeightage}}</td>
+                            <td>{{portfolio.serviceOfferingId}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Code snippet to dynamically load values from server -->
+
     </div>
 </div>
