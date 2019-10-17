@@ -7,11 +7,10 @@ import { DashboardHeaderModule } from './dashboard-header/dashboard-header.modul
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { ServiceRecordModule } from './service-record/service-record.module';
 
-
 @NgModule({
     declarations: [DashboardComponent],
     imports: [
-    CommonModule,
+        CommonModule,
         ContractModule,
         ProjectsModule,
         DashboardHeaderModule,

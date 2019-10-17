@@ -5,8 +5,6 @@ import { DashboardTitleComponent } from './dashboard-title/dashboard-title.compo
 import { DocumentButtonsComponent } from './document-buttons/document-buttons.component';
 import { DashboardHeaderComponent } from './dashboard-header.component';
 
-
-
 @NgModule({
   declarations: [DashboardHeaderComponent, DashboardTitleComponent, DocumentButtonsComponent, DashboardTilesComponent],
   imports: [

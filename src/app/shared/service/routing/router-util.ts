@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Globals } from '../../constant/globals';
-import { AppConstants } from '../../constant/app-constants';
-import { PageInfo } from '../../../shared/models/page-info';
 import { Router } from '@angular/router';
+import { Globals } from 'src/app/shared/constant/globals';
+import { AppConstants } from 'src/app/shared/constant/app-constants';
+import { IPageInfo } from 'src/app/shared/models/ipage-info';
 
 @Injectable()
 export class RouterUtil {
@@ -23,12 +23,12 @@ export class RouterUtil {
         return { pageIndex: previousPageIndex, pageUrl: previousPageUrl, pageName: previousPage };
     }
     public navigateToNextPage() {
-        const nextPageInfo: PageInfo = this.getNextPageInfo();
+        const nextPageInfo: IPageInfo = this.getNextPageInfo();
         this.globals.appPage = nextPageInfo.pageName;
         this.router.navigateByUrl(nextPageInfo.pageUrl, { skipLocationChange: true });
     }
     public navigateToPreviousPage() {
-        const previousPageInfo: PageInfo = this.getPreviousPageInfo();
+        const previousPageInfo: IPageInfo = this.getPreviousPageInfo();
         this.globals.appPage = previousPageInfo.pageName;
         this.router.navigateByUrl(previousPageInfo.pageUrl, { skipLocationChange: true });
     }

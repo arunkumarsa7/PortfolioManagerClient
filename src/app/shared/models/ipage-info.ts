@@ -1,4 +1,4 @@
-export interface PageInfo {
+export interface IPageInfo {
     pageIndex: number;
     pageUrl: string;
     pageName: string;

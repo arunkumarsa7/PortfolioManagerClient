@@ -1,5 +1,6 @@
 .tile-icon {
-    font-size: 2em;
+    font-size : 2em;
+    margin-top: -2rem;
 }
 
 .card-body {
@@ -8,7 +9,8 @@
 }
 
 .tile {
-    height: 75px;
+    height     : 75px;
+    padding-top: 5px;
 }
 
 @media(max-width: 992px) {
