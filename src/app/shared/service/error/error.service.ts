@@ -13,16 +13,16 @@ export class ErrorService {
     return error.message ? error.message : error.toString();
   }
 
-  getClientStack(error:Error):string{
+  getClientStack(error: Error): string {
     return error.stack;
   }
 
-  getServerMessage(error: HttpErrorResponse): string{
+  getServerMessage(error: HttpErrorResponse): string {
     return error.message;
   }
 
-  getServerStack(error:HttpErrorResponse):string{
-    //handle stacktrace later
+  getServerStack(error: HttpErrorResponse): string {
+    // handle stacktrace later
     return 'stack';
   }
 

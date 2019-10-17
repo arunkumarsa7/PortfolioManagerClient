@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './modules/home/home.module';
@@ -11,22 +11,28 @@ import { AppCommonModule } from './common/app-common.module';
 import { ServicesModule } from './modules/service/services.module';
 import { ErrorHandler } from '@angular/core';
 import { GlobalErrorHandler } from './shared/error/GlobalErrorHandler';
+import { ServerErrorInterceptor } from './shared/interceptor/servererrorinterceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     AppCommonModule,
     HomeModule,
     PortfolioModule,
-    ServicesModule
+    ServicesModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [
     { provide: ErrorHandler, useClass: GlobalErrorHandler },
+    {provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true},
     Globals, RouterUtil
   ],
   bootstrap: [AppComponent]
