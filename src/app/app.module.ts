@@ -9,6 +9,8 @@ import { Globals } from './shared/constant/globals';
 import { RouterUtil } from './shared/service/routing/router-util';
 import { AppCommonModule } from './common/app-common.module';
 import { ServicesModule } from './modules/service/services.module';
+import { ErrorHandler } from '@angular/core';
+import { GlobalErrorHandler } from './shared/error/GlobalErrorHandler';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,10 @@ import { ServicesModule } from './modules/service/services.module';
     PortfolioModule,
     ServicesModule
   ],
-  providers: [Globals, RouterUtil],
+  providers: [
+    { provide: ErrorHandler, useClass: GlobalErrorHandler },
+    Globals, RouterUtil
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
