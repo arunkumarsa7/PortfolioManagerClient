@@ -46,3 +46,27 @@ app-footer {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.error-snackbar{
+  background-color: #DC3149;
+  color:#FFFFFF;
+  max-width: 100% !important;
+
+}
+.warning-snackbar{
+  background-color: #EFBE25;
+  color:#FFFFFF;
+  max-width: 100% !important;
+
+}
+.success-snackbar{
+  background-color: #1E8927;
+  color:#FFFFFF;
+  max-width: 100% !important;
+
+}
+.info-snackbar{
+  background-color: #496EBD;
+  color:#FFFFFF;
+  max-width: 100% !important;
+
+}
