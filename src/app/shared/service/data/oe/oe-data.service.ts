@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
  */
 @Injectable()
 export class OEDataService {
- private url = '../../../../assets/data/oeList.json';
+ private url = 'assets/data/oeList.json';
   constructor(private http: HttpClient) {}
   getOEList(): Observable<OEList> {
     return this.http.get<OEList>(this.url);
