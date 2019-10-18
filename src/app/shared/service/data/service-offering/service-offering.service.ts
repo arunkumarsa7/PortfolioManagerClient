@@ -11,14 +11,12 @@ export class ServiceOfferingService {
   constructor(private http: HttpClient) { }
 
   getServiceOfferings(oeId: number) {
-    const data = { oeId: `${oeId}` };
     const httpOptions = {
       headers: new HttpHeaders({
-        'Accept': 'application/json',
         'Content-Type': 'application/json'
       })
     };
-    return this.http.post<IApiResponse>(`${this.baseUrl}` + 'getServiceOfferingsByOE', JSON.stringify(data), httpOptions);
+    return this.http.post<IApiResponse>(`${this.baseUrl}` + 'getServiceOfferingsByOE', oeId, httpOptions);
   }
 
 }

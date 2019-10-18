@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IApiResponse } from 'src/app/shared/models/iapi-response';
 
 @Injectable({
@@ -11,8 +11,12 @@ export class PortfolioService {
   constructor(private http: HttpClient) { }
 
   getPortfolios(serviceOfferingId: number) {
-    const data = {serviceOfferingId : `${serviceOfferingId}`};
-    return this.http.post<IApiResponse>(`${this.baseUrl}` + 'getPortfoliosByServiceOffering', JSON.stringify(data));
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.post<IApiResponse>(`${this.baseUrl}` + 'getPortfoliosByServiceOffering', serviceOfferingId, httpOptions);
   }
 
 }
