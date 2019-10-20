@@ -1,33 +1,27 @@
-import {ErrorHandler, Injectable, Injector} from '@angular/core';
+import {ErrorHandler, Injectable} from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-import { ErrorService } from '../service/error/error.service';
-import { LoggingService } from '../service/logging/logging.service';
-import { NotificationService } from '../service/notification/notification.service';
+import { FacadeService } from 'src/app/shared/service/facade/facade.service';
 
 @Injectable()
 export class GlobalErrorHandler implements ErrorHandler {
-  constructor(private injector: Injector) { }
+  constructor(private facadeService: FacadeService) { }
     handleError(error: Error | HttpErrorResponse) {
-        // custom error
-        const errorService = this.injector.get(ErrorService);
-        const logger = this.injector.get(LoggingService);
-        const notifier = this.injector.get(NotificationService);
         let message;
         let stackTrace;
 
         if (error instanceof HttpErrorResponse) {
             // Server Error
-            message = errorService.getServerMessage(error);
-            stackTrace = errorService.getServerStack(error);
-            notifier.showError(message);
+            message = this.facadeService.getServerMessage(error);
+            stackTrace = this.facadeService.getServerStack(error);
+            this.facadeService.notifyError(message);
         } else {
             // Client Error
-            message = errorService.getClientMessage(error);
-            stackTrace = errorService.getClientStack(error);
-            notifier.showError(message);
+            message = this.facadeService.getClientMessage(error);
+            stackTrace = this.facadeService.getClientStack(error);
+            this.facadeService.notifyError(message);
         }
 
         // Always log errors
-        logger.logError(message, stackTrace);
+        this.facadeService.logError(message, stackTrace);
     }
 }

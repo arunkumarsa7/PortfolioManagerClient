@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpErrorResponse} from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ErrorService {
 
   getClientMessage(error: Error): string {
@@ -18,7 +16,11 @@ export class ErrorService {
   }
 
   getServerMessage(error: HttpErrorResponse): string {
+    if(error.status===0){
+return 'Server unavailable. Please try after sometime';
+    }else{
     return error.message;
+    }
   }
 
   getServerStack(error: HttpErrorResponse): string {
