@@ -1,6 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { DashboardService } from 'src/app/shared/service/data/dashboard/dashboard.service';
 import { ServiceOfferingService } from 'src/app/shared/service/data/service-offering/service-offering.service';
+import { PortfolioService } from 'src/app/shared/service/data/portfolio/portfolio.service';
 import { OEDataService, OEList } from 'src/app/shared/service/data/oe/oe-data.service';
 import { Observable } from 'rxjs';
 import { NotificationService } from 'src/app/shared/service/notification/notification.service';
@@ -12,10 +13,13 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class FacadeService {
     private dashboardService: DashboardService;
     private serviceOfferingService: ServiceOfferingService;
+    private portfolioService: PortfolioService;
     private oeDataService: OEDataService;
     private notificationService: NotificationService;
     private loggingService: LoggingService;
     private errorService: ErrorService;
+
+    constructor(private injector: Injector) { }
 
     public get getDashboardService(): DashboardService {
         if (!this.dashboardService) {
@@ -30,6 +34,14 @@ export class FacadeService {
         }
         return this.serviceOfferingService;
     }
+
+    public get getPortfolioService(): PortfolioService {
+        if (!this.portfolioService) {
+            this.portfolioService = this.injector.get(PortfolioService);
+        }
+        return this.portfolioService;
+    }
+
     public get getOEDataService(): OEDataService {
         if (!this.oeDataService) {
             this.oeDataService = this.injector.get(OEDataService);
@@ -71,8 +83,12 @@ export class FacadeService {
         return this.getDashboardService.getProjectList();
     }
 
-    getServiceOfferings() {
-        return this.getServiceOfferingService.getServiceOfferings();
+    getServiceOfferings(oeId: number) {
+        return this.getServiceOfferingService.getServiceOfferings(oeId);
+    }
+
+    getPortfolios(serviceOfferingId: number) {
+        return this.getPortfolioService.getPortfolios(serviceOfferingId);
     }
 
     public get OEList(): Observable<OEList> {

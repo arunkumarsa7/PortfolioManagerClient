@@ -5,6 +5,7 @@ import { RouterUtil } from 'src/app/shared/service/routing/router-util';
 import { AppConstants } from 'src/app/shared/constant/app-constants';
 import { FacadeService } from 'src/app/shared/service/facade/facade.service';
 import { IServiceOffering } from 'src/app/shared/models/iservice-offering';
+import { IPortfolio } from 'src/app/shared/models/iportfolio';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -13,8 +14,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit, OnDestroy {
-  private subscription: Subscription;
-  serviceOfferings$: IServiceOffering;
+  private serviceOfferingsSubscription: Subscription;
+  private portfoliosSubscription: Subscription;
+  serviceOfferings$: IServiceOffering[];
+  portfolios$: IPortfolio[];
   globals: Globals;
   showPortfolio = false;
   showProjects = false;
@@ -34,11 +37,13 @@ export class PortfolioComponent implements OnInit, OnDestroy {
   }
 
   private subscribeServices() {
-    this.subscription = this.facadeService.getServiceOfferings().subscribe((data: IServiceOffering) => this.serviceOfferings$ = data);
+    this.serviceOfferingsSubscription = this.facadeService.getServiceOfferings(1).subscribe(data => this.serviceOfferings$ = data.result);
+    this.portfoliosSubscription = this.facadeService.getPortfolios(1).subscribe(data => this.portfolios$ = data.result);
   }
 
   private unsubscribeServices() {
-    this.subscription.unsubscribe();
+    this.serviceOfferingsSubscription.unsubscribe();
+    this.portfoliosSubscription.unsubscribe();
   }
 
   private updateViewPage() {
