@@ -16,10 +16,10 @@ export class ErrorService {
   }
 
   getServerMessage(error: HttpErrorResponse): string {
-    if (error.status === 0) {
+    if (error.status === 404) {
 return 'Server unavailable. Please try after sometime';
     } else {
-    return error.message;
+    return 'Http error response : ' + error.status;
     }
   }
 

@@ -69,7 +69,6 @@ export class FacadeService {
       }
       return this.errorService;
     }
-    constructor(private injector: Injector) { }
 
     getProjects() {
         return this.getDashboardService.getProjects();
