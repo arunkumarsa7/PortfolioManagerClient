@@ -16,9 +16,9 @@ export class ErrorService {
   }
 
   getServerMessage(error: HttpErrorResponse): string {
-    if(error.status===0){
+    if (error.status === 0) {
 return 'Server unavailable. Please try after sometime';
-    }else{
+    } else {
     return error.message;
     }
   }
