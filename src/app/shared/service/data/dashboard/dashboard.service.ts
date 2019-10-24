@@ -2,14 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IProjectInfo } from 'src/app/shared/models/iproject-info';
 import { ISubprojectInfo } from 'src/app/shared/models/isubproject-info';
-import { IProjectDetails } from 'src/app/shared/models/iproject-details';
+import { IApiResponse } from 'src/app/shared/models/iapi-response';
+import { AppConstants, httpOptions } from 'src/app/shared/constant/app-constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
-
-  private baseUrl = 'http://localhost:8080/healthApp/getProjectsByPortfolio?portfolioId=40';
 
   constructor(private http: HttpClient) { }
 
@@ -21,8 +20,8 @@ export class DashboardService {
     return this.http.get<ISubprojectInfo>('https://my-json-server.typicode.com/navas-infobreez/FakeServer/subProject');
   }
 
-  getProjectList() {
-    return this.http.get<IProjectDetails>(`${this.baseUrl}`);
+  getProjectsByPortfolio(portfolioId: number) {
+    return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'getProjectsByPortfolio', portfolioId, httpOptions);
   }
 
 }

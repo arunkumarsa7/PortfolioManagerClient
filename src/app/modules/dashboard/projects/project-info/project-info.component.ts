@@ -11,7 +11,7 @@ import { IProjectDetails } from 'src/app/shared/models/iproject-details';
 })
 export class ProjectInfoComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
-  projectDetails$: IProjectDetails;
+  projectDetails$: IProjectDetails[];
 
   constructor(private facadeService: FacadeService, private routerUtil: RouterUtil) { }
 
@@ -24,7 +24,7 @@ export class ProjectInfoComponent implements OnInit, OnDestroy {
   }
 
   private subscribeServices() {
-    this.subscription = this.facadeService.getProjectList().subscribe((data: IProjectDetails) => this.projectDetails$ = data);
+    this.subscription = this.facadeService.getProjectsByPortfolio(1).subscribe(data => this.projectDetails$ = data.result);
   }
 
   private unsubscribeServices() {

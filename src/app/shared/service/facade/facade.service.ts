@@ -50,8 +50,8 @@ export class FacadeService {
         return this.getDashboardService.getSubProjects();
     }
 
-    getProjectList() {
-        return this.getDashboardService.getProjectList();
+    getProjectsByPortfolio(portfolioId: number) {
+        return this.getDashboardService.getProjectsByPortfolio(portfolioId);
     }
 
     getServiceOfferings(oeId: number) {

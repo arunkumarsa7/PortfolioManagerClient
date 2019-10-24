@@ -1,4 +1,9 @@
+import { HttpHeaders } from '@angular/common/http';
+
 export class AppConstants {
+  /**
+   * Page navigation constants
+   */
   public static defaultOE = 'DE';
   public static defaultPageKey = 'home';
   public static homePageKey = 'home';
@@ -7,7 +12,10 @@ export class AppConstants {
   public static dashboardPageKey = 'projectDashboard';
   public static datasourcingPageKey = 'datasourcing';
   public static contractsPageKey = 'contracts';
-  // Default URL for all routing modules in this application, any changes here will break entire navigation
+  /**
+   * Routing constants
+   * Default URL for all routing modules in this application, any changes here will break entire navigation
+   */
   public static homePageUrl = '';
   public static pathMatchFull = 'full';
   public static anyPageUrl = '**';
@@ -18,6 +26,10 @@ export class AppConstants {
   public static contractsPageUrl = 'portfolio/projects/dashboard/contracts';
   public static portfolioAppPages = [AppConstants.homePageKey, AppConstants.portfolioPageKey, AppConstants.projectsPageKey, AppConstants.dashboardPageKey, AppConstants.datasourcingPageKey, AppConstants.contractsPageKey];
   public static portfolioAppPageUrls = [AppConstants.homePageUrl, AppConstants.portfolioPageUrl, AppConstants.projectsPageUrl, AppConstants.dashboardPageUrl, AppConstants.datasourcingPageUrl, AppConstants.contractsPageUrl];
+  /**
+   * Application constants
+   */
+  public static baseUrl = 'http://localhost:8080/portfolio-manager/';
 }
 
 export let RoutingEnumConstants = {
@@ -30,7 +42,14 @@ export let RoutingEnumConstants = {
     url: 'portfolio/projects/dashboard'
   }
 };
+
 export interface EnumLayout {
   key: string;
   url: string;
 }
+
+export const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+};
