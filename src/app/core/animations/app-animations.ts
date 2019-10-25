@@ -1,7 +1,7 @@
 import { trigger, transition, animate, state, style, query, group, animateChild } from '@angular/animations';
 // for a fading effect presently not added
 export let fade = trigger('fade', [state('void', style({ opacity: 0 })), transition(':enter', [animate(2000)])]);
-//sliding effect
+// sliding effect
 export function routerTransition() {
   return trigger('routerTransition',
    [
@@ -28,7 +28,7 @@ export function routerTransition() {
 
     transition('contracts => datasourcing', reverseAnimation),
     transition('datasourcing => contracts', forwardAnimation),
-//clicking home from anywhere
+// clicking home from anywhere
     transition('projectDashboard => home', reverseAnimation),
     transition('portfolio => home', reverseAnimation),
     transition('datasourcing => home', reverseAnimation),

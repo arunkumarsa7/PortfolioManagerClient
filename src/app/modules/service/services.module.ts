@@ -5,10 +5,13 @@ import { DashboardService } from 'src/app/shared/service/data/dashboard/dashboar
 import { ServiceOfferingService } from 'src/app/shared/service/data/service-offering/service-offering.service';
 import { PortfolioService } from 'src/app/shared/service/data/portfolio/portfolio.service';
 import { OEDataService } from 'src/app/shared/service/data/oe/oe-data.service';
+import { NotificationService } from 'src/app/shared/service/notification/notification.service';
+import { LoggingService } from 'src/app/shared/service/logging/logging.service';
+import { ErrorService } from 'src/app/shared/service/error/error.service';
 
 @NgModule({
     imports: [
-        CommonModule
+    CommonModule
     ],
     declarations: [],
     providers: [
@@ -16,6 +19,9 @@ import { OEDataService } from 'src/app/shared/service/data/oe/oe-data.service';
         ServiceOfferingService,
         PortfolioService,
         OEDataService,
+        NotificationService,
+        LoggingService,
+        ErrorService,
         FacadeService
     ]
 })

@@ -27,7 +27,7 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.subscription = this.facade.getOEList().subscribe(data => this.oeList = data);
+    this.subscription = this.facade.OEList.subscribe(data => this.oeList = data);
   }
 
   ngOnDestroy() {
