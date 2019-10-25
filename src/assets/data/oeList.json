@@ -1,9 +1,10 @@
 [
-  { "title": "DE", "isDisabled" : false, "imgHref" : "assets/images/home/DE_flag.png"
+  { "id":"1","name": "Allianz Technology DE", "country": {"id":"1", "name":"Germany", "code":"DE"}
+},
+  { "id":"2","name": "Allianz Technology UK", "country": {"id":"2", "name":"United Kingdom", "code":"GB"}
   },
-  { "title": "US", "isDisabled": true, "imgHref": "assets/images/home/US_flag.png"
-  },
-  { "title": "UK", "isDisabled": false, "imgHref": "assets/images/home/UK_flag.png"
+  { "id":"3","name": "Allianz Technology US", "country": {"id":"3", "name":"United States of America", "code":"US"}
+  }, 
+  { "id":"4","name": "Allianz Technology AU", "country": {"id":"4", "name":"Australia", "code":"AU"}
   }
-
 ]
