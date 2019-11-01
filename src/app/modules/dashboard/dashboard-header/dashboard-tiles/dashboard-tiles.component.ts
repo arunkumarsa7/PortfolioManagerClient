@@ -9,8 +9,8 @@ import { IProjectInfo } from 'src/app/shared/models/iproject-info';
   styleUrls: ['./dashboard-tiles.component.css']
 })
 export class DashboardTilesComponent implements OnInit, OnDestroy {
-  private subscription: Subscription;
-  projects$: IProjectInfo;
+  private kpiSummarySubscription: Subscription;
+  projectKPISummary$: IProjectInfo;
 
   constructor(private facadeService: FacadeService) { }
 
@@ -23,11 +23,11 @@ export class DashboardTilesComponent implements OnInit, OnDestroy {
   }
 
   private subscribeServices() {
-    this.subscription = this.facadeService.getProjects().subscribe((data: IProjectInfo) => this.projects$ = data);
+    this.kpiSummarySubscription = this.facadeService.getProjectKPISummary(1).subscribe(data => this.projectKPISummary$ = data.result);
   }
 
   private unsubscribeServices() {
-    this.subscription.unsubscribe();
+    this.kpiSummarySubscription.unsubscribe();
   }
 
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { IApiResponse } from 'src/app/shared/models/iapi-response';
+import { AppConstants, httpOptions } from 'src/app/shared/constant/app-constants';
 /***********************************************************************************************************************************
  * This service is responsible for dynamically loading all the OE list for a particular user.
  * Based on the user role he may be able to access multiple OE sites
@@ -11,11 +12,13 @@ import { Observable } from 'rxjs';
  */
 @Injectable()
 export class OEDataService {
- private url = 'assets/data/oeList.json';
+
   constructor(private http: HttpClient) {}
-  getOEList(): Observable<OEList> {
-    return this.http.get<OEList>(this.url);
+
+  getOperatingEntities() {
+    return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'oe/findOperatingEntities', httpOptions);
   }
+
 }
 export class OEList {
   title: string;

@@ -62,11 +62,13 @@ export class PortfolioComponent implements OnInit, OnDestroy {
     elem.innerHTML = AppComponent.title + ' | ' + this.globals.currentOE;
   }
 
-  public handlePortFolioClickEvent(event: Event) {
+  public handleServiceOfferingClickEvent(event: Event) {
+    this.globals.currentServiceOffering = (event.currentTarget as Element).getAttribute('title');
     this.routerUtil.navigateToNextPage();
   }
 
   public handleProjectClickEvent(event: Event) {
+    this.globals.currentProject = (event.currentTarget as Element).getAttribute('title');
     this.routerUtil.navigateToNextPage();
   }
 

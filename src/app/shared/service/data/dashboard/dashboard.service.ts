@@ -20,8 +20,12 @@ export class DashboardService {
     return this.http.get<ISubprojectInfo>('https://my-json-server.typicode.com/navas-infobreez/FakeServer/subProject');
   }
 
+  getProjectKPISummary(portfolioId: number) {
+    return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'project/getProjectKPISummary', portfolioId, httpOptions);
+  }
+
   getProjectsByPortfolio(portfolioId: number) {
-    return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'getProjectsByPortfolio', portfolioId, httpOptions);
+    return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'project/getProjectsByPortfolio', portfolioId, httpOptions);
   }
 
 }

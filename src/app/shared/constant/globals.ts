@@ -4,4 +4,6 @@ import { Injectable } from '@angular/core';
 export class Globals {
     appPage = 'home';
     currentOE = 'DE';
+    currentServiceOffering = '';
+    currentProject = '';
 }

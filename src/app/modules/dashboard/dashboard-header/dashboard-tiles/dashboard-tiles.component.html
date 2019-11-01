@@ -2,7 +2,7 @@
     <div class="card text-white bg-success tile">
         <div class="tile-text">
             <div class="card-body">
-                <div class="col-9 text-value float-left">{{ projects$?.activeSLA }}</div>
+                <div class="col-9 text-value float-left">{{ projectKPISummary$?.activeSLA }}</div>
                 <div class="col-9 float-left">Active SLAs</div>
                 <div class="tile-icon float-right">
                     <i class="fa fa-clock-o"></i>
@@ -16,7 +16,7 @@
     <div class="card text-white bg-warning tile">
         <div class="tile-text">
             <div class="card-body">
-                <div class="col-9 text-value float-left">{{ projects$?.atRiskSLA }}</div>
+                <div class="col-9 text-value float-left">{{ projectKPISummary$?.atRiskSLA }}</div>
                 <div class="col-9 float-left">At Risk SLAs</div>
                 <div class="tile-icon float-right">
                     <i class="fa fa-exclamation-circle"></i>
@@ -30,7 +30,7 @@
     <div class="card text-white bg-danger tile">
         <div class="tile-text">
             <div class="card-body">
-                <div class="col-9 text-value float-left">{{ projects$?.activeSLA }}</div>
+                <div class="col-9 text-value float-left">{{ projectKPISummary$?.breachedSLA }}</div>
                 <div class="col-9 float-left">Breached SLAs</div>
                 <div class="tile-icon float-right">
                     <i class="fa  fa-ban"></i>
