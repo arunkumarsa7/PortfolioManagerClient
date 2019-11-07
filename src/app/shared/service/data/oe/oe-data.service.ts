@@ -13,15 +13,14 @@ import { AppConstants, httpOptions } from 'src/app/shared/constant/app-constants
 @Injectable()
 export class OEDataService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getOperatingEntities() {
     return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'oe/findOperatingEntities', httpOptions);
   }
 
-}
-export class OEList {
-  title: string;
-  isDisabled: boolean;
-  imgHref: string;
+  doesOEHasServiceOfferings(oeId: number) {
+    return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'oe/doesOEHasServiceOfferings', oeId, httpOptions);
+  }
+
 }

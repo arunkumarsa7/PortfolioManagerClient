@@ -15,6 +15,7 @@ import { ICountry } from 'src/app/shared/models/icountry';
 export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
   oeSubscription: Subscription;
   oeList$: IOperatingEntity[];
+  hasServiceOfferings: boolean;
   globals: Globals;
 
   constructor(private routerUtil: RouterUtil, globals: Globals, private facadeService: FacadeService) {
@@ -46,8 +47,19 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
   }
 
   public handleHomeButtonClick(event: Event) {
-    this.globals.currentOE = (event.currentTarget as Element).id;
-    this.routerUtil.navigateToNextPage();
+    const oeField = event.currentTarget as HTMLElement;
+    const oeId = Number(oeField.dataset.oeid);
+    if (this.doesOEHasServiceOfferings(oeId)) {
+      this.globals.currentOE = oeField.id;
+      this.routerUtil.navigateToNextPage();
+    } else {
+      this.facadeService.notifyError('No Service Offering(s) configured');
+    }
+  }
+
+  private doesOEHasServiceOfferings(oeId: number) {
+    this.facadeService.doesOEHasServiceOfferings(oeId).subscribe(data => this.hasServiceOfferings = data.result);
+    return this.hasServiceOfferings;
   }
 
 }

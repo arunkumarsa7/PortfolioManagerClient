@@ -2,8 +2,7 @@ import { Injectable, Injector } from '@angular/core';
 import { DashboardService } from 'src/app/shared/service/data/dashboard/dashboard.service';
 import { ServiceOfferingService } from 'src/app/shared/service/data/service-offering/service-offering.service';
 import { PortfolioService } from 'src/app/shared/service/data/portfolio/portfolio.service';
-import { OEDataService, OEList } from 'src/app/shared/service/data/oe/oe-data.service';
-import { Observable } from 'rxjs';
+import { OEDataService} from 'src/app/shared/service/data/oe/oe-data.service';
 import { NotificationService } from 'src/app/shared/service/notification/notification.service';
 import { LoggingService } from 'src/app/shared/service/logging/logging.service';
 import { ErrorService } from 'src/app/shared/service/error/error.service';
@@ -131,6 +130,10 @@ export class FacadeService {
 
   public getOperatingEntities() {
     return this.getOEDataService.getOperatingEntities();
+  }
+
+  public doesOEHasServiceOfferings(oeId: number) {
+    return this.getOEDataService.doesOEHasServiceOfferings(oeId);
   }
 
 }
