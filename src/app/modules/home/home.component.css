@@ -99,3 +99,8 @@ a.disabled {
   background-color: grey;
   opacity         : 0.6;
 }
+
+.flag-icon {
+  background-size: cover;
+  box-shadow     : 5px 5px 10px #888;
+}

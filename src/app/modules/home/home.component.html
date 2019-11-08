@@ -1,8 +1,11 @@
-<div class="content" role="main">
+<div class="container content" role="main">
   <div class="card-container">
-    <a *ngFor="let oe of oeList$" [id]="oe.country.code" [title]="oe.country.name"
-      [attr.data-oeid]="oe.id" (click)="handleHomeButtonClick($event)">
-      <span [ngClass]="['flag-icon', 'round-button', 'flag-icon-' + oe.country.code | lowercase]"></span>
-    </a>
+    <div *ngFor="let oe of oeList$" class="w-25">
+      <a [id]="oe.country.code" [title]="oe.country.name" [attr.data-oeid]="oe.id"
+        (click)="handleHomeButtonClick($event)">
+        <span
+          [ngClass]="['flag-icon', 'round-button', 'flag-icon-' + oe.country.code | lowercase,'d-inline-block']"></span>
+      </a>
+    </div>
   </div>
 </div>

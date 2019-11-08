@@ -47,8 +47,7 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
   }
 
   public handleHomeButtonClick(event: Event) {
-    const oeField = event.currentTarget as HTMLElement;
-    this.checkServiceOfferingsAndNavigate(oeField);
+    this.checkServiceOfferingsAndNavigate(event.currentTarget as HTMLElement);
   }
 
   private checkServiceOfferingsAndNavigate(htmlElement: HTMLElement) {
