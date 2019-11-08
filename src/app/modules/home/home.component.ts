@@ -48,18 +48,19 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
 
   public handleHomeButtonClick(event: Event) {
     const oeField = event.currentTarget as HTMLElement;
-    const oeId = Number(oeField.dataset.oeid);
-    if (this.doesOEHasServiceOfferings(oeId)) {
-      this.globals.currentOE = oeField.id;
-      this.routerUtil.navigateToNextPage();
-    } else {
-      this.facadeService.notifyError('No Service Offering(s) configured');
-    }
+    this.checkServiceOfferingsAndNavigate(oeField);
   }
 
-  private doesOEHasServiceOfferings(oeId: number) {
-    this.facadeService.doesOEHasServiceOfferings(oeId).subscribe(data => this.hasServiceOfferings = data.result);
-    return this.hasServiceOfferings;
+  private checkServiceOfferingsAndNavigate(htmlElement: HTMLElement) {
+    const oeId = Number(htmlElement.dataset.oeid);
+    this.facadeService.doesOEHasServiceOfferings(oeId).then(data => {
+      if (data.result) {
+        this.globals.currentOE = htmlElement.id;
+        this.routerUtil.navigateToNextPage();
+      } else {
+        this.facadeService.notifyError('No Service Offering(s) configured');
+      }
+    });
   }
 
 }

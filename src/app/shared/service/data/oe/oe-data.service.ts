@@ -20,7 +20,7 @@ export class OEDataService {
   }
 
   doesOEHasServiceOfferings(oeId: number) {
-    return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'oe/doesOEHasServiceOfferings', oeId, httpOptions);
+    return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'oe/doesOEHasServiceOfferings', oeId, httpOptions).toPromise();
   }
 
 }
