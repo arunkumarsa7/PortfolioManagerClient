@@ -24,7 +24,9 @@ export class AppConstants {
   public static dashboardPageUrl = 'portfolio/projects/dashboard';
   public static datasourcingPageUrl = 'portfolio/projects/dashboard/datasourcing';
   public static contractsPageUrl = 'portfolio/projects/dashboard/contracts';
+  // tslint:disable-next-line: max-line-length
   public static portfolioAppPages = [AppConstants.homePageKey, AppConstants.portfolioPageKey, AppConstants.projectsPageKey, AppConstants.dashboardPageKey, AppConstants.datasourcingPageKey, AppConstants.contractsPageKey];
+  // tslint:disable-next-line: max-line-length
   public static portfolioAppPageUrls = [AppConstants.homePageUrl, AppConstants.portfolioPageUrl, AppConstants.projectsPageUrl, AppConstants.dashboardPageUrl, AppConstants.datasourcingPageUrl, AppConstants.contractsPageUrl];
   /**
    * Application constants

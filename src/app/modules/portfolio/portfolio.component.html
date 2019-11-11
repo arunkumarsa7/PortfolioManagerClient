@@ -2,7 +2,8 @@
     <div class="row portfolioDiv" *ngIf="showPortfolio">
         <div class="col-lg-6 text-center pt-5" *ngFor="let serviceOffering of serviceOfferings$">
             <img class="img-fluid cursor-pointer mh-50" src="assets/images/portfolio/folder.svg"
-                [title]="serviceOffering.name" (click)="handleServiceOfferingClickEvent($event)">
+                [title]="serviceOffering.name" [attr.data-so_id]="serviceOffering.id"
+                (click)="handleServiceOfferingClickEvent($event)">
             <p>{{serviceOffering.name}}</p>
         </div>
     </div>
@@ -10,7 +11,7 @@
     <div class="row projectDiv" *ngIf="showProjects">
         <div class="col-lg-6 text-center pt-5" *ngFor="let portfolio of portfolios$">
             <img class="img-fluid cursor-pointer" src="assets/images/portfolio/project.svg" [title]="portfolio.name"
-                (click)="handleProjectClickEvent($event)">
+                [attr.data-portfolio_id]="portfolio.id" (click)="handlePortfoioClickEvent($event)">
             <p class="pt-3">{{portfolio.name}}</p>
         </div>
     </div>

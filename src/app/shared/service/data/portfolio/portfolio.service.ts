@@ -11,7 +11,13 @@ export class PortfolioService {
   constructor(private http: HttpClient) { }
 
   getPortfolios(serviceOfferingId: number) {
-    return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'getPortfoliosByServiceOffering', serviceOfferingId, httpOptions);
+    // tslint:disable-next-line: max-line-length
+    return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'portfolio/getPortfoliosByServiceOffering', serviceOfferingId, httpOptions);
+  }
+
+  doesPortfoioHasProjects(portfolioId: number) {
+    // tslint:disable-next-line: max-line-length
+    return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'portfolio/doesPortfoioHasProjects', portfolioId, httpOptions).toPromise();
   }
 
 }

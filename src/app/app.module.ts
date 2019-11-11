@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,13 +14,14 @@ import { GlobalErrorHandler } from './shared/error/GlobalErrorHandler';
 import { ServerErrorInterceptor } from './shared/interceptor/servererrorinterceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MessagesUtil } from './shared/service/messages/messages-util';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     AppCommonModule,
@@ -32,9 +33,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   ],
   providers: [
     { provide: ErrorHandler, useClass: GlobalErrorHandler },
-    {provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true},
+    { provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true },
+    MessagesUtil,
+    { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [MessagesUtil], multi: true },
     Globals, RouterUtil
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function initializeApp(messages: MessagesUtil) {
+  return () => messages.load();
+}

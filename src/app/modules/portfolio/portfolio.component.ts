@@ -1,49 +1,32 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { Globals } from 'src/app/shared/constant/globals';
-import { RouterUtil } from 'src/app/shared/service/routing/router-util';
 import { AppConstants } from 'src/app/shared/constant/app-constants';
+import { RouterUtil } from 'src/app/shared/service/routing/router-util';
+import { MessagesUtil } from 'src/app/shared/service/messages/messages-util';
 import { FacadeService } from 'src/app/shared/service/facade/facade.service';
 import { IServiceOffering } from 'src/app/shared/models/iservice-offering';
 import { IPortfolio } from 'src/app/shared/models/iportfolio';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.css']
 })
-export class PortfolioComponent implements OnInit, OnDestroy {
-  private serviceOfferingsSubscription: Subscription;
-  private portfoliosSubscription: Subscription;
+export class PortfolioComponent implements OnInit {
   serviceOfferings$: IServiceOffering[];
   portfolios$: IPortfolio[];
   globals: Globals;
   showPortfolio = false;
   showProjects = false;
 
-  constructor(private routerUtil: RouterUtil, globals: Globals, private facadeService: FacadeService) {
+  constructor(private routerUtil: RouterUtil, globals: Globals, private facadeService: FacadeService, private messages: MessagesUtil) {
     this.globals = globals;
   }
 
   ngOnInit() {
-    this.subscribeServices();
-    this.updateToolbarAppTitle();
     this.updateViewPage();
-  }
-
-  ngOnDestroy() {
-    this.unsubscribeServices();
-  }
-
-  private subscribeServices() {
-    this.serviceOfferingsSubscription = this.facadeService.getServiceOfferings(1).subscribe(data => this.serviceOfferings$ = data.result);
-    this.portfoliosSubscription = this.facadeService.getPortfolios(1).subscribe(data => this.portfolios$ = data.result);
-  }
-
-  private unsubscribeServices() {
-    this.serviceOfferingsSubscription.unsubscribe();
-    this.portfoliosSubscription.unsubscribe();
+    this.updateToolbarAppTitle();
   }
 
   private updateViewPage() {
@@ -51,9 +34,11 @@ export class PortfolioComponent implements OnInit, OnDestroy {
     if (AppConstants.portfolioPageKey === currentPage) {
       this.showPortfolio = true;
       this.showProjects = false;
+      this.facadeService.getServiceOfferings(this.globals.currentOEId).subscribe(data => this.serviceOfferings$ = data.result);
     } else if (AppConstants.projectsPageKey === currentPage) {
       this.showPortfolio = false;
       this.showProjects = true;
+      this.facadeService.getPortfolios(this.globals.currentServiceOfferingId).subscribe(response => this.portfolios$ = response.result);
     }
   }
 
@@ -63,13 +48,37 @@ export class PortfolioComponent implements OnInit, OnDestroy {
   }
 
   public handleServiceOfferingClickEvent(event: Event) {
-    this.globals.currentServiceOffering = (event.currentTarget as Element).getAttribute('title');
-    this.routerUtil.navigateToNextPage();
+    this.checkPortfoliosAndNavigate(event.currentTarget as HTMLElement);
   }
 
-  public handleProjectClickEvent(event: Event) {
-    this.globals.currentProject = (event.currentTarget as Element).getAttribute('title');
-    this.routerUtil.navigateToNextPage();
+  public handlePortfoioClickEvent(event: Event) {
+    this.checkProjectsAndNavigate(event.currentTarget as HTMLElement);
+  }
+
+  private checkPortfoliosAndNavigate(htmlElement: HTMLElement) {
+    const soId = Number(htmlElement.dataset.so_id);
+    this.facadeService.doesServiceOfferingHasPortfolios(soId).then(data => {
+      if (data.result) {
+        this.globals.currentServiceOfferingId = soId;
+        this.globals.currentServiceOffering = htmlElement.getAttribute('title');
+        this.routerUtil.navigateToNextPage();
+      } else {
+        this.facadeService.notifyError(this.messages.getErrorMessage('ERROR_MSG_NO_PORTFOLIOS'));
+      }
+    });
+  }
+
+  private checkProjectsAndNavigate(htmlElement: HTMLElement) {
+    const portfolioId = Number(htmlElement.dataset.portfolio_id);
+    this.facadeService.doesPortfoioHasProjects(portfolioId).then(data => {
+      if (data.result) {
+        this.globals.currentPortfolioId = portfolioId;
+        this.globals.currentProject = htmlElement.getAttribute('title');
+        this.routerUtil.navigateToNextPage();
+      } else {
+        this.facadeService.notifyError(this.messages.getErrorMessage('ERROR_MSG_NO_PROJECT_DATA'));
+      }
+    });
   }
 
 }

@@ -136,4 +136,12 @@ export class FacadeService {
     return this.getOEDataService.doesOEHasServiceOfferings(oeId);
   }
 
+  public doesServiceOfferingHasPortfolios(soId: number) {
+    return this.getServiceOfferingService.doesServiceOfferingHasPortfolios(soId);
+  }
+
+  public doesPortfoioHasProjects(portfolioId: number) {
+    return this.portfolioService.doesPortfoioHasProjects(portfolioId);
+  }
+
 }

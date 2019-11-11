@@ -6,4 +6,7 @@ export class Globals {
     currentOE = 'DE';
     currentServiceOffering = '';
     currentProject = '';
+    currentOEId: number;
+    currentServiceOfferingId: number;
+    currentPortfolioId: number;
 }

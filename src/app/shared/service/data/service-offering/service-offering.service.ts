@@ -11,7 +11,11 @@ export class ServiceOfferingService {
   constructor(private http: HttpClient) { }
 
   getServiceOfferings(oeId: number) {
-    return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'getServiceOfferingsByOE', oeId, httpOptions);
+    return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'so/getServiceOfferingsByOE', oeId, httpOptions);
+  }
+
+  doesServiceOfferingHasPortfolios(soId: number) {
+    return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'so/doesServiceOfferingHasPortfolios', soId, httpOptions).toPromise();
   }
 
 }
