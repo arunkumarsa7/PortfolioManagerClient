@@ -12,13 +12,16 @@ export class AppConstants {
   public static dashboardPageKey = 'projectDashboard';
   public static datasourcingPageKey = 'datasourcing';
   public static contractsPageKey = 'contracts';
+  public static loginPageKey = 'login';
   /**
    * Routing constants
    * Default URL for all routing modules in this application, any changes here will break entire navigation
    */
-  public static homePageUrl = '';
-  public static pathMatchFull = 'full';
   public static anyPageUrl = '**';
+  public static defaultPageUrl = '';
+  public static homePageUrl = 'home';
+  public static loginPageUrl = 'login';
+  public static pathMatchFull = 'full';
   public static portfolioPageUrl = 'portfolio';
   public static projectsPageUrl = 'portfolio/projects';
   public static dashboardPageUrl = 'portfolio/projects/dashboard';
@@ -33,17 +36,6 @@ export class AppConstants {
    */
   public static baseUrl = 'http://localhost:8080/portfolio-manager/';
 }
-
-export let RoutingEnumConstants = {
-  Home: {
-    key: 'home',
-    url: ''
-  },
-  DashBoard: {
-    key: 'projectDashboard',
-    url: 'portfolio/projects/dashboard'
-  }
-};
 
 export interface EnumLayout {
   key: string;

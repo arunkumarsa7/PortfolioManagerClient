@@ -1,12 +1,13 @@
 import { Injectable, Injector } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
 import { DashboardService } from 'src/app/shared/service/data/dashboard/dashboard.service';
 import { ServiceOfferingService } from 'src/app/shared/service/data/service-offering/service-offering.service';
 import { PortfolioService } from 'src/app/shared/service/data/portfolio/portfolio.service';
-import { OEDataService} from 'src/app/shared/service/data/oe/oe-data.service';
+import { OEDataService } from 'src/app/shared/service/data/oe/oe-data.service';
 import { NotificationService } from 'src/app/shared/service/notification/notification.service';
 import { LoggingService } from 'src/app/shared/service/logging/logging.service';
 import { ErrorService } from 'src/app/shared/service/error/error.service';
-import { HttpErrorResponse } from '@angular/common/http';
+import { LoginService } from '../login/login.service';
 
 @Injectable()
 export class FacadeService {
@@ -17,6 +18,7 @@ export class FacadeService {
   private notificationService: NotificationService;
   private loggingService: LoggingService;
   private errorService: ErrorService;
+  private loginService: LoginService;
 
   constructor(private injector: Injector) { }
 
@@ -67,6 +69,13 @@ export class FacadeService {
       this.errorService = this.injector.get(ErrorService);
     }
     return this.errorService;
+  }
+
+  public get LoginService(): LoginService {
+    if (!this.loginService) {
+      this.loginService = this.injector.get(LoginService);
+    }
+    return this.loginService;
   }
 
   getProjects() {
@@ -141,7 +150,11 @@ export class FacadeService {
   }
 
   public doesPortfoioHasProjects(portfolioId: number) {
-    return this.portfolioService.doesPortfoioHasProjects(portfolioId);
+    return this.getPortfolioService.doesPortfoioHasProjects(portfolioId);
+  }
+
+  public login(loginPayload) {
+    return this.LoginService.login(loginPayload);
   }
 
 }

@@ -8,10 +8,11 @@ import { OEDataService } from 'src/app/shared/service/data/oe/oe-data.service';
 import { NotificationService } from 'src/app/shared/service/notification/notification.service';
 import { LoggingService } from 'src/app/shared/service/logging/logging.service';
 import { ErrorService } from 'src/app/shared/service/error/error.service';
+import { LoginService } from 'src/app/shared/service/login/login.service';
 
 @NgModule({
     imports: [
-    CommonModule
+        CommonModule
     ],
     declarations: [],
     providers: [
@@ -22,6 +23,7 @@ import { ErrorService } from 'src/app/shared/service/error/error.service';
         NotificationService,
         LoggingService,
         ErrorService,
+        LoginService,
         FacadeService
     ]
 })
