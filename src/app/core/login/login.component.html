@@ -1,25 +1,38 @@
-<div class="row">
-  <div class="col-md-6 login-container">
-    <h2 style="margin: auto">Login </h2>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="username">UserName:</label>
-        <input type="text" class="form-control" formControlName="username" id="username" autocomplete="off">
-        <div class="error"
-          *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched">Username
-          is required</div>
+<div class="lowin lowin-blue">
+  <div class="lowin-brand">
+    <img src="assets/images/login/portfolio.png" alt="logo">
+  </div>
+  <div class="lowin-wrapper">
+    <div class="lowin-box lowin-login">
+      <div class="lowin-box-inner">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <p>Sign in to continue</p>
+          <div class="form-group lowin-group">
+            <label for="username">Username</label>
+            <input type="text" autocomplete="off" class="form-control lowin-input" formControlName="username"
+              id="username">
+            <div class="error"
+              *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched">
+              Username is required
+            </div>
+          </div>
+          <div class="form-group lowin-group password-group">
+            <label for="pwd">Password</label>
+            <input type="password" name="password" class="form-control lowin-input" formControlName="password" id="pwd"
+              autocomplete="off">
+            <div class="error"
+              *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">
+              Password is required
+            </div>
+          </div>
+          <button class="btn btn-success lowin-btn login-btn" [disabled]="loginForm.invalid">
+            Sign In
+          </button>
+          <div *ngIf="invalidLogin" class="error">
+            <div>Invalid credentials.</div>
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" formControlName="password" id="pwd" autocomplete="off">
-        <div class="error"
-          *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">Password
-          is required</div>
-      </div>
-      <button class="btn btn-success" [disabled]="loginForm.invalid">Login</button>
-      <div *ngIf="invalidLogin" class="error">
-        <div>Invalid credentials.</div>
-      </div>
-    </form>
+    </div>
   </div>
 </div>
