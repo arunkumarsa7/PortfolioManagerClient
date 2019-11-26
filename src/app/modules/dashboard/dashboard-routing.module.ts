@@ -8,7 +8,7 @@ import { ServiceRecordComponent } from './service-record/service-record.componen
 
 const routes: Routes = [
   {
-    path: AppConstants.homePageUrl,
+    path: AppConstants.defaultPageUrl,
     component: DashboardComponent,
     children: [
       {
@@ -22,7 +22,7 @@ const routes: Routes = [
         data: { animation: AppConstants.contractsPageKey }
       },
       {
-        path: AppConstants.homePageUrl,
+        path: AppConstants.defaultPageUrl,
         component: ProjectComponent,
         data: { animation: AppConstants.dashboardPageKey }
       }
