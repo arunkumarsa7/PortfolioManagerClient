@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FacadeService } from 'src/app/shared/service/facade/facade.service';
+import { AppConstants } from 'src/app/shared/constant/app-constants';
 
 @Component({
   selector: 'app-login',
@@ -22,13 +23,13 @@ export class LoginComponent implements OnInit {
       username: this.loginForm.controls.username.value,
       password: this.loginForm.controls.password.value
     };
-    this.facadeService.login(loginPayload).subscribe(data => {
+    this.facadeService.generateToken(loginPayload).subscribe(data => {
       if (data.status === 200) {
         window.localStorage.setItem('token', data.result.token);
-        this.router.navigate(['home']);
+        this.facadeService.login(loginPayload.username);
+        this.router.navigate([AppConstants.homePageUrl]);
       } else {
         this.invalidLogin = true;
-        alert(data.message);
       }
     });
   }

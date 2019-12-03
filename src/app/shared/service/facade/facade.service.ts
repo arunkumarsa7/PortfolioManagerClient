@@ -153,8 +153,16 @@ export class FacadeService {
     return this.getPortfolioService.doesPortfoioHasProjects(portfolioId);
   }
 
-  public login(loginPayload) {
-    return this.LoginService.login(loginPayload);
+  public generateToken(loginPayload) {
+    return this.LoginService.generateToken(loginPayload);
+  }
+
+  public login(username) {
+    return this.LoginService.login(username);
+  }
+
+  public logout() {
+    return this.LoginService.logout();
   }
 
 }

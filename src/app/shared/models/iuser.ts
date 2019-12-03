@@ -1,3 +1,8 @@
+import { IUserContact } from './iuser-contact';
+
 export interface IUser {
-  id: number;
+  username: string;
+  firstName: string;
+  lastName: string;
+  userContact: IUserContact;
 }
