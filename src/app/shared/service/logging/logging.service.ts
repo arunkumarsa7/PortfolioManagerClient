@@ -8,4 +8,5 @@ export class LoggingService {
     // The console.log is only for testing this example.
     console.log('LoggingService: ' + message);
   }
+
 }

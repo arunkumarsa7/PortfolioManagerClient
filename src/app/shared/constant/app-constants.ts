@@ -43,7 +43,8 @@ export interface EnumLayout {
 }
 
 export const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json'
-  })
+  headers: {
+    'Content-Type': 'application/json',
+    'Data-Type': 'application/json'
+  }
 };

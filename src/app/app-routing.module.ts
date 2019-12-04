@@ -10,8 +10,9 @@ const routes: Routes = [
   { path: AppConstants.dashboardPageUrl, loadChildren: './modules/dashboard/dashboard.module#DashboardModule' },
   { path: AppConstants.projectsPageUrl, component: PortfolioComponent },
   { path: AppConstants.portfolioPageUrl, component: PortfolioComponent },
-  { path: AppConstants.homePageUrl, component: HomeComponent },
-  { path: AppConstants.defaultPageUrl, component: LoginComponent, canActivate: [AuthGuard] },
+  { path: AppConstants.homePageUrl, component: HomeComponent, canActivate: [AuthGuard] },
+  { path: AppConstants.loginPageUrl, component: LoginComponent },
+  { path: AppConstants.defaultPageUrl, component: HomeComponent },
   { path: AppConstants.anyPageUrl, redirectTo: AppConstants.defaultPageUrl, pathMatch: AppConstants.pathMatchFull }
 ];
 

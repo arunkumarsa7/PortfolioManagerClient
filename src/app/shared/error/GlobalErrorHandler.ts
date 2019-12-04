@@ -1,13 +1,15 @@
-import {ErrorHandler, Injectable} from '@angular/core';
+import { ErrorHandler, Injectable } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { FacadeService } from 'src/app/shared/service/facade/facade.service';
 
 @Injectable()
 export class GlobalErrorHandler implements ErrorHandler {
-  constructor(private facadeService: FacadeService) { }
+
+    constructor(private facadeService: FacadeService) { }
+
     handleError(error: Error | HttpErrorResponse) {
-        let message;
-        let stackTrace;
+        let message: string;
+        let stackTrace: string;
 
         if (error instanceof HttpErrorResponse) {
             // Server Error
@@ -24,4 +26,5 @@ export class GlobalErrorHandler implements ErrorHandler {
         // Always log errors
         this.facadeService.logError(message, stackTrace);
     }
+
 }

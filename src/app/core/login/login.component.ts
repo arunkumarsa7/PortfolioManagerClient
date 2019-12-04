@@ -26,7 +26,9 @@ export class LoginComponent implements OnInit {
     this.facadeService.generateToken(loginPayload).subscribe(data => {
       if (data.status === 200) {
         window.localStorage.setItem('token', data.result.token);
-        this.facadeService.login(loginPayload.username);
+        this.facadeService.login(loginPayload.username).then(response => {
+          localStorage.setItem('currentUser', JSON.stringify(response.result));
+        });
         this.router.navigate([AppConstants.homePageUrl]);
       } else {
         this.invalidLogin = true;
