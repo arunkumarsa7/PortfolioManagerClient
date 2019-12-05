@@ -3,6 +3,8 @@ import { ErrorHandler, NgModule, APP_INITIALIZER } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './modules/home/home.module';
@@ -17,6 +19,7 @@ import { MessagesUtil } from './core/helpers/messages-util';
 import { TokenInterceptor } from './core/interceptors/token-interceptor';
 import { LoginModule } from './core/login/login.module';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -25,6 +28,8 @@ import { LoginModule } from './core/login/login.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ModalModule.forRoot(),
+    NgIdleKeepaliveModule.forRoot(),
     AppCommonModule,
     HomeModule,
     PortfolioModule,

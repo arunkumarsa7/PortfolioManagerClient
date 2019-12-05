@@ -8,7 +8,8 @@ import { routerTransition } from './core/animations/app-animations';
   <div id="app-content" class="routeContainer" >
   <router-outlet></router-outlet>
   </div>
-  <app-footer></app-footer>`,
+  <app-footer></app-footer>
+  <app-timeout></app-timeout>`,
   styles: []
 })
 export class AppComponent {

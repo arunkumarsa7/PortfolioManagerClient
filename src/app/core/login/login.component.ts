@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
     this.facadeService.generateToken(loginPayload).then(data => {
       if (data.status === 200) {
         this.initializeLocalStorage(data.result);
+        this.facadeService.setUserLoggedIn(true);
         this.loadLoggedInUserDetails();
       } else {
         this.invalidLogin = true;

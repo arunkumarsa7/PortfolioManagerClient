@@ -7,7 +7,8 @@ import { OEDataService } from 'src/app/shared/service/data/oe/oe-data.service';
 import { NotificationService } from 'src/app/shared/service/notification/notification.service';
 import { LoggingService } from 'src/app/shared/service/logging/logging.service';
 import { ErrorService } from 'src/app/shared/service/error/error.service';
-import { LoginService } from '../login/login.service';
+import { TimeoutService } from 'src/app/shared/service/timeout/timeout.service';
+import { LoginService } from 'src/app/shared/service/login/login.service';
 
 @Injectable()
 export class FacadeService {
@@ -19,6 +20,7 @@ export class FacadeService {
   private loggingService: LoggingService;
   private errorService: ErrorService;
   private loginService: LoginService;
+  private timeoutService: TimeoutService;
 
   constructor(private injector: Injector) { }
 
@@ -76,6 +78,13 @@ export class FacadeService {
       this.loginService = this.injector.get(LoginService);
     }
     return this.loginService;
+  }
+
+  public get TimeoutService(): TimeoutService {
+    if (!this.timeoutService) {
+      this.timeoutService = this.injector.get(TimeoutService);
+    }
+    return this.timeoutService;
   }
 
   getProjects() {
@@ -163,6 +172,14 @@ export class FacadeService {
 
   public logout() {
     return this.LoginService.logout();
+  }
+
+  public setUserLoggedIn(isUserLoggedIn: boolean) {
+    this.TimeoutService.setUserLoggedIn(isUserLoggedIn);
+  }
+
+  public getUserLoggedIn() {
+    return this.TimeoutService.getUserLoggedIn();
   }
 
 }
