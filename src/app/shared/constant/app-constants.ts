@@ -35,6 +35,9 @@ export class AppConstants {
    * Application constants
    */
   public static baseUrl = 'http://localhost:8080/portfolio-manager/';
+  public static accessToken = 'accessToken';
+  public static loggedInUser = 'currentUser';
+  public static username = 'username';
 }
 
 export interface EnumLayout {

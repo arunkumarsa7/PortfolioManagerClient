@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, } from 'rxjs';
-import { RouterUtil } from 'src/app/shared/service/routing/router-util';
+import { RouterUtil } from 'src/app/core/helpers/router-util';
 import { FacadeService } from 'src/app/shared/service/facade/facade.service';
 import { IProjectDetails } from 'src/app/shared/models/iproject-details';
 

@@ -8,12 +8,12 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './modules/home/home.module';
 import { PortfolioModule } from './modules/portfolio/portfolio.module';
 import { Globals } from './shared/constant/globals';
-import { RouterUtil } from './shared/service/routing/router-util';
+import { RouterUtil } from './core/helpers/router-util';
 import { AppCommonModule } from './common/app-common.module';
 import { ServicesModule } from './modules/service/services.module';
-import { GlobalErrorHandler } from './shared/error/GlobalErrorHandler';
+import { GlobalErrorHandler } from './core/helpers/global-error-handler';
 import { ServerErrorInterceptor } from './core/interceptors/server-error-interceptor';
-import { MessagesUtil } from './shared/service/messages/messages-util';
+import { MessagesUtil } from './core/helpers/messages-util';
 import { TokenInterceptor } from './core/interceptors/token-interceptor';
 import { LoginModule } from './core/login/login.module';
 

@@ -3,8 +3,8 @@ import { Subscription } from 'rxjs';
 import { AppComponent } from 'src/app/app.component';
 import { Globals } from 'src/app/shared/constant/globals';
 import { AppConstants } from 'src/app/shared/constant/app-constants';
-import { MessagesUtil } from 'src/app/shared/service/messages/messages-util';
-import { RouterUtil } from 'src/app/shared/service/routing/router-util';
+import { MessagesUtil } from 'src/app/core/helpers/messages-util';
+import { RouterUtil } from 'src/app/core/helpers/router-util';
 import { FacadeService } from 'src/app/shared/service/facade/facade.service';
 import { IOperatingEntity } from 'src/app/shared/models/ioperating-entity';
 

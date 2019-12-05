@@ -23,25 +23,46 @@ export class LoginComponent implements OnInit {
       username: this.loginForm.controls.username.value,
       password: this.loginForm.controls.password.value
     };
-    this.facadeService.generateToken(loginPayload).subscribe(data => {
+    this.generateToken(loginPayload);
+  }
+
+  ngOnInit() {
+    this.clearLocalStorage();
+    this.loginForm = this.formBuilder.group({
+      username: ['', Validators.compose([Validators.required])],
+      password: ['', Validators.required]
+    });
+  }
+
+  generateToken(loginPayload: { username: string; password: string; }) {
+    this.facadeService.generateToken(loginPayload).then(data => {
       if (data.status === 200) {
-        window.localStorage.setItem('token', data.result.token);
-        this.facadeService.login(loginPayload.username).then(response => {
-          localStorage.setItem('currentUser', JSON.stringify(response.result));
-        });
-        this.router.navigate([AppConstants.homePageUrl]);
+        this.initializeLocalStorage(data.result);
+        this.loadLoggedInUserDetails();
       } else {
         this.invalidLogin = true;
       }
     });
   }
 
-  ngOnInit() {
-    window.localStorage.removeItem('token');
-    this.loginForm = this.formBuilder.group({
-      username: ['', Validators.compose([Validators.required])],
-      password: ['', Validators.required]
-    });
+  loadLoggedInUserDetails() {
+    if (window.localStorage.getItem(AppConstants.username)) {
+      this.facadeService.login(window.localStorage.getItem(AppConstants.username)).then(response => {
+        window.localStorage.setItem(AppConstants.loggedInUser, JSON.stringify(response.result));
+        this.router.navigate([AppConstants.homePageUrl]);
+      });
+    }
+  }
+
+  initializeLocalStorage(response: { token: string; username: string; }) {
+    window.localStorage.setItem(AppConstants.accessToken, response.token);
+    window.localStorage.setItem(AppConstants.username, response.username);
+  }
+
+  clearLocalStorage() {
+    window.localStorage.removeItem(AppConstants.username);
+    window.localStorage.removeItem(AppConstants.accessToken);
+    window.localStorage.removeItem(AppConstants.loggedInUser);
   }
 
 }

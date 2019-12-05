@@ -9,16 +9,22 @@ export class LoginService {
 
     constructor(private http: HttpClient) { }
 
-    generateToken(loginPayload): Observable<IApiResponse> {
-        return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'login/generate-token', loginPayload, httpOptions);
+    generateToken(loginPayload: { username: string; password: string; }) {
+        return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'login/generate-token', loginPayload, httpOptions).toPromise();
     }
 
-    login(username) {
+    login(username: string) {
         return this.http.post<IApiResponse>(`${AppConstants.baseUrl}` + 'user/getUserDetails', username, httpOptions).toPromise();
     }
 
     logout() {
-        localStorage.removeItem('currentUser');
+        this.clearLocalStorage();
+    }
+
+    clearLocalStorage() {
+        window.localStorage.removeItem(AppConstants.username);
+        window.localStorage.removeItem(AppConstants.accessToken);
+        window.localStorage.removeItem(AppConstants.loggedInUser);
     }
 
 }

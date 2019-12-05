@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Globals } from 'src/app/shared/constant/globals';
 import { AppConstants } from 'src/app/shared/constant/app-constants';
-import { RouterUtil } from 'src/app/shared/service/routing/router-util';
+import { RouterUtil } from 'src/app/core/helpers/router-util';
 
 @Component({
   selector: 'app-footer',
