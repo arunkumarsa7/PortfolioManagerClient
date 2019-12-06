@@ -6,6 +6,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 import { FacadeService } from 'src/app/shared/service/facade/facade.service';
 import { AppConstants } from 'src/app/shared/constant/app-constants';
+import { AppConfigUtil } from 'src/app/core/helpers/app-config-util';
 
 @Component({
   selector: 'app-timeout',
@@ -23,12 +24,11 @@ export class TimeOutComponent {
 
   @ViewChild('childModal', { static: false }) childModal: ModalDirective;
 
-  constructor(private idle: Idle, private keepalive: Keepalive, private router: Router, private facadeService: FacadeService) {
-    // sets an idle timeout of 5 seconds, for testing purposes.
-    idle.setIdle(5);
-    // sets a timeout period of 5 seconds. after 10 seconds of inactivity, the user will be considered timed out.
-    idle.setTimeout(5);
-    // sets the default interrupts, in this case, things like clicks, scrolls, touches to the document
+  // tslint:disable-next-line: max-line-length
+  constructor(private idle: Idle, private keepalive: Keepalive, private router: Router, private facadeService: FacadeService, private appConfig: AppConfigUtil) {
+
+    idle.setIdle(this.appConfig.getUserIdleTimeOutInSec());
+    idle.setTimeout(this.appConfig.getUserTimeOutInSec());
     idle.setInterrupts(DEFAULT_INTERRUPTSOURCES);
 
     idle.onIdleEnd.subscribe(() => {
@@ -56,8 +56,7 @@ export class TimeOutComponent {
       console.log(this.idleState);
     });
 
-    // sets the ping interval to 15 seconds
-    this.keepalive.interval(15);
+    this.keepalive.interval(this.appConfig.getUserKeepAliveInSec());
     this.keepalive.onPing.subscribe(() => this.lastPing = new Date());
     this.facadeService.getUserLoggedIn().subscribe(userLoggedIn => {
       if (userLoggedIn) {
@@ -67,12 +66,11 @@ export class TimeOutComponent {
         idle.stop();
       }
     });
-    // this.reset();
+
   }
 
   reset() {
     this.idle.watch();
-    // xthis.idleState = 'Started.';
     this.timedOut = false;
   }
 

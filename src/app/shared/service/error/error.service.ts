@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpErrorResponse} from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable()
 export class ErrorService {
@@ -17,9 +17,9 @@ export class ErrorService {
 
   getServerMessage(error: HttpErrorResponse): string {
     if (error.status === 404) {
-return 'Server unavailable. Please try after sometime';
+      return 'Server unavailable. Please try after sometime';
     } else {
-    return 'Http error response : ' + error.status;
+      return 'Http error response : ' + error.status;
     }
   }
 

@@ -38,6 +38,17 @@ export class AppConstants {
   public static accessToken = 'accessToken';
   public static loggedInUser = 'currentUser';
   public static username = 'username';
+  // Constants used in application configuration file
+  public static APP_USER_IDLE_TIME_IN_SEC = 'APP_USER_IDLE_TIME_IN_SEC';
+  public static APP_USER_TIME_OUT_IN_SEC = 'APP_USER_TIME_OUT_IN_SEC';
+  public static APP_USER_KEEP_ALIVE_IN_SEC = 'APP_USER_KEEP_ALIVE_IN_SEC';
+  public static APP_SHOW_ERROR_MSG_DURATIN_IN_MILLI_SEC = 'APP_SHOW_ERROR_MSG_DURATIN_IN_MILLI_SEC';
+  public static APP_SHOW_WARNING_MSG_DURATIN_IN_MILLI_SEC = 'APP_SHOW_WARNING_MSG_DURATIN_IN_MILLI_SEC';
+  public static APP_SHOW_INFO_MSG_DURATIN_IN_MILLI_SEC = 'APP_SHOW_INFO_MSG_DURATIN_IN_MILLI_SEC';
+  public static APP_SHOW_SUCCESS_MSG_DURATIN_IN_MILLI_SEC = 'APP_SHOW_SUCCESS_MSG_DURATIN_IN_MILLI_SEC';
+  // Error message constants
+  public static ERROR_MSG_USER_NOT_LOGGED_IN = 'ERROR_MSG_USER_NOT_LOGGED_IN';
+  public static ERROR_MSG_INVALID_USERNAME_OR_PASSWORD = 'ERROR_MSG_INVALID_USERNAME_OR_PASSWORD';
 }
 
 export interface EnumLayout {

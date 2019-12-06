@@ -44,29 +44,35 @@ app-footer {
   width : 100%;
   height: 10%;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.error-snackbar{
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin     : 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.snackbar-common {
+  color        : #FFFFFF;
+  max-width    : 100% !important;
+  margin-bottom: 11% !important;
+}
+
+.error-snackbar {
   background-color: #DC3149;
-  color:#FFFFFF;
-  max-width: 100% !important;
-
 }
-.warning-snackbar{
+
+.warning-snackbar {
   background-color: #EFBE25;
-  color:#FFFFFF;
-  max-width: 100% !important;
-
 }
-.success-snackbar{
+
+.success-snackbar {
   background-color: #1E8927;
-  color:#FFFFFF;
-  max-width: 100% !important;
-
 }
-.info-snackbar{
-  background-color: #496EBD;
-  color:#FFFFFF;
-  max-width: 100% !important;
 
+.info-snackbar {
+  background-color: #496EBD;
 }

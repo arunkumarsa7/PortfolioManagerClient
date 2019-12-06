@@ -16,6 +16,7 @@ import { ServicesModule } from './modules/service/services.module';
 import { GlobalErrorHandler } from './core/helpers/global-error-handler';
 import { ServerErrorInterceptor } from './core/interceptors/server-error-interceptor';
 import { MessagesUtil } from './core/helpers/messages-util';
+import { AppConfigUtil } from './core/helpers/app-config-util';
 import { TokenInterceptor } from './core/interceptors/token-interceptor';
 import { LoginModule } from './core/login/login.module';
 
@@ -42,14 +43,19 @@ import { LoginModule } from './core/login/login.module';
     { provide: ErrorHandler, useClass: GlobalErrorHandler },
     { provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-    MessagesUtil,
-    { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [MessagesUtil], multi: true },
+    MessagesUtil, AppConfigUtil,
+    { provide: APP_INITIALIZER, useFactory: initializeMessageUtil, deps: [MessagesUtil], multi: true },
+    { provide: APP_INITIALIZER, useFactory: initializeAppConfig, deps: [AppConfigUtil], multi: true },
     Globals, RouterUtil
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
-export function initializeApp(messages: MessagesUtil) {
+export function initializeMessageUtil(messages: MessagesUtil, appConfig: AppConfigUtil) {
   return () => messages.load();
+}
+
+export function initializeAppConfig(appConfig: AppConfigUtil) {
+  return () => appConfig.load();
 }

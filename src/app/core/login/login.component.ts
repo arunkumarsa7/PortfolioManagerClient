@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FacadeService } from 'src/app/shared/service/facade/facade.service';
 import { AppConstants } from 'src/app/shared/constant/app-constants';
+import { MessagesUtil } from 'src/app/core/helpers/messages-util';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   invalidLogin = false;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private facadeService: FacadeService) { }
+  // tslint:disable-next-line: max-line-length
+  constructor(private formBuilder: FormBuilder, private router: Router, private facadeService: FacadeService, private msgUtil: MessagesUtil) { }
 
   onSubmit() {
     if (this.loginForm.invalid) {
@@ -43,6 +45,8 @@ export class LoginComponent implements OnInit {
       } else {
         this.invalidLogin = true;
       }
+    }).catch((e) => {
+      this.facadeService.notifyError(this.msgUtil.getErrorMessage(AppConstants.ERROR_MSG_INVALID_USERNAME_OR_PASSWORD));
     });
   }
 
