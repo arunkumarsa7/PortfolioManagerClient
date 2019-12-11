@@ -6,6 +6,7 @@ import { AppConstants } from 'src/app/shared/constant/app-constants';
 import { MessagesUtil } from 'src/app/core/helpers/messages-util';
 import { RouterUtil } from 'src/app/core/helpers/router-util';
 import { FacadeService } from 'src/app/shared/service/facade/facade.service';
+import { SnackBarService } from 'src/app/common/snackbar/snack-bar.service';
 import { IOperatingEntity } from 'src/app/shared/models/ioperating-entity';
 
 @Component({
@@ -18,7 +19,8 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
   hasServiceOfferings: boolean;
   globals: Globals;
 
-  constructor(private routerUtil: RouterUtil, globals: Globals, private facadeService: FacadeService, private messages: MessagesUtil) {
+  // tslint:disable-next-line: max-line-length
+  constructor(private routerUtil: RouterUtil, globals: Globals, private facadeService: FacadeService, private snackbar: SnackBarService, private messages: MessagesUtil) {
     this.globals = globals;
   }
 
@@ -55,7 +57,7 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
         this.globals.currentOEId = oeId;
         this.routerUtil.navigateToNextPage();
       } else {
-        this.facadeService.notifyError(this.messages.getErrorMessage('ERROR_MSG_NO_SERVICE_OFFERINGS'));
+        this.snackbar.openSnackBar(this.messages.getErrorMessage('ERROR_MSG_NO_SERVICE_OFFERINGS'), AppConstants.APP_ERROR_MSG);
       }
     });
   }

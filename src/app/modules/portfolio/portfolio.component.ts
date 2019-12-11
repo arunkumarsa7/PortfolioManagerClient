@@ -5,6 +5,7 @@ import { AppConstants } from 'src/app/shared/constant/app-constants';
 import { RouterUtil } from 'src/app/core/helpers/router-util';
 import { MessagesUtil } from 'src/app/core/helpers/messages-util';
 import { FacadeService } from 'src/app/shared/service/facade/facade.service';
+import { SnackBarService } from 'src/app/common/snackbar/snack-bar.service';
 import { IServiceOffering } from 'src/app/shared/models/iservice-offering';
 import { IPortfolio } from 'src/app/shared/models/iportfolio';
 
@@ -20,7 +21,8 @@ export class PortfolioComponent implements OnInit {
   showPortfolio = false;
   showProjects = false;
 
-  constructor(private routerUtil: RouterUtil, globals: Globals, private facadeService: FacadeService, private messages: MessagesUtil) {
+  // tslint:disable-next-line: max-line-length
+  constructor(private routerUtil: RouterUtil, globals: Globals, private facadeService: FacadeService, private snackbar: SnackBarService, private messages: MessagesUtil) {
     this.globals = globals;
   }
 
@@ -63,7 +65,7 @@ export class PortfolioComponent implements OnInit {
         this.globals.currentServiceOffering = htmlElement.getAttribute('title');
         this.routerUtil.navigateToNextPage();
       } else {
-        this.facadeService.notifyError(this.messages.getErrorMessage('ERROR_MSG_NO_PORTFOLIOS'));
+        this.snackbar.openSnackBar(this.messages.getErrorMessage('ERROR_MSG_NO_PORTFOLIOS'), AppConstants.APP_ERROR_MSG);
       }
     });
   }
@@ -76,7 +78,7 @@ export class PortfolioComponent implements OnInit {
         this.globals.currentProject = htmlElement.getAttribute('title');
         this.routerUtil.navigateToNextPage();
       } else {
-        this.facadeService.notifyError(this.messages.getErrorMessage('ERROR_MSG_NO_PROJECT_DATA'));
+        this.snackbar.openSnackBar(this.messages.getErrorMessage('ERROR_MSG_NO_PROJECT_DATA'), AppConstants.APP_ERROR_MSG);
       }
     });
   }

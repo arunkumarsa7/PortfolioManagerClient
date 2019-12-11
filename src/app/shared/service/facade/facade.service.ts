@@ -4,7 +4,6 @@ import { DashboardService } from 'src/app/shared/service/data/dashboard/dashboar
 import { ServiceOfferingService } from 'src/app/shared/service/data/service-offering/service-offering.service';
 import { PortfolioService } from 'src/app/shared/service/data/portfolio/portfolio.service';
 import { OEDataService } from 'src/app/shared/service/data/oe/oe-data.service';
-import { NotificationService } from 'src/app/shared/service/notification/notification.service';
 import { LoggingService } from 'src/app/shared/service/logging/logging.service';
 import { ErrorService } from 'src/app/shared/service/error/error.service';
 import { TimeoutService } from 'src/app/shared/service/timeout/timeout.service';
@@ -16,7 +15,6 @@ export class FacadeService {
   private serviceOfferingService: ServiceOfferingService;
   private portfolioService: PortfolioService;
   private oeDataService: OEDataService;
-  private notificationService: NotificationService;
   private loggingService: LoggingService;
   private errorService: ErrorService;
   private loginService: LoginService;
@@ -57,13 +55,6 @@ export class FacadeService {
       this.loggingService = this.injector.get(LoggingService);
     }
     return this.loggingService;
-  }
-
-  public get NotificationService(): NotificationService {
-    if (!this.notificationService) {
-      this.notificationService = this.injector.get(NotificationService);
-    }
-    return this.notificationService;
   }
 
   public get ErrorService(): ErrorService {
@@ -109,21 +100,6 @@ export class FacadeService {
 
   getPortfolios(serviceOfferingId: number) {
     return this.getPortfolioService.getPortfolios(serviceOfferingId);
-  }
-
-  public notifyError(message: string): void {
-    return this.NotificationService.showError(message);
-  }
-
-  public notifySuccess(message: string): void {
-    return this.NotificationService.showSuccess(message);
-  }
-
-  public notifyInfo(message: string): void {
-    return this.NotificationService.showInfo(message);
-  }
-  public notifyWarning(message: string): void {
-    return this.NotificationService.showWarning(message);
   }
 
   public logError(message: string, stack: string): void {

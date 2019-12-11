@@ -1,0 +1,36 @@
+.snackbar-common {
+    color        : #FFFFFF;
+    max-width    : 100% !important;
+    margin-bottom: 11% !important;
+}
+
+.snack-icon {
+    width: 5%;
+    float: left;
+}
+
+.snack-message {
+    width        : 90%;
+    float        : right;
+    font-family  : "Times New Roman", Times, serif;
+    font-size    : 1.2em;
+    white-space  : nowrap;
+    overflow     : hidden;
+    text-overflow: ellipsis;
+}
+
+.error-snackbar {
+    background-color: #DC3149;
+}
+
+.warning-snackbar {
+    background-color: #EFBE25;
+}
+
+.success-snackbar {
+    background-color: #1E8927;
+}
+
+.info-snackbar {
+    background-color: #496EBD;
+}

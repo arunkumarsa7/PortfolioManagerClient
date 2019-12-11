@@ -1,5 +1,5 @@
 <div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-child-name">
-  <div class="modal-dialog modal-md">
+  <div class="modal-dialog modal-md modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h4 id="dialog-child-name" class="modal-title pull-left">You Have Been Idle!</h4>
@@ -9,6 +9,8 @@
       </div>
       <div class="modal-body">
         {{idleState}}
+      </div>
+      <div class="modal-footer">
         <div class="row mrgbtm">
           <div class="col-md-6">
             <button type="button" (click)="logout()" class="btn btn-danger">Logout</button>

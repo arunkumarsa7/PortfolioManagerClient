@@ -1,13 +1,14 @@
 import { ErrorHandler, Injectable } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { FacadeService } from 'src/app/shared/service/facade/facade.service';
+import { SnackBarService } from 'src/app/common/snackbar/snack-bar.service';
 import { MessagesUtil } from 'src/app/core/helpers/messages-util';
 import { AppConstants } from 'src/app/shared/constant/app-constants';
 
 @Injectable()
 export class GlobalErrorHandler implements ErrorHandler {
 
-    constructor(private facadeService: FacadeService, private msgUtil: MessagesUtil) { }
+    constructor(private facadeService: FacadeService, private snackbar: SnackBarService, private msgUtil: MessagesUtil) { }
 
     handleError(error: Error | HttpErrorResponse) {
         let message: string;
@@ -17,7 +18,7 @@ export class GlobalErrorHandler implements ErrorHandler {
             // Server Error
             message = this.facadeService.getServerMessage(error);
             stackTrace = this.facadeService.getServerStack(error);
-            this.facadeService.notifyError(message);
+            this.snackbar.openSnackBar(message, AppConstants.APP_ERROR_MSG);
         } else {
             // Client Error
             message = this.facadeService.getClientMessage(error);
@@ -40,7 +41,7 @@ export class GlobalErrorHandler implements ErrorHandler {
                 break;
             }
         }
-        this.facadeService.notifyError(errorMessage);
+        this.snackbar.openSnackBar(errorMessage, AppConstants.APP_ERROR_MSG);
     }
 
 }

@@ -43,7 +43,6 @@ logo-div {
 }
 
 @media(max-width: 576px) {
-
   .title {
     display: none;
   }

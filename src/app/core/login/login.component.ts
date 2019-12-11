@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FacadeService } from 'src/app/shared/service/facade/facade.service';
 import { AppConstants } from 'src/app/shared/constant/app-constants';
 import { MessagesUtil } from 'src/app/core/helpers/messages-util';
+import { SnackBarService } from 'src/app/common/snackbar/snack-bar.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   invalidLogin = false;
 
   // tslint:disable-next-line: max-line-length
-  constructor(private formBuilder: FormBuilder, private router: Router, private facadeService: FacadeService, private msgUtil: MessagesUtil) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private facadeService: FacadeService, private msgUtil: MessagesUtil, private snackBar: SnackBarService) { }
 
   onSubmit() {
     if (this.loginForm.invalid) {
@@ -46,7 +47,8 @@ export class LoginComponent implements OnInit {
         this.invalidLogin = true;
       }
     }).catch((e) => {
-      this.facadeService.notifyError(this.msgUtil.getErrorMessage(AppConstants.ERROR_MSG_INVALID_USERNAME_OR_PASSWORD));
+      const errorMessage = this.msgUtil.getErrorMessage(AppConstants.ERROR_MSG_INVALID_USERNAME_OR_PASSWORD);
+      this.snackBar.openSnackBar(errorMessage, AppConstants.APP_ERROR_MSG);
     });
   }
 

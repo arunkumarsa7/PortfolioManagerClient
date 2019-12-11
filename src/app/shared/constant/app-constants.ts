@@ -46,6 +46,11 @@ export class AppConstants {
   public static APP_SHOW_WARNING_MSG_DURATIN_IN_MILLI_SEC = 'APP_SHOW_WARNING_MSG_DURATIN_IN_MILLI_SEC';
   public static APP_SHOW_INFO_MSG_DURATIN_IN_MILLI_SEC = 'APP_SHOW_INFO_MSG_DURATIN_IN_MILLI_SEC';
   public static APP_SHOW_SUCCESS_MSG_DURATIN_IN_MILLI_SEC = 'APP_SHOW_SUCCESS_MSG_DURATIN_IN_MILLI_SEC';
+  // Error constants
+  public static APP_SUCCESS_MSG = 'Success';
+  public static APP_ERROR_MSG = 'Error';
+  public static APP_WARNING_MSG = 'Warn';
+  public static APP_INFO_MSG = 'Info';
   // Error message constants
   public static ERROR_MSG_USER_NOT_LOGGED_IN = 'ERROR_MSG_USER_NOT_LOGGED_IN';
   public static ERROR_MSG_INVALID_USERNAME_OR_PASSWORD = 'ERROR_MSG_INVALID_USERNAME_OR_PASSWORD';

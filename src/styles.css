@@ -54,25 +54,3 @@ body {
   margin     : 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
-.snackbar-common {
-  color        : #FFFFFF;
-  max-width    : 100% !important;
-  margin-bottom: 11% !important;
-}
-
-.error-snackbar {
-  background-color: #DC3149;
-}
-
-.warning-snackbar {
-  background-color: #EFBE25;
-}
-
-.success-snackbar {
-  background-color: #1E8927;
-}
-
-.info-snackbar {
-  background-color: #496EBD;
-}
